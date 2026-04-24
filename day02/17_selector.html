@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            font-style: italic;
+            /*기울림꼴*/
+
+            .ptag {
+                color: blue;
+            }
+
+            #p {
+                color: brown;
+            }
+
+            p:hover {
+                text-decoration: underline;
+            }
+
+
+
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+    <!-- 
+    selector 선택자
+    요소 element를 선택하게 하는 이름.
+id선택자 - #아이디명   1개의 html에 1개 혹은 0개.
+
+클래스 선택자: .클래스명 >>> 여러개 가능함.
+ 같은 클래스는 같은 스타일의 영향을 받음
+
+tagName 선택자 - 태그명. 같은 태그명에 같은 스타일의 영향을 받음.
+
+가상 클래스 선택 - 가상클래스명.
+    어떤 조건이나 상황에서 스타일을 적용하도록 만든 선택자.
+앞에 대상의 선택자가 먼저 나오고 뒤에 가상 클래스의 선택자가 나옴
+:hover - 앞의 요소가 마우스를 올렸을때 적용.
+:focus 앞의 요소가 포커스를 받고있을때 적용 
+:nth-child(a)  / :nth-of-type(a)  요소가 많을때 a번째에 해당하는 요소
+1 - 첫번째요소
+even - 짝수 번째 요소
+odd: 홀수번째 요소
+2n / 3n  - 2배수 3배수
+3n-1같은거도 됨.
+
+
+
+선택자 조합
+여러 선택자를 이용하여 요소 선택
+자식 관계: >
+부모 선택자 > 자식 선택자 table > tbody > tr > td
+부모 선택자 바로 위에 있는 부모
+자손관계: 공백
+조상선택자 자손선택자 table td
+조상 선택자는 부모 포함
+평제관계 : 선택자를 붙여서 나열
+선택자1선택자2 선택자1 2 모두 만족하는 요소
+#p.a(아이디p/클래스a)O     p.hong(o)    근데 divp() 이런건 안됨 .hongp 이런거도 안됨.
+구분이 안되면 인정 못받음.
+
+
+안되는 조합 - 붙여써서 발생되는 상황
+띄어쓰기 없이 구분 안되면 인정 안됨. 혹은 태그 선택자들로만 되있는 상황이라던가
+
+선택자 우선순위
+하나의 엘리먼트에 여러 선택자가 겹쳐져있는 상황일경우
+아이디 선택자 > 클래스 선택자 > 태그   일단 아이디 부터 쑤셔넣어
+
+
+
+    -->
+
+
+    <!-- 와 단축키 ctrl alt 스크롤이 도대체 뭐람!!! -->
+    <p class="ptag" id="p">HEllo! CSS!!</p>
+    <p class="ptag">HEllo! CSS!!</p>
+    <p>HEllo! CSS!!</p>
+    <p>HEllo! CSS!!</p>
+    <p>HEllo! CSS!!</p>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

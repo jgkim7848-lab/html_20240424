@@ -1,0 +1,10 @@
+git init
+git add .
+git commit -m "day "
+git remote add origin https://github.com/jgkim7848-lab/html_20240424.git
+git push -u origin main
+
+
+
+main이 아니면
+git branch -M main

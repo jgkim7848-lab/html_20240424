@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+        table : 표를 나타내는 태그 (표 전체 박스)
+        tr : 행 (한 행을 의미)
+        td : 열 (한 칸을 의미)
+        th : 열 (제목열, 가운데정렬, 굵은글씨)
+        3*4 테이블 생성
+        tr * 3
+        tr => td * 4
+        총 td = 12개
+        모양 => css에서 크기, 색, 선 지정
+        caption : 표에 제목을 붙이는 태그
+        thead / tbody / tfoot
+
+        - colspan : 열병합 / rowspan : 행병합
+    -->
+    <table border="1" width="50%">
+        <caption>title</caption>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>홍길동</td>
+                <td>78</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>홍길동</td>
+                <td>78</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>홍길동</td>
+                <td>78</td>
+                <td>89</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>홍길동</td>
+                <td>78</td>
+                <td>89</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">합계</td>
+                <td>000</td>
+                <td>000</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table border="1" width="50%">
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+    <table border="1" width="50%">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>성적</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>홍길동</td>
+            <td>90</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>김철수</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>민수박</td>
+            <td>78</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>임동균</td>
+            <td>67</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>이수민</td>
+            <td>52</td>
+        </tr>
+        <tr>
+            <td colspan="2">합계</td>
+            <td>170</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- input 태그는 화면에서 서버로 데이터를 전송할때 사용함.
+     여러가지 속성값이 다양해서 여러가지 기능이 가능하기때문
+     form태그와 같이 사용하여 서버로 전송함. -->
+    <!-- input의 속성에서 type이라고 해서 내가 원하는 타입을 줄수있다.
+ 어떤 타입으로 데이터를 받을지에 대한것.
+ input type="타입" name=변수명, value:값 id:태그를 유일하게 구분
+ 
+  -->
+    <input type="text" name="id" id="a" placeholder="아이디 입력">
+    <!-- 값을 입력할수있는 태그. input. -->
+    <input type="text" name="password" id="a " placeholder="비밀번호 입력">
+
+    <!-- type = button과 submit   일반 버튼은 자바 스크립트에서...데이터 전송은 submit
+ type = reset  취소 버튼임.모든 input 의 삭제. -->
+    <input type="button" value="button" name="" id="">
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+    <hr>
+    <!-- form태그: 태그안의 정보를 서버로 전송할때 서버의 주소를 나타내는 태그
+     action="" - 주소를 나타냄.보낼 서버의 주소를 작성함.
+     그리고 데이터를 전송하는 방식에 따라 2가지의 method가 존재함.
+    1. get(어지간해선 이게 기본임.)
+    주소 뒤에 ?를 붙여서 정보를 보내는 방식.
+    2. post
+    반드시 입력, 데이터를 숨겨서 가는 방식. 데이터를 보낼때 쓰는 내부 객체가 존재함.
+    그 객체의 body에 이걸 숨김.
+
+    name = "변수명" value="값"
+    action?변수명=값&action?변수명=값&action?변수명=값&.
+    쿼리 스트링 방식은 띄어쓰기가 안됨. 따옴표도 안됨.
+
+
+      -->
+    <input type="text" name="age" placeholder="나이"><br>
+    <input type="button" name="button">
+    <input type="submit" name="submit">
+    <input type="reset" name="reset" id="">
+
+    <br><br><br>
+
+    <form action="" method="get">
+
+        <input type="text" name="id" id="a" placeholder="아이디 입력">
+        <input type="password" name="password" id="a " placeholder="비밀번호 입력">
+        <input type="text" name="age" placeholder="나이"><br>
+        <input type="button" value="button">
+        <input type="submit" value="submit">
+        <input type="reset" value="reset" id="">
+
+
+    </form>
+
+
+    <!-- 
+    type="password" 비밀번호를 별로 가려줌.********
+    type="checkbox" 다중선택을 할 경우 사용함.
+    
+    -->
+
+    <input type="radio">
+    <br><br><br>
+    <hr>
+    <form action="">
+        <input type="checkbox" name="fruit" value="apple"> apple
+        <input type="checkbox" name="fruit" value="jyadu"> jyadu
+
+        <input type="checkbox" name="fruit" value="pineapple"> pineapple
+        <input type="submit" value="submit">
+    </form>
+    <br><br><br>
+
+    <!-- label 다른 태그의 제목 역할을 함.
+ for="연결태그id" == id="값" 이게 같으면 묶어주는 역할을 함. -->
+    <form action="">
+        <input type="checkbox" id="apple" name="fruit" value="apple" checked>
+        <label for="apple">apple</label>
+        <label for="orange">
+            <input type="checkbox" id="orange" name="fruit" value="orange">orange
+        </label>
+        <label for="orange">
+            <input type="checkbox" id="banana" name="fruit" value="banana">banana
+        </label>
+        <br>
+        <input type="submit" value="submit">
+
+
+    </form>
+
+    <br><br><br>
+
+    <form action="">
+        <input type="radio" id="apple" name="fruit2" value="apple" checked>
+        <label for="apple">apple</label>
+        <label for="orange">
+            <input type="radio" id="orange" name="fruit2" value="orange">orange
+        </label>
+        <label for="orange">
+            <input type="radio" id="banana" name="fruit2 " value="banana">banana
+        </label>
+        <br>
+        <input type="submit" value="submit">
+
+
+    </form>
+
+
+    <br><br><br>
+
+    <!-- form label radio 버턴을 이용하여 10대 20대 30대 40대중 택일 전송 -->
+    <form action="">
+
+        <label for="10대">
+            <input type="radio" name="age" value="10대">10대
+        </label>
+
+        <label for="20대">
+            <input type="radio" name="age" value="20대">20대
+        </label>
+
+        <label for="30대">
+            <input type="radio" name="age" value="30대">30대
+        </label>
+
+        <label for="40대이상">
+            <input type="radio" name="age" value="40대이상">40대이상
+        </label>
+
+        <br>
+        <input type="submit" value="submit">
+
+
+    </form>
+
+
+
+
+    <br><br><br>
+    <hr>
+    <!-- type color 색깔 선택. -->
+    <input type="color">
+    <input type="year" name="" id="">
+    <input type="month">
+    <input type="week">
+    <input type="datetime-local" name="" id="">
+    <input type="time">
+    <hr>
+    <br>
+    <!-- type="email" email 형식에 맞나 안맞나 검사
+ type="url" url 형식에 맞는지 검사 -->
+
+ <!-- type search   -->
+
+ <input type="search" name="" id="">
+
+ <input type="file" name="" id="">
+<!-- 첨부파일 1개 선택 가능. 2개 이상 안됨.
+ 여러개 넣고싶으면??? option multiple -->
+<input type="file" multiple>
+
+<input type="hidden" name="id" value="admin1234">
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>

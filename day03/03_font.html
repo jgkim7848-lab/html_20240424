@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+font 지정.
+글씨체.
+글꼴, 글자 크기, 스타일, 굵기 총 4가지로 글자 지정이 가능함.
+지정하려고하는 폰트를 , 로 나열함.
+한글 폰트인 경우 한글이름과 영ㅇ문이름을 같이 써야함.
+기본형 sefif
+폰트명 - 따옴표 안쓴다.단 씌어쓰기가 있을경우 띄어쓰기함. "맑은 고딕"
+font size 글자 크기.
+font style 밑줄, 기울림꼴등....style투입가능. 
+font weight 굵기 보통100단위로 지정때림.
+만약에 내가 폰트 속성 한번에 지정은 가능함.
+font [style | weight] size family
+
+fontgoogle에서 가져오기
+head안에 링크를 붙여서 사용하는 방식 CDN 방식.
+사이트에 문제가 생기면???= 해당 폰트는 멸망함.
+
+그런데 이 폰트 파일 자체를 아예 다운로드가 가능하단말이지???
+
+ex 눈누 폰트
+
+
+
+-->
+<style>
+.font{
+    font-family: NanumGothic-Bold;
+    font-size: 30px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: NanumGothic-Bold;
+    src: url(../font/nanumgothic/NanumGothic-Bold.ttf);
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <div class="font">Hello CSS World</div>
+
+</body>
+</html>

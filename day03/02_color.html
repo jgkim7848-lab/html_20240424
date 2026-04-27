@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- 
+색상 관련된 속성 color
+글자의 색임.    
+background-color 배경색
+dorder color 테두리색
+
+색상 지정방법은 대충 이름있는 색이면 색깔이름 넣고 아니면 rpb값 투입
+16진수 색상코드 써도 됨.
+rgb, rgba 
+그라디언트cssgradiant
+background: linear gradiant (방향, 색상1, 색상2...)
+
+bordercolor 선색상
+기본적으론 두께가 없음. 그러므로 두께를 줘야함.
+선두께, 선모양
+border 두께 모양 색
+border 선두께
+borderstyle 모양
+border color 선 색상
+
+-->
+
+<style>
+div{
+    width: 300px;
+    height: 100px;
+    text-align: center; /*요소 가로 가운데 정렬*/
+line-height: 100px; /*글자 자체의 높이를 늘리는 역할*/
+
+}
+.color{
+    color: brown;
+    background-color: bisque;
+}
+.bg-color{
+    background: #3F5EFB;
+background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(132, 85, 198, 1) 32%, rgba(199, 77, 147, 1) 72%, rgba(252, 70, 107, 1) 100%);
+}
+.b-color{
+    border: 1px solid #3F5EFB;
+    border-style: dashed;
+}
+.box{
+    color: pink;
+background-color: yellow;
+border: 4px solid purple;
+border-style: groove;
+font-weight: 10000;
+}
+
+
+</style>
+
+</head>
+<body>
+    <div class="color">글자색</div>
+    <div class="bg-color">배경색</div>
+    <div class="b-color">테두리색</div>
+    <div class="box">test</div>
+    
+</body>
+</html>

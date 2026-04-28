@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .p-box {
+            height: 150px;
+            background-color: brown;
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            float: left;
+            position: absolute;
+        }
+
+        .box1 {
+            background-color: skyblue;
+            top: 25px;
+            left: 25px;
+
+        }
+
+        .box2 {
+
+            background-color: yellow;
+            top: 25px;
+            left: 50%;
+            transform: translate(-50%);
+            /*transform 나이 요소가 변화하는 기능.
+            translate: 움직임*/
+
+        }
+
+        .box3 {
+            background-color: blue;
+            top: 25px;
+            right: 25px;
+        }
+
+
+
+
+
+        .outer {
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+            position: relative;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: calc(50% / 3 * 2);
+            left: calc(50% / 3 * 2);
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- 300 300 / 100 100 -->
+
+    <div class="p-box">
+        <div class="box box1">day04 06번</div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+
+    </div>
+
+
+    <div class="outer">
+        <div class="inner">
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

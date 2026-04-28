@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        .box1 {
+            border-bottom: none;
+        }
+
+        .box2 {
+            border-bottom: none;
+        }
+
+        .box3 {
+            border-bottom: none;
+        }
+
+
+
+        .box:hover {
+            background-color: yellow;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .box {
+            /*무조건 부모의 100% 없으면 body의 %*/
+            
+            height: 50px;
+            border: 1px solid black;
+            background-color: white;
+            text-align: center;
+            box-sizing: border-box;
+            /*박스 사이징이랑 width에서 calc(100% / 4)말고 다른 방법으로 했었음 아*/
+        }
+        .box-box{
+            width: 200px;
+            float: left;
+        }
+        .box-dog{
+            float: right;
+            width: calc(100% - 210px);
+            height: 700px;
+            background-color: rebeccapurple;
+            background-image: url(../image/doggy2.jpg);
+            background-position: center;
+            background-size: cover;
+
+            /*background-size: contain;*/
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div class="big-box">
+        <div class="box-box">
+
+            <div class="box box1"><span>menu1</span></div>
+
+            <div class="box box2"><span>menu2</span></div>
+            <div class="box box3"><span>menu3</span></div>
+            <div class="box box4"><span>menu4</span></div>
+        </div>
+
+        <div class="box-dog">
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+    display속성
+    태그가 가지고있는 기본 속성을 변경하는 기능
+    block - 새 라인에서 시작. 한 컨텐츠가 한 라인을 차지하는 태그.
+          - width height 조절 가능.
+          -여백조절기능 magin padding
+    inline - 현재 라인에서 이어서 시작. 자신의 컨텐츠만큼 자리를 차지하는 태그
+           - width height를 쓴다고 조절이 안됨.
+           - magin은 안되는데 padding은 됨.
+           - 와중에 magin 위아래는 안됨?????
+    inlineblock - 현재 라인에 이어서 시작. 자신의 컨텐츠 만큼만 자리차지
+                - width height 크기 조절 가능
+                - 여백 조절 기능
+
+
+    -->
+
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            background-color: antiquewhite;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+
+        }
+
+        span {
+            width: 200px;
+            height: 50px;
+            background-color: yellow;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        b {
+            width: 200px;
+            height: 50px;
+            background-color: red;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+
+
+
+</head>
+
+
+<!-- block 끼리 맞붙으면 magin이 상쇄된다???? -->
+
+
+<body>
+    <div>block속성</div>
+    <span>inline속성</span>
+    <b>inline속성</b>
+    <button>inlineblock속성</button>
+
+
+</body>
+
+</html>

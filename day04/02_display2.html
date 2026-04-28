@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    ul{
+list-style: none;
+padding: 0;
+
+    }
+    ul>li{
+        display: inline;
+        margin: 10px 20px;
+        font-size: 20px;
+    }
+
+ul>li::after{
+    content: "/";
+    padding: 10px;
+}
+ul>li:last-child::after{
+    content: "";
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+    <ul>
+        <li>외투</li>
+        <li>하의</li>
+        <li>상의</li>
+        <li>악세서리</li>
+        <li>문의</li>
+    </ul>
+    
+</body>
+</html>

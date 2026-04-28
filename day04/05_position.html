@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+position속성
+속성을 좀더 유연하게 사용하기위해 위치값을 부여하는 속성
+static: default 별도로 지정 안하면 가동됨.
+fixed 화면상의 특정 영역에 고정]
+sticky: 스크롤에 반응하여 특정 위치에 고정
+ - 부모 높이 만큼만 sticky가 고정됨.
+ - 부모 요소에 overflow hidden auto scroll 속성이 있으면 적용이 안됨
+relative 요소끼리 위치값에 서로 영향을 줌. 상대적 위치
+absolue
+ - 요소의 위치를 절대적인 위치로 변경
+ - 기준이 되는 요소는 relative 속성을 갖고있는 가장 가까운 조상
+ - 만약 내 조상중 relative 속성이 없다면 body 기준이 됨.
+
+
+
+
+-->
+
+    <style>
+        .fixed {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+
+            font-weight: 700;
+
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+
+
+
+        }
+
+        .fixed>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav {
+            background-color: navajowhite;
+            margin: 20px;
+            padding: 10px;
+            top: 0px;
+            position: sticky;
+            /*sticky는 자신의 부모요소 안에서만 작동함.*/
+
+        }
+
+
+        nav>a {
+            text-decoration: none;
+            font-size: 20px;
+            margin: 20px;
+
+        }
+
+        .outer {
+            width: 500px;
+            height: 200px;
+            background-color: aquamarine;
+            position: relative;
+        }
+
+        .inner {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: -20px;
+            right: -20px; /*아니 시발 이거 왤케 ㅈ같이 안움직여 씨ㅣㅣ발아 px 안붙였누 ㅅㅂㅋㅋㅋㅋ*/
+            border-radius: 50%;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <h1>position속성은 좀더 유연하게 사용하기위해 위치값 부여</h1>
+    <nav>
+        <a href="">menu1</a>
+        <a href="">menu2</a>
+        <a href="">munu3</a>
+        <a href="">menu4</a>
+        <a href="">menu5</a>
+
+    </nav>
+
+    <div class="fixed">
+        <a href="#top">TOP</a>
+
+    </div>
+
+
+    <div class="outer">
+        <div class="inner">
+            inner box
+        </div>
+    </div>
+
+
+
+
+
+    <ul>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+        <li>dummyline</li>
+    </ul>
+
+
+
+
+</body>
+
+</html>

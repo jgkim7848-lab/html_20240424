@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Document</title>
+
+
+<style>
+@keyframes moveBox {
+    0% {
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-50px);
+    }
+    37.5% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px); /* 위로 */
+    }
+    75% {
+        transform: translateY(0);
+    }
+    87.5% {
+        transform: translateY(-50px); /* 위로 */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.ani {
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    animation-name: moveBox;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+</style>
+
+
+
+</head>
+
+<body>
+
+    <div class="ani">hihihihi</div>
+
+
+
+</body>
+
+</html>

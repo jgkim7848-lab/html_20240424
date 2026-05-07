@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            top: 45px;
+            left: 45px;
+            position: absolute;
+            z-index: 100;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            top: 75px;
+            left: 75px;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: indigo;
+            top: 105px;
+            left: 105px;
+            position: absolute;
+            z-index: 1;
+            /*x 인덱스가 큰게 제일 앞으로 튀어나오게됨.ㅇㅇ*/
+        }
+
+        .bigbox {
+            width: 300px;
+            /*높이는 정할 필요 X
+            안에 있는게 커짐으로서 정해짐*/
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        .textbox {
+            width: 280px;
+            height: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            box-sizing: border-box;
+
+
+            font-size: 20px;
+            text-align: center;
+            padding-top: 8px;
+            /*감으로 때려맞추는 부분도 있다는걸 명심할것.*/
+        }
+
+        .inbox {
+            width: 280px;
+            height: 270px;
+            border: 1px solid black;
+            position: relative;
+            margin: auto;
+        }
+        
+
+        
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="bigbox">
+
+        <div class="box textbox">텍스트</div>
+
+        <div class="box inbox">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+
+        </div>
+
+
+        <div class="box textbox">텍스트</div>
+    </div>
+
+
+
+
+</body>
+
+</html>

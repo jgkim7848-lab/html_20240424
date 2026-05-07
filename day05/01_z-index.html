@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+z-index 
+요소가 겹쳐있을 경우 누구를 위로 보낼지 결정하는 속성
+기본값은 자식이 위로 오게됨.
+숫자가 높을수록 우선순위를 갖게된다.
+
+-->
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            position: absolute;
+            /*absolute만 주면 다 겹쳐짐.*/
+        }
+
+        .box1 {
+            background-color: aqua;
+            top: 15px;
+            left: 15px;
+        }
+
+        .box2 {
+            background-color: crimson;
+            top: 30px;
+            left: 30px;
+        }
+
+        .box3 {
+            background-color: indigo;
+            top: 45px;
+            left: 45px;
+            z-index: 10;/*x 인덱스가 큰게 제일 앞으로 튀어나오게됨.ㅇㅇ*/
+        }
+
+        .box4 {
+            background-color: mediumpurple;
+            top: 60px;
+            left: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-image: url(../image/자연배경/알프스.jpg);
+            background-size: cover;
+            /* 화면 꽉 채움 */
+
+            /* 가운데 정렬 */
+            background-repeat: no-repeat;
+            /* 반복 없음 */
+        }
+/*float height margin??
+
+
+
+*/
+        li {
+            color: red;
+            list-style: none;
+        }
+
+        ul>.left {
+            float: left;
+            margin: 15px; /*상하좌우 다 15px 띄우기.*/
+        }
+
+        ul>.right {
+            float: right;
+            margin: 15px;
+
+        }
+        ul::after{
+            clear: both;
+            content: "";
+            display: block;
+/*부모의 after 채워주기.*/            
+        }
+        div{
+            text-align: center;
+            margin-top: 270px;
+        }
+        p{
+            font-size: 50px;
+            color: white;
+
+        }
+        button{
+            font-size: 20px;
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="inter">
+        <ul>
+            <li class="left">DESIGN</li>
+
+            <li class="right">BOARD</li>
+
+            <li class="right">SIGNUP</li>
+            <li class="right">LOGIN</li>
+            <li class="right">HOME</li>
+
+            <!-- 좌우 별도의 div로 나눴어야했다<div class=""></div> -->
+        </ul>
+    </nav>
+    <div>
+        <p>Welcome to Front-End<br>World</p>
+        <a href="https://naver.com"><button>Learn More</button></a>
+    </div>
+</body>
+
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-image: url(../image/음식사진/backgroundSAJIN.jpg);
+            background-size: cover;
+            /* 화면 꽉 채움 */
+
+            /* 가운데 정렬 */
+            background-repeat: no-repeat;
+            /* 반복 없음 */
+        }
+
+        li {
+            color: red;
+            list-style: none;
+        }
+
+        ul>.left {
+            float: left;
+        }
+
+        ul>.right {
+            float: right;
+            margin: 15px;
+
+        }
+        div{
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="inter">
+        <ul>
+            <li class="left">DESIGN</li>
+            <li class="right">HOME</li>
+            <li class="right">LOGIN</li>
+            <li class="right">SIGNUP</li>
+            <li class="right">BOARD</li>
+        </ul>
+    </nav>
+    <div>
+        <p>Welcome to Front-End</p>
+        <p>World</p>
+        <a href="https://naver.com"><button>Learn More</button></a>
+    </div>
+</body>    이거말인데 대체 왜 div를 margin top으로 내렸는데 nav도 같이 내려오냐
+
+이거 핵심 원인 딱 하나야 👍
+
+👉 **`float` 때문에 nav 높이가 “깨진 상태”라서 그래**
+
+---
+
+## ✔️ 지금 상황 구조
+
+너 코드 보면:
+
+```css id="bug01"
+ul > .right {
+    float: right;
+}
+```
+
+👉 float 쓰면:
+
+* li들이 **문서 흐름에서 빠짐**
+* 부모(`ul`, `nav`)가 **높이를 제대로 못 가짐**
+
+---
+
+## ✔️ 그래서 무슨 일이 생기냐
+
+```html id="bug02"
+<nav>
+    <ul>
+        <li>...</li>  ← float 때문에 떠 있음
+    </ul>
+</nav>
+
+<div style="margin-top:100px;">
+```
+
+👉 nav가 “비어있는 공간처럼” 취급됨
+👉 그래서 div margin이 nav랑 같이 움직여 보임
+
+---
+
+## ✔️ 해결 방법 2개 (중요)
+
+---
+
+# 🔥 방법 1 (추천) — clearfix 넣기
+
+```css id="fix01"
+ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+```
+
+👉 float 때문에 깨진 부모 높이 복구
+
+---
+
+# 🔥 방법 2 — nav에 높이 강제
+
+```css id="fix02"
+nav {
+    overflow: hidden;
+}
+```
+
+👉 이것도 float 문제 해결됨
+
+---
+
+## ✔️ 추가로 더 좋은 구조 (추천)
+
+지금 float 방식은 옛날 방식이라서
+
+👉 요즘은 이렇게 씀:
+
+```css id="fix03"
+li {
+    display: inline-block;
+}
+```
+
+👉 float 안 쓰고 메뉴 만들기
+
+---
+
+## ✔️ 핵심 정리
+
+👉 문제는 div가 아니라
+👉 **float 때문에 nav 높이가 깨진 것**
+
+---
+
+## ✔️ 한줄 요약
+
+👉 “float 쓰면 부모 높이 사라져서 레이아웃 이상해진다”
+
+---
+
+원하면
+👉 “float vs inline-block vs flex 차이 (진짜 이해 쉽게)”도 정리해줄게 👍
+
+
+-->

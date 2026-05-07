@@ -1,0 +1,96 @@
+@import url(../day06/reset.css);
+@font-face {
+    font-family: NotoSansKR-VariableFont_wght;
+    src: url(../font/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf);
+}
+body{
+    font-family: NotoSansKR-VariableFont_wght;
+    color: black;
+}
+.wrap{
+    min-width: 1400px;
+}
+/* inner : 1360px */
+.inner{
+    width: 1360px;
+    margin: auto;
+    box-sizing: border-box;
+}
+/* 전체 content-box padding 120px */
+.con-box{
+    padding: 120px 0;
+}
+
+/* header */
+header{
+    /* 메뉴 스티키 값 설정 */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+}
+header .top, .menu{
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+}
+header .top a, .menu a{
+    color: gray;
+    font-weight: 500;
+    letter-spacing: -2px;
+}
+header .top a{
+    font-size: 13px;
+}
+header .inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+header .inner .top-left>ul, .top-right>ul{
+    display: flex;
+}
+header .inner .top-left>ul>li, .top-right>ul>li{
+    margin: 10px;
+}
+header .inner .top-right img{
+    width: 12px;
+    margin-left: 5px;
+}
+header .menu .menu-left{
+    display: flex;
+    align-items: center;
+}
+header .menu .menu-left img{
+    margin-right: 70px;
+}
+header .menu .menu-left ul{
+    display: flex;
+}
+header .menu .menu-left ul>li{
+    margin: 0 35px;
+}
+header .menu .menu-left ul>li>a{
+    font-size: 17px;
+    color: black;
+}
+header .menu .menu-right{
+    width: 100px;
+    height: 35px;
+    border: 1px solid rgb(0, 29, 0);
+    border-radius: 50px;
+    line-height: 35px;
+}
+#g{
+    color: rgb(0, 80, 0);
+}
+.after::after{
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    left: 10px;
+    width: 1px;
+    height: 13px;
+    background-color: rgb(156, 156, 156);
+}

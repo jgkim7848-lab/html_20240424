@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+
+<style>
+body {
+    margin: 0;
+}
+
+/* 공통 배경 옵션 */
+.main-img, .subject, .content, .sub, .footer {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 기본 (모바일) */
+.header {
+    height: 60px;
+    background-color: gray;
+}
+
+.main-img {
+    height: 300px;
+    background-image: url(../image/자연배경/알프스.jpg);
+}
+
+.subject {
+    height: 300px;
+    background-image: url(../image/자연배경/사막.jpg);
+}
+
+.content {
+    height: 300px;
+    background-image: url(../image/자연배경/소금사막.jpg);
+}
+
+.sub {
+    height: 300px;
+    background-image: url(../image/자연배경/심해.jpg);
+}
+
+.footer {
+    height: 300px;
+    background-image: url(../image/자연배경/화산번개.jpg);
+}
+
+/* 🔥 1200px 이상 */
+@media screen and (min-width: 1200px) {
+
+    .wrap {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .main {
+        display: flex;
+        flex: 1;
+    }
+
+    .main-img {
+        width: 50%;
+        height: auto;
+    }
+
+    .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subject {
+        height: 50%;
+    }
+
+    .bottom {
+        display: flex;
+        flex: 1;
+    }
+
+    .content {
+        width: 50%;
+        height: auto;
+    }
+
+    .side {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub {
+        flex: 1;
+    }
+
+    .footer {
+        flex: 1;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+    <div class="header"></div>
+
+    <div class="main">
+        <div class="main-img"></div>
+
+        <div class="right">
+            <div class="subject"></div>
+
+            <div class="bottom">
+                <div class="content"></div>
+
+                <div class="side">
+                    <div class="sub"></div>
+                    <div class="footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .search-box {/*테두리.*/
+            width: 700px;
+            height: 60px;
+            margin: 20px auto;
+            border: 1px solid green;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        div { /*div 한줄에 이어쓰기*/
+            display: inline-block;
+        }
+
+        img {/*모든 이미지 크기이긴한데 결국엔 지들기리 크기 정해놨음.
+            근데 왜 이거 지우면 오른쪽 3개 크기가 이상해지냐*/
+            width: 40px;
+            height: 40px;
+        }
+
+        .icon {/*네이버 아이콘*/
+            position: absolute;
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 25px;
+        }
+
+        input {/*검색어 입력부*/
+            width: 400px;
+            height: 50px;
+            border: none;
+            margin-left: 70px;
+            margin-top: 5px;
+            outline: none;
+        }
+
+        .search-right {/*아이콘 3개 배치*/
+            float: right;
+            right: 50px;
+            margin-right: 45px;
+            margin-top: 10px;
+            
+        }
+
+        .search-right>a{ /*아이콘 간 거리조절*/
+            margin-right: 10px;
+        }
+
+        button { /*돋보기 케어1*/
+            background-color: white;
+            border: none;
+        }
+
+        .search-box:hover {/*돋보기 케어2*/
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            ;
+        }
+
+        .down { /*아래 화살표 크기.*/
+            width: 20px;
+            height: 20px;
+            
+        }
+        .keyboard { /*키보드 아이콘 크기.*/
+            width: 30px;
+            height: 30px;
+            
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <form action="">
+        <div class="search-box">
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(226, 0, 11);">
+                    <path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path>
+                </svg>
+
+            </div>
+            <input type="text" placeholder="검색어를입력하세요">
+
+            <div class="search-right">
+                <a href=""><img src="../image/keyboard.png" alt="" class="keyboard"></a>
+                <a href=""><img src="../image/triangledown.png" alt="" class="down"></a>
+                <button type="submit">
+                    <img src="../image/rednaversearch.png" alt="">
+            </div>
+
+        </div>
+
+
+
+    </form>
+</body>
+
+</html>

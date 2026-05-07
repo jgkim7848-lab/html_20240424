@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            background-color: #f5f5dc;
+        }
+        .greenbox{
+            background-color: green;
+            width: 480px;
+            height: 300px;
+            border-radius: 30px;
+            margin: auto;
+            text-align: center;
+            margin-top: 250px;
+            position: relative;
+        }
+
+        .inner{ /*id password login 통합 박스 관리*/
+            margin: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            
+        }
+        .id{
+            position: relative;
+            top: 30px;
+        }
+
+        .password{
+            position: relative;
+            top: 30px;
+        }
+        
+        .login{
+            position: relative;
+            top: 30px;
+        }
+
+        a{
+            position: relative;
+            top: 100px;
+            text-decoration-line: none;
+        }
+
+        input, button{
+            width: 400px;
+            height: 40px;
+            border: 1px solid white;
+            background-color: white;
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none;
+
+        }
+        input{
+            padding-left: 10px;
+        }
+        button{
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- form으로 싼걸 로그인 버튼으로 submit
+ input text   input password
+-->
+</head>
+
+<body>
+
+    <div class="greenbox">
+        <form action="">
+            <div class="insert">
+                <div class="id inner"><input type="text" placeholder="아이디"></div>
+                <div class="password inner"><input type="password" placeholder="비밀번호"></div>
+                <div class="login inner"><button type="submit">로그인</button></div>
+            </div>
+        </form>
+
+
+        <a href="https://naver.com" class="word" style="color:white">비밀번호를 잊어버리셨나요</a>
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -138,42 +138,992 @@ body {
 }
 
 
-.Lhwasalpyo{
-background-image: url(./민속박물관/다운로드\ \(21\).svg);
+.Lhwasalpyo {
+    background-image: url(./민속박물관/다운로드\ \(21\).svg);
 
 }
 
-.Rhwasalpyo{
-background-image: url(./민속박물관/다운로드\ \(20\).svg);
+.Rhwasalpyo {
+    background-image: url(./민속박물관/다운로드\ \(20\).svg);
 
 }
 
-.clock{
+.clock {
     background-image: url(./민속박물관/다운로드\ \(3\).svg);
 }
 
-.calander{
+.calander {
     background-image: url(./민속박물관/다운로드\ \(11\).svg);
+    filter: invert(100%);
+    /* 원래는 검정색인데 반전 해서 하얀색으로 만듬. */
+    /* stroke 라는거도 있는듯???? svg 선 색깔 변경??? */
+}
+
+.clock,
+.calander {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* 하양초록박스가두는거 */
 .iljung {
     width: 1360px;
-    height: 150px;
+    height: 120px;
     display: flex;
 }
 
-.iljung > .whitepart {
+.iljung>.whitepart {
     width: 65%;
     height: 100%;
     background-color: white;
 }
 
-.iljung > .greenpart {
+.iljung>.greenpart {
     width: 35%;
     height: 100%;
     background-color: green;
 }
 
+.info {
+    position: absolute;
+
+    right: 1500px;
+    /* 오른쪽 이동 */
+    bottom: 130px;
+    /* 아래쪽 기준 위로 */
+
+    font-size: 30px;
+    font-weight: 500;
+
+    color: white;
+    margin: 10px 0;
+    line-height: 1;
+}
+
+.inn {
+    position: relative;
+}
+
+.whitepart>strong {
+    font-weight: 900;
+}
 
 
+.iljung {
+    width: 1360px;
+    height: 100px;
+
+    display: flex;
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.whitepart,
+.greenpart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 세로 중앙 */
+    padding: 0 30px;
+}
+
+.whitepart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    /* 핵심 */
+    font-size: 20px;
+}
+
+.greenpart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* padding margin 
+ 👉 margin = 바깥 여백
+👉 padding = 안쪽 여백
+| 구분     | margin  | padding |
+| ------ | ------- | ------- |
+| 위치     | 바깥      | 안쪽      |
+| 역할     | 요소 간 거리 | 내용 여백   |
+| 배경 영향  | ❌ 영향 없음 | ⭕ 배경 포함 |
+| 테두리 기준 | 바깥      | 안쪽      |
+*/
+/* con-box1 con1 시작=========================================== */
+
+.con-box>.inner {
+    width: 1360px;
+    height: 650px;
+    /* border: 1px solid black; */
+
+}
+
+.inner>.special {
+    height: 650px;
+    width: 30%;
+    /* border: 1px solid red; */
+
+}
+
+.inner>.gong {
+    height: 100%;
+    width: 5%;
+    /* border: 1px solid purple; */
+
+}
+
+.inner>.always {
+    height: 100%;
+    width: 65%;
+    /* border: 1px solid blue; */
+}
+
+.sunsa {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../day07/민속박물관/main_permanent_exhibition_01-BP3gX8fx.jpeg);
+
+
+}
+
+.samguk {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../day07/민속박물관/main_permanent_exhibition_02-BObc2jSO.jpeg);
+}
+
+.sunsa,
+.samguk {
+    width: 340px;
+    height: 210px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.sulbox {
+    height: 200px;
+    width: 470px;
+}
+
+.book1 {
+    background-image: url(../day07/민속박물관/2026011619bc52ad4fd10.jpeg);
+    /* width: 336px;
+    height: 476px; */
+    width: 400px;
+    height: 530px;
+    background-position: center;
+    background-size: cover;
+}
+
+.pplus {
+    background-image: url(../day07/민속박물관/다운로드\ \(9\).svg);
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Lgo {
+    background-image: url(../day07/민속박물관/다운로드\ \(23\).svg);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Rgo {
+    background-image: url(../day07/민속박물관/다운로드\ \(22\).svg);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page {
+    width: 100%;
+    height: 36px;
+}
+
+.word1 {
+    display: flex;
+    align-items: center;
+    gap: 240px;
+    height: 35px;
+
+}
+
+.one {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.word2 {
+    display: flex;
+    align-items: center;
+    gap: 710px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.page {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.green2 {
+    color: green;
+}
+
+.greenplus {
+    background-image: url(../day07/민속박물관/다운로드\ \(15\).svg);
+    width: 18px;
+    height: 18px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.letsgo {
+    display: flex;
+}
+
+.ssul1,
+.ssul2 {
+    display: flex;
+}
+
+.hardhr {
+    height: 2px;
+    background-color: black;
+    border: none;
+}
+
+.h11 {
+    margin-bottom: 20px;
+}
+
+.softhr {
+    height: 1px;
+    background-color: gray;
+    margin-bottom: 40px;
+}
+
+.head {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.simpexpl {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.explain {
+    color: rgb(88, 87, 87);
+}
+
+.greenplus {
+    margin-top: 3px;
+}
+
+.letsgo {
+    font-weight: 500;
+}
+
+
+
+
+
+/* 바로가기 옆에 붙는 더하기
+C:\web_260315_kim\html_workspace\day07\민속박물관\다운로드 (15).svg
+*/
+
+
+/* con-box con2 시작------------------------------------ */
+
+.con2>.inner {
+    width: 100%;
+    height: 1200px;
+    /* background-color: blanchedalmond; */
+    background-image: url(../day07/민속박물관/배경1.jpg);
+    background-size: contain;
+
+}
+
+.b1 {
+    /* 구석기인의 하루 */
+    background-image: url(../day07/민속박물관/202508061987e6b4d9180.jpeg);
+}
+
+.b2 {
+    /* 열두동물의 신나는 달리기 */
+    background-image: url(../day07/민속박물관/202508061987e67f3de90.jpeg);
+
+}
+
+.b3 {
+    /* 선사~조선 왁자지껄 살아있는 박물관 */
+    background-image: url(../day07/민속박물관/202509121993d45b23d30.jpeg);
+
+
+}
+
+.b4 {
+    /* 유물 속 십이지신 이야기. */
+    background-image: url(../day07/민속박물관/202508061987e45a30260.jpeg);
+}
+
+.bookname {
+    width: 400px;
+    height: 500px;
+    background-size: contain;
+    background-position: center;
+}
+
+.con2>.inner {
+    display: flex;
+    flex-direction: column;
+    /* inner이 자체적으로 flex 처리되있는데 이걸로 정상화 */
+}
+
+.midbook {
+    display: flex;
+}
+
+.u1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 150px;
+}
+
+.u2 {
+    display: flex;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.u2>.green2::after {
+    content: " · ";
+
+}
+
+.upp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 윗부분 제작 완료 아래론 가운데 midbook관련 */
+
+.you {
+    width: 50px;
+    height: 25px;
+    background-color: skyblue;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.chod {
+    width: 50px;
+    height: 25px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.bkname {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.bookint {
+    margin: 10px;
+}
+
+
+
+/* 맨 아랫부분 제작 시작. */
+
+.lastpart {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+/* con-box con3 시작============================= */
+.con3>.inner {
+    width: 100%;
+    height: 1200px;
+    /* background-color: blanchedalmond; */
+    background-image: url(../day07/민속박물관/배경2.jpg);
+    display: flex;
+    flex-direction: column;
+    /* 세로 배치 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.up3 {
+    text-align: center;
+}
+
+.a1 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.a2 {
+    font-size: 20px;
+}
+
+.LG {
+    background-image: url(../day07/민속박물관/다운로드\ \(21\).svg);
+    width: 68px;
+    height: 68px;
+    background-color: gray;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.RG {
+    background-image: url(../day07/민속박물관/다운로드\ \(20\).svg);
+    width: 68px;
+    height: 68px;
+    background-color: gray;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.maincontent {
+    display: flex;
+}
+
+.bigboxbox {
+    width: 1150px;
+    height: 460px;
+    display: flex;
+}
+
+.grnp {
+    background-color: green;
+    width: 460px;
+
+    display: flex;
+    justify-content: center;
+    /* 가로 가운데 */
+    align-items: center;
+    /* 세로 가운데 */
+
+}
+
+.bkbk1 {
+    background-image: url(../day07/민속박물관/20250924199795bafbd10.jpeg);
+    width: 250px;
+    height: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.whtp {
+    background-color: white;
+    width: 690px;
+}
+
+.bigst {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.sulmyeong {
+    font-weight: 300;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.shit {
+    display: flex;
+}
+
+.star {
+    background-image: url(../day07/민속박물관/다운로드\ \(14\).svg);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(240, 238, 238);
+    border-radius: 50%;
+}
+
+.star5 {
+    background-image: url(../day07/star2.png);
+    width: 100px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hell {
+    display: flex;
+}
+
+.zelda {
+    background-image: url(../day07/민속박물관/다운로드\ \(18\).svg);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(240, 238, 238);
+    border-radius: 50%;
+
+}
+
+.closer {
+    background-color: green;
+    width: 180px;
+    height: 50px;
+    color: white;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    /* 가로 가운데 */
+    align-items: center;
+    /* 세로 가운데 */
+}
+
+.up3 {
+    margin-top: 100px;
+}
+
+.a1 {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.wtf {
+    padding: 60px;
+}
+
+.fuck {
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.star,
+.star5,
+.zelda {
+    margin-top: 18px;
+}
+
+.hell {
+    margin-left: 50px;
+}
+
+
+.r30 {
+    font-size: 20px;
+}
+
+.fuck>.r30 {
+    font-weight: bold;
+}
+
+.fuck>.shit>p {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.fuck>.hell>p {
+    margin-left: 20px;
+}
+
+.fuck>.hell>p>span {
+    margin-left: 20px;
+    font-weight: 300;
+}
+
+
+.maincontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.pppp {
+    margin-bottom: 0px;
+}
+
+.LG {
+    margin-right: 100px;
+}
+
+.RG {
+    margin-left: 100px;
+}
+
+.juntong,
+.ginyum {
+    padding-top: 120px;
+    padding-left: 40px;
+}
+
+.bttnmoim>button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: gray;
+}
+
+.bttnmoim>.b11 {
+    width: 60px;
+    height: 12px;
+    border-radius: 999px;
+    background-color: black;
+}
+
+
+.lastmok {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.alllook {
+    width: 180px;
+    height: 60px;
+    border: 1px solid black;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lastmok {
+    margin-bottom: 300px;
+}
+
+/* con4 시작 */
+
+.con4 {
+    width: 100%;
+    height: 620px;
+}
+
+.masimakunseri {
+    height: 520px;
+}
+
+.twopic {
+    height: 280px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.juntong {
+    height: 100%;
+    background-image: url(../day07/민속박물관/202509251997cfd11bb40.jpeg);
+    width: 656px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ginyum {
+    height: 100%;
+    width: 656px;
+    background-image: url(../day07/민속박물관/202509251997cfece7480.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.juntong>p,
+.ginyum>p {
+    color: white;
+    font-size: 18px;
+}
+
+.juntong>.pppp,
+.ginyum>.pppp {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.juntong,
+.ginyum {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* 콜럼인 상태에서 content를 이상하게 적어서 안내려왔던거같다는 말이
+    end박으니까 내려옴.
+    */
+    padding-left: 40px;
+}
+
+.munyi {
+    width: 100%;
+    height: 100px;
+    display: flex;
+
+}
+
+/* 
+=========================================================================
+전통혼례장 / 민속 기념품점 이거 글씨 어케 내리는지 몰라서 유기.
+외안대요 ㅏ
+=========================================================================
+*/
+
+
+
+.mun {
+    width: 50%;
+    background-color: rgb(16, 114, 16);
+    display: flex;
+    align-items: center;
+}
+
+.gil {
+    width: 50%;
+    background-color: rgb(4, 47, 4);
+    display: flex;
+    align-items: center;
+}
+
+
+.Nggimpyo {
+    background-color: green;
+    background-image: url(../day07/민속박물관/다운로드\ \(13\).svg);
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+
+
+.bigcircle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.zido {
+    background-image: url(../day07/민속박물관/다운로드\ \(7\).svg);
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wwww {
+    color: white;
+    font-size: 25px;
+}
+
+.mun>.Rgo, .gil>.Rgo {
+margin-left: 700px;
+width: 30px;
+height: 30px;
+filter: invert(100%);
+}
+
+
+
+.munyi {
+    height: 100px;
+}
+/* ====================================================== */
+
+
+
+
+
+
+
+
+
+.lotte{
+background-image: url(../day07/민속박물관/footerLogo-BwqZGQTA.jpeg);
+width: 120px;
+height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.camera{
+background-image: url(../day07/민속박물관/다운로드\ \(6\).svg);
+width: 30px;
+height: 30px;    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.youtube{
+background-image: url(../day07/민속박물관/다운로드\ \(5\).svg);
+width: 30px;
+height: 30px;    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.facebook{
+background-image: url(../day07/민속박물관/다운로드\ \(4\).svg);
+width: 30px;
+height: 30px;    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ismsp{
+background-image: url(../day07/민속박물관/footer_mark_ismsp-CO5-I-2X.jpeg);
+width: 30px;
+height: 30px;    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.starr{
+background-image: url(../day07/민속박물관/footer_mark_service-Bb-xvGQT.jpeg);
+width: 30px;
+height: 30px;    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+    /* display: flex; */
+
+.line1, .line2, .line4, .famili{
+        display: flex;
+}
+
+.tttt{
+    
+        display: flex;
+}
+
+
+
+footer>.inner {
+    width: 1360px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+
+}
+
+.line1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sitemap{
+    display: flex;
+    gap: 20px;
+}
+
+.line2{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.famili{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.line4{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tttt>.rrrr>span, .tttt>.zandang>span{
+    font-size: 9px;
+}
+
+.ganejungbo>span{
+    font-size: 14px;
+}
+
+.ismsp, .starr{
+    margin-top: 7px;
+}
+
+.tttt{
+    gap: 20px;
+}
+
+.famili>button{
+    margin-right: 50px;
+}
+
+footer{
+    margin-bottom: 40px;
+}

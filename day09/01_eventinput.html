@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>input객체를 직접 가져오기</h1>
+
+    <!-- 
+input 태그는 속성에 값이 맵핑되어있다.
+value의 속성으로 값을 가져올수있다.   
+input의 속성은 value이다?? 
+
+checkbox radio select option  태그 내에서 별도의 value 속성을
+부여해줘야지만 내가 선택한 값을 가져올수있다.
+string 처리된 값을 숫자 형태로 사용하기 위해서는 변환이 필요함.
+-->
+
+    <!-- <input type="text" value="없음">
+
+<input type="password">
+<input type="email">
+<input type="checkbox">
+<input type="radio">
+ -->
+
+    <fieldset>
+        <!-- 테두리 쳐주는 역할임. -->
+        <legend>input tag element</legend>
+        name: <input type="text" id="name" placeholder="name..."><br>
+        age: <input type="text" id="age" placeholder="age..."><br>
+        address: <input type="text" id="addr" placeholder="address..."><br>
+        <button onclick="clickEvent()">data input</button>
+
+
+
+    </fieldset>
+
+    <h1 id="printResult"></h1>
+    <ul id="ul"></ul>
+
+
+    <script>
+        const name = document.getElementById('name');
+        const age = document.getElementById('age');
+        const address = document.getElementById('addr');
+        console.log(name);
+
+        function clickEvent() {
+            console.log(name.value);
+            console.log(name.id);
+            console.log(name.placeholder);
+            console.log(age.value, typeof age.value);
+            console.log(Number(age.value), typeof Number(age.value));
+            document.getElementById('printResult').innerText =
+                `${name.value}(${age.value}) : ${address.value}`;
+
+            document.getElementById('ul').innerHTML = `
+            <li>name: ${name.value}</li>
+            <li>age: ${age.value}</li>
+            <li>address: ${address.value}</li>
+            `;
+            name.value = '';
+            
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

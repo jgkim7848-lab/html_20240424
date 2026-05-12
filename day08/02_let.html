@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>자바 스크립트의 변수 사용</h1>
+    <!-- 변수란  사용하고자 하는 값을 담고있는 메모리 공간의 이름.
+    자바는 자료형 변수명 = 값; 으로 작성했음.
+    자바 스크립트는 자료형이라는게 없다.
+    아무거나 변수명에 삽입 가능.
+    =    변수명에 들어갈수있는 값의 제한이 없다.
+    
+    자바스크립트에서 문자 표현 방식
+    ``  ""    ''
+    이 3가지를 문자의 값으로 사용함.
+    html 내부 속성의 값을 표현할때 사용되는 ""은 변하지않음.
+"", '' 문자열을 의미
+`` 값이나 변수를 의미
+
+'값' $(변수)    값과 변수의 값을 동시에 사용 가능.
+변수 사용 범위에 따라  var let const
+var    현 ES6 버전 이후론 권장하진 않음.
+    - 골때리는 여러 이유. 1 중복 선언 가능. 재할당은 가능함.
+let    
+const  
+
+호이스팅 import 처럼 변수나 함수를 미리 선언.
+var name = 'hong'
+let name1;
+
+너의 값이 할당되기 전에 내가 엑세스를 못하니 죽겠다 = 오류발생
+var 변수 자체가 중복도 되고 호이스팅이 값도 여기저기 넣고 하다보니 너무 var 변수가 혼란스럽다. 그래서 let이랑 const로 갈아탐
+
+
+let - 중복 불가
+자바에서의 지역 변수, 일반 변수 의 개념.
+
+
+const 객체 함수 참조 규칙 정의시 사용함.
+중복 선언은 불가능하며 재할당도 불가능하다.  값의 고정 용ㅇ도
+중괄호를 벗어나면 메모리에서 사라짐.
+변수의 사용 범위(scope:스코프) : { }
+
+
+    -->
+
+    <script>
+        //console.log(name);
+        let name1 = 'lee';
+        console.log(name1);
+        name1 = 'hong';
+        //let name1 = 'lo' 같이 중복 선언이 안됨.
+
+
+
+        var name = 'hong';
+        console.log(name);
+        name = 'lee';
+
+        var name = 'kim';
+        console.log(name);
+
+
+        const number = 123;
+        console.log(number);
+        //number = 456;
+        //console.log(number); //이건 오류남. 왜냐?????
+
+
+        let age;
+        age = 20;
+        //const age2; //재할당도 안되고 선언만 하고 나중에 값 넣겠다고도 안됨.
+
+        //변수 선언시 camelCase 사용 / sql underline_case
+
+
+        let myfirst = '123';
+        console.log(myfirst);
+
+        console.log("내가 선언한 변수는 ", myfirst);
+        console.log("내가 선언한 변수는" + myfirst);
+
+
+
+        let firstname = 'kim';
+        let lastname = 'killdong';
+        age = 20;
+        console.log("내 이름은 " + firstname + lastname + "이고 나이는 " + age + "입니다.");
+        console.log(`name : ${firstname}${lastname} / age : ${age}`);
+
+
+        //변수 let const var 없이 변수 사용은 가능
+        //선언 기호 없이 사용시 전역에 영향을 미치므로 가급적 쓰진 말자
+
+        //상수 한번 선언되면 변경 불가능한 값.  const
+
+
+        //typeof 변수 타입 확인
+        //typeof 변수명
+        console.log(typeof firstname);
+
+
+
+
+
+    </script>
+    <script src="01_script.js"></script>
+    <script>
+        //외부 스크립트는 무조건 연결된 이후에 사용이 가능해짐.
+        console.log(name1);
+
+    </script>
+
+</body>
+
+</html>

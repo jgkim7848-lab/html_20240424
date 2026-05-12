@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>함수 안에서 함수 호출</h1>
+    
+<script>
+    function subfunc(p1, p2){
+    return p1 - p2;
+}
+
+function sumfunc(p1, p2){
+    console.log(subfunc(p1. p2));
+    return p1 + p2;
+}
+
+
+console.log(sumfunc(100,200))
+
+
+
+
+
+
+function func1(p1,p2){
+    return p1 / p2;
+}
+
+function func2(p1, p2){
+    return func1(p1, p2);
+}
+
+function func3(p1, p2){
+    return func2(p1, p2);
+}
+const result = func3(10, 20);
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>함수의 파라미터와 리턴 타입</h1>
+    <!-- 
+파라미터의 개수엔 제한이 없지만 너무 많으면 관리가 힘듬.
+파라미터 타입도 제한 없음. 전달된 내용 그대로 사용.
+변수명은 외부 변수명과 같아도 달라도 상관 X
+return 유무에 따라 값을 리턴받을수도 그냥 종료될수도 있음.
+return의 위치에 따라 종료 시점 결정 가능.
+-->
+
+
+    <script>
+        let myname = '홍길동';
+
+
+
+    /*
+            function callname(name) {
+            console.log(`파라미터 => ${name}`)//인지 가능'
+
+           console.log(`함수 내부에서 선언한 변수 => ${yourname}`);
+            console.log(`함수 외부에서 선언한 변수 => ${myname}`);
+            console.log(`함수 외부에서 선언한 변수 => ${myname2}`);
+
+        }
+
+        
+    let myname2 = 'hong kill dong';
+    callname('영이')
+    
+    */
+
+    //return이 있는 함수
+    //num1 num2를 파라미터로 받아 덧셈 결과 리턴??? 걍 시원하게 return 갖다 박으면 된다
+
+
+
+
+    //표현식 함수
+    const myfunc = function(param){
+        return `hello ${param}`;
+    }
+    let result2 = myfunc('hong');
+        console.log(result2);
+
+        const arrowfunc = (param1, param2) =>{
+            return param1 + param2;
+        }
+
+        let arrowresult = arrowfunc(50, 60);
+        console.log(arrowresult);
+
+
+
+
+//함수생성
+//파라미터로 이름과 취미를 받아서 콘솔에 출력
+//홍길동은 독서를 좋아합니다
+//function / 표현식 / 화살표함수
+
+let name = '홍길동';
+let hobby = '독서';
+
+function func(name, hobby){
+    console.log(`${name}은 ${hobby}를 좋아합니다.`);
+}
+
+func('홍길동', '독서');
+
+
+const exp = function(name, hobby){
+    console.log(`${name}은 ${hobby}를 좋아합니다.`);
+}
+
+exp('홍길동', '독서');
+
+
+const arrow = (name, hobby) => {
+    console.log(`${name}은 ${hobby}를 좋아합니다.`);
+}
+
+arrow('홍길동', '독서');
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

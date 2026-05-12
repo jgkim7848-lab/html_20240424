@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        object객체 식별 가능한 것을 상세 특징으로 표현하려한 형식
+    </h1>
+    <!-- 
+보통은 const로 선언함. 객체의 지속성 확보를 위해서.
+key:value();
+key:value();
+
+
+key값은 같은 객체 내에선 중복 불가능 (고유키)
+value 중복 가능
+key는 대체로 string
+value는 뭐가 와도 상관X
+-->
+
+    <script>
+        //좋아하는 가수의 정보를 담은 객체?
+        //이름 나이 플레이리스트{ 오브젝트로 } , jukebox{플레이 리스트를 콘솔로 출력하는 함수 넣기}
+        //
+
+        const singer = {
+            name: '비틀즈',
+            age: 65,
+
+            playlist: {
+                song1: 'Hey Jude',
+                song2: 'Let It Be',
+                song3: 'Yesterday'
+            },
+
+            jukebox: function () {
+                console.log('🎵 플레이리스트 🎵');
+                console.log(this.playlist.song1);
+                console.log(this.playlist.song2);
+                console.log(this.playlist.song3);
+            }
+        };
+
+        console.log(`가수 이름 : ${singer.name}`);
+        console.log(`가수 나이 : ${singer.age}`);
+
+
+        singer.jukebox();
+        console.log(singer.playlist.song2);
+        console.log('=======================');
+        console.log(singer.playlist['song2']);
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>생년월일 확인</legend>
+        이름: <input type="text" id="name"> <br>
+        주민번호: <input type="text" id="rNum"> <br>
+        <button onclick="clickEvent()">확인</button>
+        <h3 id="printResult"></h3>
+    </fieldset>
+
+
+    <script>
+
+        function clickEvent() {
+
+            let birth;
+            let gender;
+
+            const name = document.getElementById('name').value;
+            const rNum = document.getElementById('rNum').value;
+
+            // 주민번호 앞 2자리
+            let year = parseInt(rNum.slice(0, 2));
+
+            // 뒷자리 첫 번호
+            let backfirst = rNum.charAt(rNum.indexOf("-") + 1);
+
+            if (backfirst == "1") {
+                birth = 1900 + year;
+                gender = "남자";
+
+            } else if (backfirst == "2") {
+                birth = 1900 + year;
+                gender = "여자";
+
+            } else if (backfirst == "3") {
+                birth = 2000 + year;
+                gender = "남자";
+
+            } else {
+                birth = 2000 + year;
+                gender = "여자";
+            }
+
+            let age = 2026 - birth;
+
+            document.getElementById('printResult').innerText = `
+이름: ${name}
+생년월일: ${birth}
+나이: ${age}
+성별: ${gender}
+`;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>생년월일 확인</legend>
+        이름: <input type="text" id="name"> <br>
+        주민번호: <input type="text" id="rNum"> <br>
+        <button onclick="clickEvent()">확인</button>
+        <h3 id="printResult"></h3>
+    </fieldset>
+
+
+    <script>
+
+
+
+        function clickEvent() {
+
+        let birth;
+        let gender;
+
+        let backfirst = rNum.slice(rNum.indexOf("-"), rNum.indexOf("-") + 1)
+
+        const name = document.getElementById('name');
+        const rNum = document.getElementById('rNum');
+
+
+            if (backfirst == "1") {
+                birth = 1900 + parseInt(backfirst);
+                gender = "남자";
+            } else if (backfirst == "2") {
+                birth = 1900 + parseInt(backfirst);
+                gender = "여자";
+            } else if (backfirst == "3") {
+                birth = 2000 + parseInt(backfirst);
+                gender = "남자";
+            } else {
+                birth = 2000 + parseInt(backfirst);
+                gender = "여자";
+            }
+
+            let aaggee = 2026 - birth;
+
+
+            document.getElementById('printResult').innerText = `
+            이름: ${name}
+            생년월일: ${rNum.slice(0, rNum.indexOf("-"))}
+            나이: ${aaggee}
+            성별: ${gender}
+            `;
+
+
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>   이거 왜 안되냐 -->

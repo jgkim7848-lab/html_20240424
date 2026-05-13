@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>getElementBy** / querySelector</h1>
+    <h1>test</h1>
+    <!-- 
+    getelement**에서 **에 쓰이는게 보통 3가지 id tagname classname
+    id는 한 화면(document)에서 유일함. 유일한 객체로서 제대로 잡힘.
+    tagName이랑 className - 값이 많아서 배열로 들어옴. 
+
+    배열처럼 사용되는걸 유사 배열이라고 부름.
+    예를 들어document.getelementbytagName('h1')[0];
+    htmlcollection객체로 들어옴
+
+
+
+
+
+    -->
+
+    <script>
+        const h1 = document.getElementsByTagName('h1');
+        console.log(h1);
+console.log(h1[0].innerText);
+console.log(h1[1].innerText);
+
+const h1Query = document.querySelectorAll('h1');
+//대상이 id면 그냥 쿼리 셀렉터, ....?? 언제 그냥 쿼리 셀렉터고 언제 쿼리셀렉터 올 인거냐
+console.log(h1Query);
+console.log(h1Query[0].innerText);
+
+//alert 안내문 띄워줌
+//confirm 확인 true 취소 false
+//prompt 값을 입력받는 input을 같이 제공
+//alert("hello");
+
+//let con = confirm("pass?")
+
+//let pro = prompt("이름을 입력해주세요")
+//console.log(pro);
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

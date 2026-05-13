@@ -58,7 +58,7 @@ string 처리된 값을 숫자 형태로 사용하기 위해서는 변환이 필
             console.log(Number(age.value), typeof Number(age.value));
             document.getElementById('printResult').innerText =
                 `${name.value}(${age.value}) : ${address.value}`;
-
+//Number() 문자를 숫자로 변경, parseInt라는거도 가능.
             document.getElementById('ul').innerHTML = `
             <li>name: ${name.value}</li>
             <li>age: ${age.value}</li>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- confirm창을 띄워 확인 버튼을 누르면 
+     printresult 영역에
+     '확인버튼을 클릭하셨습니다가 나오고'
+     취소하면 취소 버튼을 클릭하셨습니다
+
+     라는 문구를 띄워볼것. 
+    -->
+    <h1 id="printResult"></h1>
+
+    <script>
+        let con = confirm("pass?")
+        if(con==true){
+            document.getElementById('printResult').innerText =
+                `확인 버튼을 클릭하셨습니다. 
+                `;
+
+        }else{
+            document.getElementById('printResult').innerText =
+                `취소 버튼을 클릭하셨습니다. 
+                `;
+        }
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>한인율 구하기</legend>
+
+        가격: <input type="text" id="price">원 <br>
+        할인율: <input type="text" id="rate">% <br>
+        <button onclick="clickEvent()">할인가격 계산</button>
+
+        <!-- 가격과 할인율에 따른 할인 금액과 최종 지불해야 되는 금액 출력 -->
+
+
+    </fieldset>
+    <h1 id="printResult"></h1>
+
+    <script>
+        function clickEvent() {
+            const sale = parseInt(price.value / 100 * rate.value);
+            const final = Number(price.value - sale);
+
+            document.getElementById('printResult').innerText =
+                `가격: ${price.value} / 
+                할인율: ${rate.value} / 
+                할인금액: ${sale} / 
+                지불금액: ${final} /  
+                `;
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

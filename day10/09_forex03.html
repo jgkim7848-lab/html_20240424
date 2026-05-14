@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- for(변수 : 리스트)
+     for in : object
+     java처럼 :를 쓰지않고 in or of 사용????????????
+     for(let value of array){
+     
+     }
+     
+    for(let key in/of object)
+
+     -
+    -->
+<ul id="ul"></ul>
+
+    <script>
+        const people = ['kim', 'park', 'hong', 'hwang', 'nam'];
+        console.log(people);
+
+        for (let i = 0; i < people.length; i++) {
+            console.log(people[i]);
+        }
+
+        for (let p of people) {
+            console.log(p);
+        }
+
+
+
+        const me = {
+            name: 'hong',
+            age: 20,
+            email: '123@naver.com'
+        };
+        for (let key in me) {
+            console.log(key + ":" + me[key]);
+        }
+        console.log("============================")
+
+        const member = {
+
+            name: 'park',
+            age: 30,
+            favors: ['baseball', 'game', 'movie']
+        }
+        for (let key in member) {
+            console.log(key + ":" + me[key]);
+            if(key == 'favors'){
+                for(let m of member[key]){
+                    console.log(m);
+                }
+            }
+        }
+
+        console.log("============================")
+
+const musician = {
+    name: "IU",
+    age: 20,
+    addr:"seoul",
+    playList: ['너랑나','좋은날','밤편지']
+
+}
+
+document.getElementById('ul').innerHTML = `
+            <ol>name: IU</ol>
+            <ol>age: 20</ol>
+            <ol>addr: seoul</ol>
+            <ol>playList:
+                <li>너랑나</li>
+<li>좋은날</li>
+<li>밤편지</li>
+            </ol>
+            `;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

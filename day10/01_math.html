@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>수학 관련 함수
+    </h1>
+    <!-- 
+수학 관련한 함수를 제공하는 Math.method
+자바와 동일한 함수를 제공함.
+Math.random()
+Math.round  floor  ceil등 > 정수로만 표현하게하는 애들.
+max min도 다 됨.
+난수 발생 표현 = Math.random(0에서 1만 포함되므로
+Math.floor(Math.random() * count) + start
+-->
+
+    <button id="btn">난수발생</button>
+    <h1 id="printResult"></h1>
+
+    <script>
+
+        let num = Math.random() * 10 + 1;
+        console.log(num);
+        let num2 = Math.random() * 50 + 50;
+        console.log(num2);
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+            let num3 = Math.floor(num2);
+            printResult.innerText = `${num3}`;
+        })
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

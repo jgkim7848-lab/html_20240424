@@ -1,5 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>생년월일 확인</legend>
+        이름 : <input type="text" id="name"> <br>
+        주민번호 : <input type="text" id="rNum" placeholder="010101-3123456"> <br>
+        <button id="btn">확인</button>
+        <!-- 이름, 생년월일, 나이, 성별 출력 -->
+        <h3 id="printResult"></h3>
+    </fieldset>
+
+    <script>
+        document.getElementById('btn').addEventListener('click',()=>{
+            const printResult = document.getElementById('printResult');
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
+
+            // 생년월일, 나이, 성별
+            // 010101-3123456
+            let birth = rNum.substring(0,rNum.indexOf("-"));
+            console.log(birth);
+
+            let getNum = rNum.charAt(7);
+            let gender = (getNum == '1' || getNum =='3') ? "남" : "여";
+            console.log(gender);
+
+            //나이 : 오늘날짜의 연도 - 태어난 연도  1900(1,2) / 2000(3,4)
+            const today = new Date(); // 오늘날짜
+            let todayYear = today.getFullYear();  //method 사용시 () 있어야 함.
+            console.log(todayYear);
+            let birthYear = Number(birth.substring(0,2));
+            let age = getNum <= 2 ? todayYear - (1900+birthYear) 
+                    : todayYear - (2000+birthYear);
+            
+            printResult.innerText = `이름:${name}, 생년월일:${birth}, 나이:${age}, 성별:${gender}`;
+
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+ 되기는 한데 gpt 쓴거.
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -65,7 +116,9 @@
 
 </body>
 
-</html>
+</html> -->
+
+
 
 
 
@@ -74,6 +127,7 @@
 
 
 <!-- <!DOCTYPE html>
+ 뭐가 잘못됬는지 모르는거임.
 <html lang="en">
 
 <head>

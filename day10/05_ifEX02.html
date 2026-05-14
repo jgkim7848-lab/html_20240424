@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    이름 국어 영어 수학 점수를 입력받아 계산 버튼을 클릭하면
+    ul => li 이름과 점수를 출력하고 합꼐 평균을 같이 출력.
+    Number()   문자열을 숫자로 바꿈.
+    parseInt 정수만 변경 가능함.
+    -->
+    <fieldset>
+        국여: <input type="text" id="kor"><br>
+        영어: <input type="text" id="eng"><br>
+        수학 : <input type="text" id="math"><br>
+        <button onclick="clickEvent()">data input</button>
+
+
+
+        <ul id="ul"></ul>
+
+    </fieldset>
+
+    <script>
+        const name = document.getElementById('name');
+        const age = document.getElementById('age');
+        const address = document.getElementById('addr');
+
+        let word;
+
+        function clickEvent() {
+            const sum =
+                Number(kor.value) +
+                Number(eng.value) +
+                Number(math.value);
+
+            const avg = sum / 3;
+
+            if (
+                isNaN(kor.value) ||
+                isNaN(eng.value) ||
+                isNaN(math.value)
+            ) {
+                alert('숫자만 입력하세요.');
+                return;
+            }
+
+            if (
+                Number(kor.value) < 0 || Number(kor.value) > 100 ||
+                Number(eng.value) < 0 || Number(eng.value) > 100 ||
+                Number(math.value) < 0 || Number(math.value) > 100
+            ) {
+                alert("범위를 벗어난 숫자입니다.")
+                document.getElementById('ul').innerHTML = `
+            <li>국어: </li>
+            <li>영어: </li>
+            <li>수학: </li>
+            <li>총합: </li>
+            <li>평균: </li>
+            `;
+                return;
+            }
+
+
+            if (avg >= 80 && avg <= 100) {
+                word = alert("합격입니다.")
+                document.getElementById('ul').innerHTML = `
+            <li>국어: ${kor.value}</li>
+            <li>영어: ${eng.value}</li>
+            <li>수학: ${math.value}</li>
+            <li>총합: ${sum}</li>
+            <li>평균: ${avg}</li>
+            `;
+
+                document.getElementById('kor').value = '';
+                document.getElementById('eng').value = '';
+                document.getElementById('math').value = '';
+            } else if (avg >= 0 && avg < 80) {
+                word = alert("불합격입니다.")
+                document.getElementById('ul').innerHTML = `
+            <li>국어: ${kor.value}</li>
+            <li>영어: ${eng.value}</li>
+            <li>수학: ${math.value}</li>
+            <li>총합: ${sum}</li>
+            <li>평균: ${avg}</li>
+            `;
+
+                document.getElementById('kor').value = '';
+                document.getElementById('eng').value = '';
+                document.getElementById('math').value = '';
+
+            } else {
+                word = alert("잘못된 입력이 감지되었습니다.")
+            }
+
+
+
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>

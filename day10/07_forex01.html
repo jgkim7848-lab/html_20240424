@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>구구단</legend>
+        구구단: <input type="text" id="dan"><br>
+        <button id="btn">구구단 출력</button>
+        <button id="reset">초기화 버튼</button>
+        <ul id="ul"></ul>
+    </fieldset>
+    <script>
+        const dan = document.getElementById('dan');
+        document.getElementById('reset').addEventListener('click', () => {
+            document.getElementById('ul').innerHTML='';
+        })
+
+
+        btn.addEventListener('click', function () {
+            let str = ''; //비어있다고 표현하는 이게 없으니까 undifined 나옴.
+            //누적 할때 뭔가 있어야 누적이 되니까...?
+            for (let i = 1; i < 10; i++) {
+                str += `<li>${dan.value}단: ${dan.value * i}</li>`;
+            }
+            ul.innerHTML = str;
+        })
+
+
+    </script>
+
+
+
+</body>
+
+</html>

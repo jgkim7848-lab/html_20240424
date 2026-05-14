@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>조건문if</h1>
+
+    <!-- 
+    if  /  switch
+
+    자바와 동일한 문법구조 보유
+
+
+    -->
+    <fieldset>
+        숫자 입력: <input type="text" id="number"> <br>
+        <button id="btn">판별</button>
+        <h1 id="result">홀수 / 짝수 판별</h1>
+    </fieldset>
+
+    <script>
+        //미리 정의되어있는 함수를 호출시 함수에 ()를 쓰지말것
+
+
+
+
+        let btn = document.getElementById('btn');
+        let num = document.getElementById('number');
+        let num3;
+        btn.addEventListener('click', function () {
+            if (num.value % 2 == 0) {
+                num3 = '짝수';
+            } else {
+                num3 = '홀수';
+            }
+
+            console.log(num3);
+
+            result.innerText = `${num3}`;
+        })
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

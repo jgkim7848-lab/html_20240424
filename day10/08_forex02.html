@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <button id="bnt">구구단전체출력</button>
+
+    <fieldset id="result"></fieldset>
+    <script>
+
+        let a = 1;
+        let b = 1;
+        let str = '';
+
+        bnt.addEventListener('click', function () {
+            str += `<table border="1">`;
+            for (a = 2; a < 10; a++) {
+                str += `<tr>`;
+                for (b = 1; b < 10; b++) {
+                    str += `<td>${a} * ${b} = ${a * b}</td>`;
+                }
+                str += `</tr>`;
+            }
+            str += `</table>`;
+            document.getElementById('result').innerHTML = str;
+        })
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

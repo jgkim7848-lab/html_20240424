@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>array Iteration method 순환구조에서 사용하는 메서드들.</h1>
+    <!-- 
+    array.reduce(callback function(total, value, index, self), [init]);
+    reduce 함수를 실행하고 그 결과의 누적값을 리턴함.
+    array.every(callback function(value, index, self))
+        - 콜백 함수의 리턴 조건에 모든 배열이 만족할경우 true 아니면 false 
+    array.some(callback function(value, index, self))
+        - 콜백 함수의 리턴 조건에 1 하나의 값이 만족하면 true
+    array.indexOf('str', [start index]);
+        ㄷ해당 문자 존재하면 index 리턴
+    array.lastIndexOf('str', [start index]);
+        뒤에서부터 해당 문자가 존재하면 index 리턴
+    array.find(callback function(value, index, self))
+        검색 조건에 만족하는 첫번재 값 리턴
+    array.findIndex(callback function(value, index, self))
+        검색 조건에 만족하는 첫번재 번지 리턴
+    
+    Array.from('객체') 순서가 있거나 순환 구조를 갖고있는 객체를 배열로 변환
+    array.includes('str') 배열에 str값이 있으면 true 없으면 false
+    array.keys() index만 배열로 리턴
+    array.entries   index:value 구조값을 만들어서 배열에 담아 리턴함
+-->
+
+
+
+
+<script>
+    const fruits = ['apple','orrange', 'banana', 'apple', 'manggo'];
+    let key = fruits.keys();
+    console.log(key);
+    //key.forEach(v=>console.log(v));
+
+        for(let k of key){
+            console.log(k);
+        }
+
+let entry = fruits.entries();
+console.log(entry);
+for(let en of entry){
+    console.log(en);
+}
+
+console.log("===========================");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

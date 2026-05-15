@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>null_coalescing 연산자 - null 병합 연산자</h1>
+    <!-- 
+    2020 버전부터 지원된 기능. 
+    값이 null이거나(공백은 안됨) undefined를 판단하여 해당 값의 대체값을 출력하는 연산자이다.
+    좌측항이 null이거나 undefined일 경우 우측 값 출력
+    좌측항이 이것들이면 좌측값 그대로 출력함.
+    -->
+
+    <script>
+        let n;
+        console.log(n ?? '우측항 출력'); //>>n이 undefined이므로 우측항출력이라는게 콘솔에 출력됨.
+
+        let n2 = null;
+        console.log(n2 ?? 'null가능');
+
+        console.log('' ?? '빈문자 가능') //안됨
+        console.log(NaN ?? 'NaN 가능') //안됨
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

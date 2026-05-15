@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>json javascript object notation</h1>
+
+    <!-- 
+        많은 양의 데이터를 실시간으로 전달되야할때 
+        가장 효율적이고 편리한 데이터 전송 방식.
+        json - javascript 객체를 구조화된 데이터로 표현하기위한 문자 기반 표준 포멧
+
+        화면과 서버간의 데이터 전송시 일반적으로 사용됨.
+
+        SML
+        <name>IU</name>
+        <age><age>
+
+        자바 스크립트의 객체 형태를 띄기 때문에 구조 파악이 쉽고 제작도 쉽다. SML -> json
+        모든 웹 분야에서 화면은 자바 스크립트가 모든 프론트에서 호환됨.
+        데이터 수집, 출력하는 용도로 거의 모든 플랫폼에서 사용되는중
+
+        object -> string 원하는 서버로 전송
+        string -> 각자 서버에서 처리 가능한 객체로 변황 (json 라이브러리)
+
+        자바 스크립트에서는 json 객체를 string으로 변환하고 
+        string -> object는 변경하는 명령어가 이미 존재함.
+
+        JSON.stringify(object)=> string 변경 원하는 서버로 데이터 전송
+        JSON.parse(string) => object 변경.
+
+    -->
+
+
+<script>
+    const top = {
+        '거래상위': [{
+            name: '코덱스 200 선물 인덱스',
+            price: 104,
+            updown: -4,
+            ratio: -3.70
+        },{
+            name: '코리아 인버스',
+            price: 1067,
+            updown: -20,
+            ratio: -1.84
+        },{
+            name: '타이거 200 선물 인버스',
+            price: 112,
+            updown: -3,
+            ratio: -2.61
+        }],
+        '상승': [{
+            name: '플레드',
+            price: 50000,  
+            updown: 15000,
+            ratio: 300        }],
+        '하락': [],
+        '시가총액 상위': []
+    }
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

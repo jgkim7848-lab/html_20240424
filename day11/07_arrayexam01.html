@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>가위바위보 10번 게임</h1>
+
+    <button id="btn">시작</button>
+
+    <h3>승률: <span id="result"></span>%</h3>
+
+    <div id="log"></div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+        const log = document.getElementById('log');
+
+        btn.addEventListener('click', () => {
+
+            let win = 0;
+            let lose = 0;
+            let draw = 0;
+
+            const hand = ['가위', '바위', '보'];
+
+            log.innerHTML = '';
+
+            for (let i = 1; i <= 10; i++) {
+
+                let me = Math.floor(Math.random() * 3);
+                let comp = Math.floor(Math.random() * 3);
+
+                let text = "";
+
+                if (me === comp) {
+                    draw++;
+                    text = "무승부";
+                }
+                else if (
+                    (me === 0 && comp === 2) ||
+                    (me === 1 && comp === 0) ||
+                    (me === 2 && comp === 1)
+                ) {
+                    win++;
+                    text = "승리";
+                }
+                else {
+                    lose++;
+                    text = "패배";
+                }
+
+                log.innerHTML += `
+            <p>${i}. player:${hand[me]} / comp:${hand[comp]} >> ${text}</p>
+        `;
+            }
+
+            // 승률 계산
+            let winRate = ((win / (10 - draw)) * 100).toFixed(2);
+            document.getElementById('result').innerHTML = winRate;
+
+            // 최종 결과 출력
+            log.innerHTML += `<hr>
+            <p>승: ${win} / 패: ${lose} / 무: ${draw}</p>
+    `;
+        });
+    </script>
+
+</body>
+
+</html>

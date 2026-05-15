@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        const numArray = [1, 2, 3, 4, 5, 6];
+        const strArray = ['a', 'k', 'l', 'y', 'p', 'i', 'e'];
+
+        for (let num of numArray) {
+            console.log(num);
+        }
+        for (let str of strArray) {
+            console.log(str);
+        }
+
+        console.log("forEach(value, index, array)----------------------")
+
+        numArray.forEach(function (v, i, a) {
+            console.log(v, i, a)
+        })
+
+        numArray.forEach(function (v, i) {
+            console.log(i, v)
+        })
+
+
+        console.log("forEach(value)========================")
+        numArray.forEach(function (v) {
+            console.log(v)
+        })
+
+
+        //numArray의 값의 합계를 콘솔에 출력하기.
+        let sum = 0;
+        numArray.forEach(function (v) {
+            sum += v;
+        })
+        console.log(sum);
+
+        function print(v) {
+            console.log(v);
+        }
+
+        //이미 만들어져있는 함수를 콜백으로 호출
+        //invoke callback function() 없음.
+        strArray.forEach(print);
+        console.log("========================")
+
+        strArray.forEach((v) => {
+            console.log(v);
+        })
+        console.log("========================")
+        strArray.forEach(v => console.log(v));
+        console.log("========================")
+
+
+        console.log("map(value, index, array)========================")
+        const newNumarr = numArray.map(function (v, i, a) {
+            return `${v}, ${i}, ${a}`;
+        })
+        console.log(newNumarr);
+
+        const newNumarr2 = numArray.map(function (v, i) {
+            return `${i} => ${v}`;
+        })
+        console.log(newNumarr2);
+
+
+        const newNumarr3 = numArray.map(function (v) {
+            return `${v}`;
+        })
+        console.log(newNumarr3);
+
+        console.log("map을 이용하여 numArray v*2 값을 배열로 리턴후 콘솔에 출력하기");
+
+        const newNumarr4 = numArray.map(function (v) {
+            return `${v * 2}`;
+        })
+        console.log(newNumarr4);
+//const map3 = numArray.map(v => v*2); console.log(map3); 해도 됨.
+//numArray.map(v=>v*2).forEach(n=>console.log(n));
+
+//filter
+console.log("filter-----------")
+const map4 = numArray.filter(function(v){
+    return v >= 5;
+})
+console.log(map4);
+
+//그럼 홀수만 출력하면??
+console.log("홀수-----------")
+const map5 = numArray.filter(function(v){
+    return v % 2 == 1;
+})
+console.log(map5);
+
+numArray.filter(v=>v%2==1).forEach(n=>console.log(n));
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        파일명: <input type="text" id="fileName">
+        <button id="btn"></button>
+        <p id="result"></p>
+    </fieldset>
+    <script>
+        //input에 파일명. 확장자 형태로 입력하여 확인버튼 클릭시
+        //이미지 파일인지 아닌지 검사
+        //이미지 파일이면 정상파일입니다 - 초록
+        //아니면 이미지파일만 가능합니다 - 빨강   
+
+        const fileName = document.getElementById('fileName');
+
+        document.getElementById('btn').addEventListener('click', () => {
+
+            let fn = fileName.value;
+
+            const reg = /\.(jpg|jpeg|gif|png|bmp)$/i;
+            //.test - 이 문자열이 조건에 맞는지 검사하는 함수 
+            //A.test(b)  >> b가 A의 규칙에 맞는지 검사해서 true false 알려줌.
+            if (reg.test(fn)) {
+                result.innerHTML = `<span style="color:red">정상 파일입니다.</span>`;
+            } else {
+                result.innerHTML = `<span style="color:green">이미지 파일만 가능합니다.</span>`;
+            }
+
+        });
+
+
+    </script>
+</body>
+
+</html>

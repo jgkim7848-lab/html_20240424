@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <h1>set을 활용한 로또 만들기</h1>
+        <button id="makeRandom">랜덤번호 6자리 생성(출력)</button>
+        <h1 id="printNum">로또번호 출력</h1>
+
+        <button id="makeRandom2">당첨번호 7자리 생성(출력)</button>
+        <h1 id="printNum2">당첨번호 출력</h1>
+
+        <button id="ranking">당첨여부 확인</button>
+        <h3 id="printResult">당첨여부 출력</h3>
+    </fieldset>
+
+    <script>
+        //로또 룰
+        //1~10 중복X
+        //순서 상관 없이 숫자만 맞으면 된다.
+        //보너스 번호 없이 6개 다맞으면 1등
+        //보너스 번호 맞으면서 5개 맞으면 2등
+        //3등 - 5개 맞으면 됨 (보너스 번호 빼고)
+
+        const human = new Set();
+        const comp = new Set();
+
+        document.getElementById('makeRandom').addEventListener('click', function () {
+
+            while (human.size < 6) {
+
+                let num = Math.floor(Math.random() * 10) + 1;
+
+                human.add(num);
+            }
+
+
+            document.getElementById('printNum').innerHTML =
+                [...human];
+
+        })
+
+
+        document.getElementById('makeRandom2').addEventListener('click', function () {
+            while (comp.size < 7) {
+
+                let num = Math.floor(Math.random() * 10) + 1;
+
+                comp.add(num);
+            }
+            const arr = [...comp];
+            let arrrr = '';
+            for (let i = 0; i < arr.length; i++) {
+                if (i == arr.length - 1) {
+                    arrrr += ` [`;
+                }
+
+                arrrr += arr[i];
+                if (i != arr.length - 1) {
+                    arrrr += ` , `;
+                }
+
+
+                if (i == arr.length - 1) {
+                    arrrr += `]`;
+                }
+            }
+            document.getElementById('printNum2').innerHTML =
+                arrrr;
+        })
+
+        document.getElementById('ranking').addEventListener('click', function () {
+            const me = [...human];
+            const atk = [...comp];
+            let count = 0;
+            let int = 0;
+
+            for (let i = 0; i < me.length; i++) {
+                for (let j = 0; j < me.length; j++) {
+                    if (me[i] == atk[j]) {
+                        count++;
+                    }
+                }
+            }
+
+            if (count == 4) {
+                for (let k = 0; k < me.length; k++) {
+                    if (atk[atk.length - 1] == me[k]) {
+                        count++;
+                        int++;
+                    }
+                }
+            }
+
+            if (count == 6) {
+                document.getElementById('printResult').innerText = `1등입니다.`;
+            } else if (count == 5 && int == 1) {
+                document.getElementById('printResult').innerText = `2등입니다.`;
+
+            } else if (count == 5) {
+                document.getElementById('printResult').innerText = `3등입니다.`;
+
+            } else if (count == 4) {
+                document.getElementById('printResult').innerText = `4등입니다.`;
+
+            } else if (count == 3) {
+                document.getElementById('printResult').innerText = `5등입니다.`;
+
+            } else {
+                document.getElementById('printResult').innerText = `꽝`;
+
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

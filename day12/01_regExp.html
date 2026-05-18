@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        정규표현식(Regular Expression) RegEx / RegExp
+    </h1>
+    <!-- 
+        - 정규표현식 : 문자 내에서 특정 내용을 찾거나, 대체, 발췌 하는데 사용
+        - RegEx / RegExp 단어로 검색
+        - 특정 데이터를 탐색, 확인, 존재여부를 쉽게 파악하기 위한 규칙
+        - 주로 데이터 분석과 같은 분야에서 사용 (반드시 알고 있어야 함.)
+        - 웹 분야에서는 password, 첨부파일규칙, 회원가입 규칙 등에서 정도만 사용
+        - 다른 언어에서도 정규표현식은 같은 방식으로 사용되기 때문에 알아두면 도움됨.
+    -->
+    <!-- 
+        /regExp/flag  =>  /   /  => 시작기호, 종료기호
+        regExp : 패턴, flag: 옵션
+
+        - ('str').match(/regexp/) : str 에서 매칭되는 항목들을 배열로 리턴 없으면 null
+
+        - ('str').replace(/regexp/ , 'changeStr') : str 문자열이 정규식에 맞는지 체크 
+          true 가 되면 바꿀 문자로 변경 (최초 1개만) : 전체 변경은 replaceAll  /regexp/g
+
+        - ('str').split(/regexp/) : 정규식에 매칭되는 항목을 기준으로 str을 나누어 배열로 리턴
+
+        - (/regexp/).test('str') : str 문자열이 정규식에 맞는지 체크 true / false
+    -->
+    <!-- 
+        정규표현식에 사용되는 플래그
+        i : 대소문자 구분x / g : 전역검색 / m : 줄바꿈 포함
+
+        패턴 문자열
+        a-zA-Z : 영어 대소문자  / ㄱ-ㅎ가-힇 : 한글  /  0-9 : 숫자
+        . : 모든 문자열 (숫자, 한글, 영어, 특수문자, 공백) => 줄바꿈 x
+
+        \d : 숫자       \D : 숫자 아닌 것
+        \s : 공백       \S : 공백 아닌 것
+        \w : 영숫자     \W : 영숫자 아닌 것
+        \특수기호
+
+        검색패턴
+
+        | or  (jpg|gif|png)$     [jpg] => j or p or g
+
+        [] : or의 묶음 / 해당 문자들 중 하나
+
+        /abc/ => 'abc'를 포함하는
+        /[abc]/  =>  'a','b','c' 중 하나를 포함하는
+        /[a-z+]/  =>  a~z까지 중 하나를 포함하는 (+ : 하나이상)
+        /[^abc]/  =>  'a','b','c' 제외
+
+        {min, max} : min~max까지 글자수 제한
+
+        ^ => 시작문자  /  $ => 끝나는문자
+        /^시작  끝$/
+
+        - 그림파일만 허용 파일명.jpg, gif, png, bmp
+        /\.(jpg|jpeg|gif|png|bmp)$/i
+    -->
+
+    <script>
+        let testStr = 'This is Javascript Regular Expression';
+        console.log(testStr.match(/is/g));  // 배열로 리턴
+        if (testStr.match(/is/g)) {
+            console.log('is 문장이 존재합니다.');
+        } else {
+            console.log('is 문장이 존재하지 않습니다.');
+        }
+
+        console.log((/is/g).test(testStr));  // true / false로 리턴
+
+        const fileName = ['abc.jpg', 'main.java', 'main.GIF', 'test.gif', 'doc.pdf', 'code.js'];
+        // 이미지파일 : abc.jpg, main.GIF, test.gif
+        // 그외 파일 : main.java, doc.pdf, code.js
+        // /\.(jpg|jpeg|gif|png|bmp)$/i
+
+        console.log(fileName[0].match(/\.(jpg|jpeg|gif|png|bmp)$/i));
+
+        const imageFiles = [];
+        const otherFiles = [];
+
+
+        for (let i = 0; i < fileName.length; i++) {
+
+            if (/\.(jpg|jpeg|gif|png|bmp)$/i.test(fileName[i])) {
+                imageFiles.push(fileName[i]);
+            } else {
+                otherFiles.push(fileName[i]);
+            }
+        }
+
+        console.log(imageFiles);
+        console.log(otherFiles);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

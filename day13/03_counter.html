@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+버튼 2개 준비
+- 0 +
++   1씩 증가
+-   1씩 감소    음수는 X
+-->
+
+    <button id="plus">+</button>
+    <span id="num">0</span>
+    <button id="minus">-</button>
+
+
+<script>
+    //innertext 태그 안쪽 글자 (보여지는 글자만 가져옴.)
+    //textcontent : display:none 으로 인해 안보이는 글자도 가져올수있음.
+    
+
+document.getElementById('plus').addEventListener('click', function(){
+
+    let num = Number(document.getElementById('num').innerHTML);
+    //id가 num인 것의 내부 html 자체를 가져와서 Number로 숫자화.
+
+    num++;
+
+    document.getElementById('num').innerHTML = num;
+
+});
+
+document.getElementById('minus').addEventListener('click', function(){
+
+    let num = Number(document.getElementById('num').innerHTML);
+
+    num--;
+
+    if(num < 0){
+        num = 0;
+    }
+
+    document.getElementById('num').innerHTML = num;
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- 
+원래였던거.
+    <button id="plus">+</button>
+    <span id="num">0</span>
+    <button id="minus">-</button>
+
+    <script>
+        const num = document.getElementById('num')
+
+document.getElementById('plus').addEventListener('click',function(){
+    num++;
+    document.getElementById('num').innerHTML = `${num}`;
+})
+
+document.getElementById('minus').addEventListener('click',function(){
+    num--;
+    if(num < 0){
+        num = 0;
+    }
+    document.getElementById('num').innerHTML = `${num}`;
+})
+
+
+
+    </script>
+
+
+-->

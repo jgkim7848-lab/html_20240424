@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            /*class*/
+            width: 500px;
+            height: 750px;
+            margin: 0 auto;
+        }
+
+        button {
+            /*그냥 기능 이름*/
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 20px;
+            font-size: 40px;
+            background-color: #851e1e;
+        }
+
+        /*#뭐시기 >> id=뭐시기 일때만*/
+        #printResult {
+            width: 480px;
+            height: 100px;
+            background-color: #7a7a17;
+
+            display: flex;
+            align-items: center;
+            /* 세로 가운데 */
+            justify-content: flex-end;
+            /* 오른쪽 정렬 */
+
+            padding-right: 10px;
+            /* 오른쪽 여백 */
+            font-size: 50px;
+            border-radius: 20px;
+        }
+
+        .c {
+            width: 480px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="printResult">0</h1>
+        <div class="area">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+">+</button>
+            <br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button>
+            <br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button>
+            <br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="/">/</button>
+            <br>
+            <button type="button" value="c" class="c">C</button>
+        </div>
+    </div>
+
+
+    <script>
+        const pr = document.getElementById('printResult');
+
+        let calculateLine = "";
+        let imsi = "";
+
+        document.addEventListener('click', (e) => {
+
+            if (e.target.tagName !== "BUTTON") return;
+
+            let value = e.target.value;
+
+            // C 초기화
+            if (value === "c") {
+                calculateLine = "";
+                imsi = "";
+                pr.innerText = "0";
+                return;
+            }
+
+            // = 계산
+            if (value === "=") {
+
+                calculateLine += imsi;
+                imsi = "";
+
+                let tokens = calculateLine.match(/(\d+\.?\d*|\+|\-|\*|\/)/g);
+                if (!tokens) return;
+
+                let result = calc(tokens);
+
+                pr.innerText = result;
+
+                calculateLine = "";
+                imsi = "";
+                return;
+            }
+
+            // 숫자
+            if (!isNaN(value) || value === ".") {
+                imsi += value;
+            }
+
+            // 연산자
+            else {
+                if (imsi !== "") {
+                    calculateLine += imsi;
+                    imsi = "";
+                }
+                calculateLine += value;
+            }
+
+            pr.innerText = calculateLine + imsi;
+        });
+
+
+        // 🔥 핵심 계산 함수 (우선순위 처리)
+        function calc(tokens) {
+
+            // 1. * / 먼저 처리
+            for (let i = 0; i < tokens.length; i++) {
+
+                if (tokens[i] === "*" || tokens[i] === "/") {
+
+                    let left = parseFloat(tokens[i - 1]);
+                    let right = parseFloat(tokens[i + 1]);
+
+                    let result =
+                        tokens[i] === "*" ? left * right : left / right;
+
+                    tokens.splice(i - 1, 3, result.toString());
+
+                    i = 0; // 다시 처음부터 검사
+                }
+            }
+
+            // 2. + - 처리
+            let result = parseFloat(tokens[0]);
+
+            for (let i = 1; i < tokens.length; i += 2) {
+                let op = tokens[i];
+                let num = parseFloat(tokens[i + 1]);
+
+                if (op === "+") result += num;
+                else result -= num;
+            }
+
+            return result;
+        }
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+<!-- 
+    <script>
+    const pr = document.getElementById('printResult');
+
+    let calculateLine = "";
+    let imsi = "";
+
+    document.addEventListener('click', (e) => {
+
+        let value = e.target.value;
+
+        // 버튼 아닌 곳 클릭 방지
+        if (value === undefined) {
+            return;
+        }
+
+        // C (초기화)
+        if (value === "c") {
+            calculateLine = "";
+            imsi = "";
+            pr.innerText = "0";
+            return;
+        }
+
+        // = (계산 실행)
+        if (value === "=") {
+
+            calculateLine += imsi;   // 마지막 숫자 붙이기
+            imsi = "";
+            //calculateLine을 계산을 해야되는데 어케하지
+
+
+            ///////////////////////////////////////////////////////////
+            calculateLine = "";
+            return;
+        }
+
+        // 숫자
+        if (!isNaN(value)) {
+            imsi += value;
+        }
+
+        // 연산자
+        else if (value === "+" || value === "-" ||
+                 value === "*" || value === "/") {
+
+            calculateLine += imsi;   // 숫자 확정
+            calculateLine += value;  // 연산자 추가
+            imsi = "";               // 초기화
+        }
+
+        // 화면 출력
+        pr.innerText = calculateLine + imsi;
+
+    });
+</script>
+
+-->
+
+
+
+
+
+
+<!-- 
+    <script>
+        const pr = document.getElementById('printResult');
+
+        let calculateLine = "";
+        //입력된것들이 =이 입력되기 전까지 유지하는거.
+
+        let imsi = 0; //>>> 잠깐 숫자 기록용으로 남겨놓기.
+        document.addEventListener('click', (e) => {
+
+            //지금 클릭한 버튼값
+            let value = e.target.value;
+            // C
+            if (value === "c") {
+                calculateLine = "";
+                pr.innerText = "0";
+                return;
+            }
+
+
+            /*// 버튼 아닌 곳 클릭 시 종료
+                        if (value === undefined) {
+                            return;
+                        }
+            
+                        // =
+                        if (value === "=") {
+            
+                            calculateLine = "";
+                            return;
+                        }*/
+
+
+            if (!isNaN(value)) {
+                //숫자일 경우
+                imsi += value;
+            } else {
+                calculateLine += imsi;
+                calculateLine += value;
+            }
+
+            // 누적
+            calculateLine += value;
+
+            pr.innerText = calculateLine;
+            //입력된것들이 =이 입력되기 전까지 유지하는거.
+
+        });
+
+
+    </script>
+
+-->
+
+
+
+
+
+<!-- 
+const pr = document.getElementById('printResult');
+
+let calculateLine = "";
+
+document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function(){
+
+        let value = this.value;
+
+        // C 처리 (초기화)
+        if(value === "c"){
+            calculateLine = "";
+            pr.innerText = "0";
+            return;
+        }
+
+        // = 처리 (계산)
+        if(value === "="){
+            pr.innerText = eval(calculateLine);
+            calculateLine = "";
+            return;
+        }
+
+        // 누적
+        calculateLine += value;
+
+        pr.innerText = calculateLine;
+
+    });
+});
+-->

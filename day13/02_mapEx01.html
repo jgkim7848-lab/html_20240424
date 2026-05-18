@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>성적표</legend>
+        과목: <input type="text" id="subject"><br>
+        점수: <input type="text" id="score"><br>
+        <button id="add">추가</button>
+        <button id="printBTN">출력</button>
+        <ul id="ul"></ul>
+        <h3 id="h3"></h3>
+
+
+
+    </fieldset>
+    <!-- 추가 버튼 클릭시 map에 점수 추가 
+    출력 버튼 클릭시 ul li 점수들을 출력 및 h3에서 합계 및 평균 그리고 pass 여부.
+    pass는 평균 80점 이상. 
+    -->
+
+
+    <script>
+
+        const map = new Map();
+
+        const sub = document.getElementById('subject');
+        const scr = document.getElementById('score');
+
+        document.getElementById('add').addEventListener('click', function () {
+
+            map.set(sub.value, Number(scr.value));
+
+        });
+
+        document.getElementById('printBTN').addEventListener('click', function () {
+
+            let hap = 0;
+            let avg = 0;
+
+            for (let value of map.values()) {
+                hap += value;
+            }
+
+            avg = hap / map.size;
+
+            const ulhtml = document.getElementById('ul');
+
+            ulhtml.innerHTML = '';
+
+            for (let [key, value] of map) {
+                ulhtml.innerHTML += `<li>${key} : ${value}</li>`;
+            }
+
+            let pass = avg >= 80 ? 'PASS' : 'FAIL';
+
+            document.getElementById('h3').innerHTML =
+                `합계 : ${hap} 평균 : ${avg.toFixed(2)} ${pass}`;
+
+        });
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+원래 script부분
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>성적표</legend>
+        과목: <input type="text" id="subject"><br>
+        점수: <input type="text" id="score"><br>
+        <button id="add">추가</button>
+        <button id="printBTN">출력</button>
+        <ul id="ul"></ul>
+        <h3 id="h3"></h3>
+
+
+
+    </fieldset>
+추가 버튼 클릭시 map에 점수 추가 
+    출력 버튼 클릭시 ul li 점수들을 출력 및 h3에서 합계 및 평균 그리고 pass 여부.
+    pass는 평균 80점 이상. 
+
+
+
+    <script>
+
+        const map = new Map();
+
+        const sub = document.getElementById('subject');
+        const scr = document.getElementById('score');
+
+        document.getElementById('add').addEventListener('click', function () {
+            map.set(sub, src);
+
+        })
+
+        document.getElementById('printBTN').addEventListener('click', function () {
+
+            let hap = 0;
+            let avg = 0;
+
+            for (let value of map.values()) {
+                hap += value;
+            }
+
+            avg = hap / 3;
+
+            const ulhtml = document.getElementById('ul');
+
+            ulhtml.innerHTML += `<ul>`;
+            for (let [key, value] of map) {
+                ulhtml.innerHTML += `<li>${key} : ${value}</li>`;
+            }
+            ulhtml.innerHTML += `</ul>`;
+
+
+            
+
+            document.getElementById('h3').innerHTML = `평균: ${avg}`;
+
+        })
+
+    </script>
+
+
+
+</body>
+
+</html>  이거 왜 작동이 안되냐
+
+
+-->

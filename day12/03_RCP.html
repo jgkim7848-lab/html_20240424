@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .fld {
+            display: flex;
+        }
+
+        div {
+            width: 150px;
+            height: 150px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .a1 {
+            background-image: url(./가위.jpg);
+        }
+
+        .a2 {
+            background-image: url(./바위.jpg);
+
+        }
+
+        .a3 {
+            background-image: url(./보.jpg);
+        }
+
+        p {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="fld">
+        <button id="btn1">
+            <div class="a1" onclick="clkevnt1()"></div>
+        </button>
+        <button id="btn2" onclick="clkevnt2()">
+            <div class="a2"></div>
+        </button>
+        <button id="btn3" onclick="clkevnt3()">
+            <div class="a3"></div>
+        </button>
+
+    </fieldset>
+    <p id="result"></p>
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+
+        let win = 0;
+        let draw = 0;
+        let lose = 0;
+        const hand = ['가위', '바위', '보'];
+        let str = '';
+
+
+        //가위 눌렀을 경우
+        document.getElementById('btn1').addEventListener('click', function () {
+            //alert("가위 클릭됨");
+            str = '';
+            let comp = Math.floor(Math.random() * 3);
+            if (comp == 0/*가위*/) {
+                draw++;
+                str += `나: 가위 / 컴퓨터: ${hand[comp]} → 무승부<br>`;
+            } else if (comp == 1/*바위*/) {
+                lose++;
+                str += `나: 가위 / 컴퓨터: ${hand[comp]} → 패배<br>`;
+            } else/*보*/ {
+                win++;
+                str += `나: 가위 / 컴퓨터: ${hand[comp]} → 승리<br>`;
+            }
+
+            let winrate = (win / (win + draw + lose) * 100).toFixed(2);
+            str += `현재 전적<br>`;
+            str += `win: ${win} / draw: ${draw} / lose: ${lose}<br>`;
+            str += `승률 : ${winrate}`;
+
+
+            document.getElementById('result').innerHTML = str;
+        });
+
+
+        //바위 눌렀을 경우
+        document.getElementById('btn2').addEventListener('click', function () {
+            //alert("바위 클릭됨");
+            str = '';
+            let comp = Math.floor(Math.random() * 3);
+            if (comp == 0/*가위*/) {
+                win++;
+                str += `나: 바위 / 컴퓨터: ${hand[comp]} → 승리<br>`;
+
+            } else if (comp == 1/*바위*/) {
+                draw++;
+                str += `나: 바위 / 컴퓨터: ${hand[comp]} → 무승부<br>`;
+            } else/*보*/ {
+                lose++;
+                str += `나: 바위 / 컴퓨터: ${hand[comp]} → 패배<br>`;
+            }
+
+            let winrate = (win / (win + draw + lose) * 100).toFixed(2);
+            str += `현재 전적<br>`;
+            str += `win: ${win} / draw: ${draw} / lose: ${lose}<br>`;
+            str += `승률 : ${winrate}`;
+
+            document.getElementById('result').innerHTML = str;
+        });
+
+
+        //보 눌렀을 경우
+        document.getElementById('btn3').addEventListener('click', function () {
+            //alert("보 클릭됨");
+            str = '';
+            let comp = Math.floor(Math.random() * 3);
+            if (comp == 0/*가위*/) {
+                lose++;
+                str += `나: 보 / 컴퓨터: ${hand[comp]} → 패배<br>`;
+
+            } else if (comp == 1/*바위*/) {
+                win++;
+                str += `나: 보 / 컴퓨터: ${hand[comp]} → 승리<br>`;
+
+            } else/*보*/ {
+                draw++;
+                str += `나: 보 / 컴퓨터: ${hand[comp]} → 무승부<br>`;
+            }
+
+            let winrate = (win / (win + draw + lose) * 100).toFixed(2);
+            str += `현재 전적<br>`;
+            str += `win: ${win} / draw: ${draw} / lose: ${lose}<br>`;
+            str += `승률 : ${winrate}`;
+
+
+            document.getElementById('result').innerHTML = str;
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>

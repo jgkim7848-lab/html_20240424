@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>class: 자바 스크립트에서도 클래스 생성이 가능함.</h1>
+    <!-- 
+        객체의 구조를 표준화시켜 관리를 쉽게 하기위한 방범으로 사용됨.
+        일반 자바스크립트의 페이지에서는 잘 쓰진 않음.
+        (대형 프로젝트에선 쓸지도)
+
+        1 객체 구조 관리의 용이함
+        2 쉬운 유지보수
+        3 typescript 프로젝트에서 많이 사용함.
+    -->
+
+<!-- 
+    클래스 생성 기본 문법 
+    
+    생성자는 1개만 가능함
+    constructor(param){
+        멤버변수 정의
+    }
+    
+    메서드 정의
+    methodName(param){
+        ...
+    }
+    
+
+
+    getter/setter
+-->
+
+
+
+
+
+<script>
+    class Car{
+        //생성자는 1개만 가능함
+        constructor(name, year){
+            this.name = name;
+            this.year = year;
+            this.model = '';
+        }
+    }
+
+    const myCar1 = new Car('sonata', 2025);
+    myCar1.model = 'XG';
+    console.log(myCar1);
+
+
+</script>
+
+
+
+</body>
+</html>

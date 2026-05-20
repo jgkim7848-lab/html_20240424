@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Car class</h1>
+    <!-- 
+    private 필드 선언 ES2022버전부터나 가능해졌다.
+    그 이전엔 이런 제한을 둔다는게 자바 스크립트에선 없었다.
+    
+    
+-->
+
+
+
+
+
+
+
+
+
+
+    <script>
+        class Car {
+            #power = false; //시동
+            #speed = 0; //현재속도
+            //#은 private 필드 기호이다.
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+
+            }
+
+            get power() {
+                return this.#power
+            }
+            get speed() {
+                return this.#speed
+            }
+            set speed(value) {
+                this.#speed = value;
+            }
+
+            //현재상태
+            status() {
+                console.log(`차량명:${this.name} (${this.year}) / power: ${this.#power}? '켜짐' : '꺼짐'`);
+
+            }
+
+            //시동 켜기
+            start() {
+                if (this.#power) {
+                    console.log('시동이 켜진 상태');
+                } else {
+                    this.#power = true;
+                    console.log('시동이 켜졌다');
+                }
+            }
+
+            //시동끄기
+            stop() {
+                if (!this.#power) {
+                    console.log('시동이 꺼진 상태');
+                } else if (this.#speed > 0) {
+                    console.log('속도를 0으로 하여 멈추고 시동을 꺼라');
+                }
+                else {
+                    this.#power = false;
+                    console.log('시동이 꺼졌다');
+                }
+            }
+
+
+
+            //가속
+            speedUp() {
+                if (!this.#power) {
+                    console.log('시동을 켜주세요');
+                    return;
+                }
+                this.#speed += 10;
+                console.log('현재 속도: ', this.#speed);
+            }
+
+            //감속
+            speedDown() {
+                if (!this.#power) {
+                    console.log('시동을 켜주세요');
+                    return;
+                }
+                this.#speed -= 10;
+                console.log('현재 속도: ', this.#speed);
+            }
+
+
+        }
+
+        const myCar = new Car('sonata', 2024);
+        myCar.status();
+        myCar.start();
+        myCar.status();
+
+        myCar.speedUp();
+        myCar.speedUp();
+        myCar.speedUp();
+        myCar.speedUp();
+        myCar.speedUp();
+        myCar.speedUp();
+
+        myCar.speedDown();
+
+        myCar.speedDown();
+
+        myCar.speedDown();
+        myCar.speedDown();
+        myCar.speedDown();
+        myCar.speedDown();
+        myCar.stop();
+
+        console.log(myCar.name);
+        console.log(myCar.speed);
+
+        //setter가 없어지면 멤버변수를 지들 ㅈ대로 추가해버린다???
+        console.log(myCar);
+        myCar.speed = 100;
+        console.log(myCar.speed);
+        console.log(myCar);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

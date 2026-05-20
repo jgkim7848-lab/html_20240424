@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        생성자 함수: 클래스를 함수화
+        일반 함수랑 생성자 함수는 별 차이가 없다.
+
+        반드시 new 키워드를 통해 실행
+        첫글자가 대문자일것
+
+    -->
+
+    <script>
+        class PersonClass {
+            constructor(first, last, age, addr) {
+                this.first = first;
+                this.last = last;
+                this.age = age;
+                this.addr = addr;
+            }
+
+            get personInfo() {
+                return `${this.first} ${this.last} ${this.age} ${this.addr}`;
+            }
+
+        }
+
+const me = new PersonClass('kim', 'minji', 20, 'suwon');
+
+    </script>
+
+</body>
+
+</html>

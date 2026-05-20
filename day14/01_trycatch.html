@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        try catch
+        예상되는 에러를 try 영역에 배치하고 만약 에러 발생시
+        catch부분에서 처리하는 예외 프로세스
+    </h1>
+    <!-- 
+        try{
+            code...
+        } catch(error){
+            code... 
+        }
+
+        자바에선 걍 콘솔에 띄우는거 말곤 별거 안하는듯
+
+        try는 에러 발생 가능성있는 코드 적고
+        catch는 에러를 처리하는데임.
+        예외처리를 하게되면 프로세스를 멈추지않고 지속시킬수있다.
+        finally영역  예외처리와 상관없이 무조건 코드를 실행해야하는 영역
+
+        throw new Error  예외를 고의적으로 발생시키는 키워드
+        
+    -->
+
+    <script>
+        let answer = "abc";
+        try{
+            console.log('try영역')
+            console.log(answer);
+
+            if(isNaN(answer)){
+                throw new Error("숫자를 입력하세요!");
+            }
+        } catch(error){
+            console.log(error);
+            console.log(error.name);
+            console.log(error.message);
+        } finally{
+            console.log("finally 영역")
+        }
+
+            console.log("프로세스 종료")
+
+
+    </script>
+
+</body>
+
+</html>

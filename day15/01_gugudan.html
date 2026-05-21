@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            height: auto;
+            width: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>구구단</h1>
+
+    <fieldset>
+        <button id="btn">문제 출제 버튼</button>
+        <ol id="q"></ol>
+        <button id="compare">정답 확인</button>
+        <h3 id="result">결과</h3>
+    </fieldset>
+
+
+
+
+    <!-- 
+        문제 10개 출제.
+        구구단중 아무거나 10개를 출제함.
+        정답의 개수와 정답률를 기록할것.
+    -->
+
+    <script>
+        const front = [];
+        const back = [];
+
+
+        document.getElementById('btn').addEventListener('click', function () {
+            for (let i = 0; i < 10; i++) {
+                front[i] = Math.floor((Math.random() * 8) + 2); // 2~9 랜덤 정수
+            }
+
+            for (let i = 0; i < 10; i++) {
+                back[i] = Math.floor((Math.random() * 9) + 1); // 1~9 랜덤 정수
+            }
+
+            document.getElementById('q').innerHTML = `
+                <li>${front[0]} * ${back[0]} = <div id="b0" style="background-color: green;"><input type="text" style="background-color: green;" id="a0"></div></li>
+                <li>${front[1]} * ${back[1]} = <div id="b1" style="background-color: green;"><input type="text" style="background-color: green;" id="a1"></div></li>
+                <li>${front[2]} * ${back[2]} = <div id="b2" style="background-color: green;"><input type="text" style="background-color: green;" id="a2"></div></li>
+                <li>${front[3]} * ${back[3]} = <div id="b3" style="background-color: green;"><input type="text" style="background-color: green;" id="a3"></div></li>
+                <li>${front[4]} * ${back[4]} = <div id="b4" style="background-color: green;"><input type="text" style="background-color: green;" id="a4"></div></li>
+                <li>${front[5]} * ${back[5]} = <div id="b5" style="background-color: green;"><input type="text" style="background-color: green;" id="a5"></div></li>
+                <li>${front[6]} * ${back[6]} = <div id="b6" style="background-color: green;"><input type="text" style="background-color: green;" id="a6"></div></li>
+                <li>${front[7]} * ${back[7]} = <div id="b7" style="background-color: green;"><input type="text" style="background-color: green;" id="a7"></div></li>
+                <li>${front[8]} * ${back[8]} = <div id="b8" style="background-color: green;"><input type="text" style="background-color: green;" id="a8"></div></li>
+                <li>${front[9]} * ${back[9]} = <div id="b9" style="background-color: green;"><input type="text" style="background-color: green;" id="a9"></div></li>`;
+
+        })
+
+
+        document.getElementById('compare').addEventListener('click', function () {
+            console.log(document.getElementById('a0').value);
+            console.log(front, back);
+
+            document.getElementById('a1').innerHTML;
+
+            let count = 0;
+
+            for (let i = 0; i < 10; i++) {
+                if ((front[i] * back[i]) == document.getElementById(`a${i}`).value) {
+                    document.getElementById(`b${i}`).innerHTML = `정답입니다.`;
+                    count++;
+                } else {
+                    document.getElementById(`b${i}`).innerHTML = `오답입니다.`;
+
+                }
+            }
+
+
+            document.getElementById('result').innerHTML = `정답: ${count} / 정답률: ${count * 10}%`;
+
+        })
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

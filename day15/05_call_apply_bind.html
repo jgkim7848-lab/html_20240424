@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>call   apply    bind</h1>
+
+    <!-- 
+        함수를 호출하는 방법
+        1 함수명()   함수명뒤에 ()를 붙여서 호출
+        2 call , apply하는 방법
+        함수명.call(thism params...);
+        this : 호출하려는 함수 주체 (대상)  >> 자신의 함수면 null
+        
+        함수명.apply
+        call을 써서 this를 호출한다면 다른 객체의 파라미터나 메서드를 자신의 것처럼 사용가능
+        this는 전역객체의 window로 정해져있다.
+        몇가지 방법으로 window를 다른것으로 변경가능.
+
+        bind는 함수가 가르키는 this만 바꾸고 호출은 안함.
+        this를 정의하고나서 그 함수를 복사해 새로운 함수를 만들어서 리턴
+
+
+    -->
+
+
+    <script>
+        const example = function(a,b,c){
+            return a + b + c;
+        }
+        let a = example(1,2,3);
+        console.log(a);
+
+        let b = example.call(null,1,2,3,);
+        let c = example.apply(null, [1,2,3]);
+
+        console.log(a, b, c);
+
+        const obj = {
+            string: 'zero',
+            yell: function(){
+                console.log(this.string);
+            }
+        }
+
+        const obj2 = {
+            string: "what" //;가 왜 붙으면 안되냐 이건 ㅅㅂ
+        }
+        
+        obj.yell();
+        obj.yell.call(obj2); //this의 값을 yell 값의 this 대상으로
+
+        const kimObj = {
+            name: 'kim',
+            first: 10,
+            second:30
+        }
+        
+        function sum(num){
+            return num + this.first + this.second;
+        }
+
+
+        console.log(sum.call(kimObj,1000)); //1040
+
+
+        //유사배열
+        /*
+            배열처럼 인덱스와 length 프로퍼티를 가지고있지만 배열이 아닌 형태
+            HTMLCOLLECTion   NodeList   arguments 문자열    유사배열에 속함
+            배열메서드를 사용할수없으므로 
+            배열메서드를 사용하기위해선
+            Array.from()  유사배열을 실제 배열로 변환하면 가능하다.
+
+            
+        */
+
+
+
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

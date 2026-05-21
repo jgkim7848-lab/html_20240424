@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<!-- day15같은데 14 추가본임. -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+    계좌 2개를 만들거임
+    myAccount, yourAccount
+    
+    1 객체를 사용하여 생성
+    2 class로 생성
+    name 실소유주, balance잔액
+
+    메서드 - 입금deposit 출금withdraw 송금transfer
+
+-->
+
+    <script>
+        class Account {
+            constructor(name, balance = 0) {
+                this.name = name;
+                this.balance = balance;
+            }
+
+            deposit(amount) {
+                this.balance += amount;
+                console.log(`${this.name} 입금: ${amount}, 잔액: ${this.balance}`);
+            }
+
+            withdraw(amount) {
+                if (amount > this.balance) {
+                    console.log("잔액 부족");
+                    return false;
+                }
+                this.balance -= amount;
+                console.log(`${this.name} 출금: ${amount}, 잔액: ${this.balance}`);
+            }
+
+            transfer(amount, targetAccount) {
+                if (amount > this.balance) {
+                    console.log("잔액 부족");
+                    return false;
+                }
+                this.balance -= amount;
+                targetAccount.balance += amount;
+                console.log(`내 계좌: ${this.balance} / 상대 계좌:${targetAccount.balance}`);
+            }
+        }
+
+
+        const myAccount = new Account("용찬", 1000);
+        const yourAccount = new Account("심영", 500);
+
+        myAccount.deposit(200);
+        yourAccount.deposit(600);
+        myAccount.withdraw(400);
+
+        myAccount.transfer(400,yourAccount);
+
+
+    </script>
+
+
+
+</body>
+
+</html>

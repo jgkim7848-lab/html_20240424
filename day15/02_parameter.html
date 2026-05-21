@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>자바 스크립트의 파라미터 = 매개변수</h1>
+
+    <!-- 
+        함수에서의 파라미터 개수는 상관없음.
+         - 파라미터의 개수와 상관없이 함수명이 같다면 호출 가능.
+         - 파라미터개수가 불일이차혀 값을 받지못하는 변수가 있다면 undefined처리
+         - 값을 받아오지못하는 파라미터가 undefined처리되는것을 막기위해서 파라미터의 기본값을 설정가능함.
+            - 그 기본값으로 설정되는 파라미터를 optional parameter 라고한다.
+         - 파라미터는 arguments라는 프로퍼티로 파라미터들을 관리함.
+         - arguments 배열로 담겨서 관리됨.
+            - optional parameter는 arguments 배열에 저장되지않는다.
+            - optional parameter는 다른 파라미터보다 뒤에 있어야한다. (가장 끝에 존재함)
+        
+         - rest parameter : 남는 파라미터
+         - 사용할 파라미터는 일반 파라미터에 저장하고 나머지 파라미터들을 통합하여 배열로 관리하는 방법
+         - ... : spread 연산자.  배열 객체 복사시 사용됨
+    -->
+
+
+
+    <script>
+        function testFunc(p1, p2, p3, p4, p5) {
+            console.log(p1, p2, p3, p4, p5);
+            console.log(arguments);
+        }
+
+        testFunc(1, 2, 3);
+        testFunc(1, 2, 3, 4, 5);
+
+        function testfunc2() {
+            console.log('parameter X');
+        }
+        //함수에서 파라미터를 받지 않아도 에러가 나지않음.
+        //파라미터는 버려짐.
+        testFunc2(1);
+
+//restparameter
+function restFunc(a,b,...others){
+    let sum = 0;
+
+}
+// ...펼쳐놓는다는 의미.
+
+    </script>
+
+</body>
+
+</html>

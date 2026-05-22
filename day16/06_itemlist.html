@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    form {
+        background-color: aqua;
+        width: 600px;
+        height: 100px;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #item {
+        width: 350px;
+        height: 40px;
+
+    }
+
+    #btn {
+        height: 46px;
+        width: auto;
+        font-size: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        /* 점 제거 */
+        padding: 0;
+        /* 기본 들여쓰기 제거 */
+        margin: 0;
+        /* 기본 여백 제거 */
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        /* 부모(ul)의 너비에 맞춤 */
+        max-width: 600px;
+        /* 폼과 동일한 최대 너비 */
+        padding: 5px 10px;
+        border-bottom: 1px solid #ccc;
+        margin: auto;
+    }
+
+    .n1 {
+        background-color: pink;
+    }
+
+    .n2 {
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <h1>여행 준비물 점검 목록</h1>
+    <form action="">
+        <input type="text" id="item">
+        <button type="button" id="btn">추가</button>
+    </form>
+    <div>
+        <ul id="itemList"></ul>
+    </div>
+
+    <script>
+        let count = 0;
+        document.getElementById('btn').addEventListener('click', function () {
+            count++;
+
+
+            if (count % 2 == 1) {
+                let item = document.getElementById('item').value;
+                let str = '';
+                let itemList = document.getElementById('itemList');
+
+                str += `<li class="n1"><p>${item}</p><button class="a" id="b1">X</button></li>`;
+
+                itemList.innerHTML += str;
+            } else {
+                let item = document.getElementById('item').value;
+                let str = '';
+                let itemList = document.getElementById('itemList');
+
+                str += `<li class="n2"><p>${item}</p><button class="a" id="b2">X</button></li>`;
+
+                itemList.innerHTML += str;
+
+            }
+
+            
+
+            document.getElementById('item').value = '';
+        })
+
+
+        
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

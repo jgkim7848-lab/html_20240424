@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'MoiraiOne';
+            /* 내가 붙일 이름 */
+            src: url('../font/Playwrite_DE_SAS/PlaywriteDESAS-VariableFont_wght.ttf') format('truetype');
+        }
+
+        body {
+            font-family: 'MoiraiOne', sans-serif;
+            /* 불러온 폰트 적용 */
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        #bigname {
+            font-weight: 900;
+            font-size: 50px;
+        }
+
+        #secondbigname {
+            font-weight: 600;
+            font-size: 40px;
+        }
+
+        .head {
+            margin: 50px;
+        }
+
+        .box {
+            width: 350px;
+            height: 450px;
+            border: 1px solid black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #sero {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #sero>div {
+            margin: 30px;
+            border-radius: 20px;
+        }
+
+        .humanname {
+            font-size: 30px;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-left: 15px;
+            margin-bottom: -5px;
+        }
+
+        #sero>.box>p {
+            margin-left: 15px;
+        }
+
+        #sero>.box>ul {
+            margin-left: 80px;
+        }
+
+        #sero>.box>.a {
+            margin: 3px;
+            margin-left: 15px;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+
+<!-- 
+    https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+-->
+
+<body>
+
+    <header id="header"></header>
+    <section id="section"></section>
+    <!-- 
+    클릭 이벤트 없이 바로 불러오기???
+    html 문서가 로딩되면 바로 호출됬으면 좋겠다.
+     >>>DOMContentLoaded   
+-->
+
+    <script>
+        /*
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
+        */
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+                .then(resp => resp.json())
+                .then(json => printData(json))
+                .catch(err => console.log(err));
+        });
+
+        function printData(obj) {
+            console.log(obj.squadName);         // 스쿼드 이름
+            console.log(obj.members[0].age);    // 1번 멤버 나이
+            const powers = obj.members[2].powers;
+            console.log(powers[0]); // 첫 번째 요소 → "Immortality"
+            console.log(powers[2]); // 세 번째 요소 → "Inferno"
+
+            const hd = document.getElementById('header');
+            hdstr = ''
+
+            const sc = document.getElementById('section');
+            scstr = ''
+
+
+
+            hdstr += `<div id="bigname" class="head">SUPER HERO SQUAD</div>`;
+            hdstr += `<div id="secondbigname" class = "head">HomeTown : ${obj.homeTown} // Formed : ${obj.formed}</div>`;
+            hd.innerHTML = hdstr;
+
+
+            scstr += `<div id="sero">`;
+
+            for (let i = 0; i < 3; i++) {
+
+                scstr += `<div id="box${i}" class="box">`
+                scstr += `<p class="humanname">${obj.members[i].name}</p>`
+                scstr += `<p class="a">SecretIdentity : ${obj.members[i].secretIdentity}</p>`
+                scstr += `<p class="a">Age : ${obj.members[i].age}</p>`
+                scstr += `<p class="a">SuperPowers : </p>`;
+                scstr += `<ul>`;
+                for (let j = 0; j < obj.members[i].powers.length; j++) {
+                    scstr += `<li>${obj.members[i].powers[j]}</li>`;
+                }
+                scstr += `</ul>`;
+                scstr += `</div>`;
+
+
+            }
+            scstr += `</div>`;
+            sc.innerHTML = scstr;
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

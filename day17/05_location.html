@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        location 영역
+        브라우저의 주소 표시줄에 입력에 관련된 객체
+
+        window.location
+        location.hreg = "url" url로 이동함. history 객체에 저장됨.
+        location.replace('url')  url로 이동 history객체에 저장은 안됨
+        location.assign('url')  url로 이동은 하고 history객체에 저장됨
+        location.reload  현재 페이지에서 새로고침.
+
+
+    </h1>
+
+
+  <button id="hrefBtn">location.href</button>
+  <button id="replaceBtn">location.replace</button>
+  <button id="assignBtn">location.assign</button>
+  <button id="reloadBtn">location.reload</button>
+
+
+
+
+
+
+    <script>
+document.getElementById("hrefBtn").onclick = function() {
+      location.href = "https://www.naver.com"; // 이동 + history 저장
+    };
+
+
+    document.getElementById("replaceBtn").onclick = function() {
+      location.replace("https://www.google.com"); // 이동 + history 저장 안 됨
+    };
+
+
+
+
+    </script>
+    
+</body>
+</html>

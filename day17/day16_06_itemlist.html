@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    form {
+        background-color: aqua;
+        width: 600px;
+        height: 100px;
+        margin: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #item {
+        width: 350px;
+        height: 40px;
+
+    }
+
+    #btn {
+        height: 46px;
+        width: auto;
+        font-size: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        /* 점 제거 */
+        padding: 0;
+        /* 기본 들여쓰기 제거 */
+        margin: 0;
+        /* 기본 여백 제거 */
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        /* 부모(ul)의 너비에 맞춤 */
+        max-width: 600px;
+        /* 폼과 동일한 최대 너비 */
+        padding: 5px 10px;
+        border-bottom: 1px solid #ccc;
+        margin: auto;
+    }
+
+    .n1 {
+        background-color: pink;
+    }
+
+    .n2 {
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <h1>여행 준비물 점검 목록</h1>
+    <form action="">
+        <input type="text" id="item">
+        <button type="button" id="btn">추가</button>
+    </form>
+    <div>
+        <ul id="itemList"></ul>
+    </div>
+
+    <script>
+        /*
+            CRUD
+            c create  아이템 생성 저장공간에 저장
+            r read 읽기  저장공간에 담긴 내용을 읽기 =>출력으로 이어짐
+            u update 수정  읽기   바꾸기   저장으로 이어짐
+            d delete  삭제    item배열에서 삭제
+                - 내가 지울거야 하면 니가 지우고자 하는건 뭔지 물어보는게 필요함
+                - 
+        */
+        const itemList = [];
+        document.getElementById('btn').addEventListener('click', function () {
+            const item = document.getElementById('item');
+            // let item = document.getElementById('item').value; let은 value를 적어줘야함.
+            //const는 객체를 받아오는거고 let은 string을 받아오는거라서 이런다.
+            //둘이 바꿔쓴다고 큰일 나진 않는데 그냥 대체로 이렇게 쓴다는것
+
+            if(item.value.trim()==''){
+                alert('item값이 없습니다');
+                item.focus(); //커서 보내기
+            } else{
+                itemList.push(item.value)
+                itemList.value='';
+                item.focus(); //focus대상은 element 자체에 보내야함.
+
+                //추가한 내용을 화면에 출력
+
+                printData();
+
+            }
+
+            function printData(){
+                //배열에 대한 즉 itemList를 출력할거임.
+                let str='';
+                for(let i = 0; i < itemList.length; i++){
+                    str += `<li>${itemList[i]} <span class="close" id="${i}">X</span></li>`;
+                }
+                document.getElementById('itemList').innerHTML = str;
+            }
+
+
+
+        })
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

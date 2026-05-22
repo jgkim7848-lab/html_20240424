@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    fieldset {
+        width: 510px;
+        height: auto;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 700;
+    }
+
+    #img {
+        width: 500px;
+        height: 400px;
+        border: 1px solid black;
+    }
+
+    #place {
+        width: 500px;
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid #000000;
+        padding: 10px;
+    }
+
+    #place span {
+        font-weight: bold;
+        border: 1px solid #000000;
+    }
+
+    
+
+</style>
+
+
+<body>
+    <fieldset>Travel</fieldset>
+
+    <div>
+        <div id="place">
+            <span id="home" onclick="home">HOME</span>
+            <span id="s" onclick="s">Seoul</span>
+            <span id="t" onclick="t">Tokyo</span>
+            <span id="p" onclick="p">Paris</span>
+        </div>
+        <div >
+            <img src="../image/자연배경/소금사막.jpg" alt="" id="img">
+        </div>
+
+
+    </div>
+    
+
+    <script>
+        const itemList = [];
+
+
+        itemList[0] = '../image/자연배경/소금사막.jpg';
+        itemList[1] = 'seoul.jpg';
+        itemList[2] = 'tokyo.png';
+        itemList[3] = 'paris.webp';
+        console.log(itemList);
+
+
+    function showImage(img) {
+       document.getElementById('img').src =img;
+
+    }
+
+    document.getElementById('home').onclick = () => {
+        showImage(itemList[0]);
+    }; 
+    
+    document.getElementById('s').onclick = () => {
+        showImage(itemList[1]);
+    }; 
+    
+    document.getElementById('t').onclick = () => {
+        showImage(itemList[2]);
+    }; 
+    
+    document.getElementById('p').onclick = () => {
+        showImage(itemList[3]);
+    };
+
+
+    </script>
+
+
+</body>
+
+</html>

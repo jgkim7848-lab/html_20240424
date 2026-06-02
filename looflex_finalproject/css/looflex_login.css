@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BonmyeongjoSourceHanSerif';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'Pretendard';
+    letter-spacing: -0.05em;
+    border-radius: 5px;
+    color: #f6f6f6;
+}
+
+
+body {
+    background-color: #2E313D;
+    margin: 0;
+    min-width: 800px;
+}
+
+body > img {
+    width: 100px;
+    margin: 30px;
+}
+
+.inner{
+    width: 400px;
+    max-width: 1360px;
+    margin: 0 auto;
+    text-align: center;
+    
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.7);
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 50px 50px 50px;
+    box-sizing: border-box;
+    border-radius: 5px
+}
+
+h2{
+    margin: 20px 50px 40px 50px;
+    font-size: 50px;
+    color: #F6F6F6;
+
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+
+.inner .top .text{
+    border: 1px solid black;
+    width: 100%;  
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.inner .top .login-button{
+    width: 100%; 
+    height: 50px;
+    margin: 10px 0;
+    border: 1px solid black;
+    position: relative;
+    background-color: #0088FD;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+
+    transition: 0.2s ease;
+}
+
+.inner .top .login-button:hover{
+    background-color: #016ecd;
+}
+
+
+
+.inner .bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.inner .bottom a{
+    color: #F6F6F6;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.inner .bottom .bottom-light a:first-child::after {
+    content: "|";
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.inner .bottom a:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+}
+
+.top input {
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+}
+
+input:focus {
+    outline: 2px solid #0088FD;
+}

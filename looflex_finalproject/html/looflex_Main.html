@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looflex</title>
+    <link rel="stylesheet" href="../css/common/looflex_common.css">
+    <link rel="stylesheet" href="../css/common/looflex_modal.css">
+    <link rel="stylesheet" href="../css/looflex_Main.css">
+    <link rel="icon" href="../resource/img/looflex_logo_ico.png">
+</head>
+<body>
+    <script src="../js/common/config.js" defer></script>
+    <script src="../js/looflex_Main.js" defer></script>
+    <script src="../js/common/looflex_detail_modal.js" type="module" defer></script>
+    <script src="../js/common/looflex_header.js" defer></script>
+
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo" onclick="location.href='../html/looflex_Main.html'">
+            <img src="../resource/img/looflex_logo.png" alt="">
+        </div>
+        <div class="category">
+            <div onclick="location.href='../html/looflex_allMovies.html'">영화</div>
+            <div onclick="location.href='../html/looflex_series.html'">시리즈</div>
+            <div class="genres">장르<img src="../resource/img/down_arrow.png" alt="">
+                <div class="genres-drop">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <div class="search-icon">
+                <div class="search-icon-img"></div>
+            </div>
+        </div>
+        <div class="my-page-box">
+            <button onclick="location.href='../html/looflex_myPage_wishlist.html'">마이페이지</button>
+        </div>
+    </div> 
+
+    <!-- MAIN -->
+    <div class="container">
+            <div class="slide-box">
+                <div class="inner">
+                    <div class="slide-container">
+                        <div class="slide-wrapper">
+                            <div class="slide-img img1"></div>
+                            <div class="slide-img img2"></div>
+                            <div class="slide-img img3"></div>
+                            <div class="slide-img img4"></div>
+                            <div class="slide-img img5"></div>
+                        </div>
+                        <div class="buttons">
+                            <img src="../resource/img/left_arrow.png" alt="" class="button left">
+                            <img src="../resource/img/right_arrow.png" alt="" class="button right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="links-box">
+                <div class="inner">
+                    <div class="links">
+                        <div class="link marvel"
+                            onclick="location.href='../html/looflex_series.html?category=marvel'"
+                        >
+
+                        </div>
+                        <div class="link star-wars"
+                            onclick="location.href='../html/looflex_series.html?category=starwars'"
+                        >
+
+                        </div>
+                        <div class="link fast-furious"
+                            onclick="location.href='../html/looflex_series.html?category=fastandfurious'"
+                        >
+
+                        </div>
+                        <div class="link harry-potter"
+                            onclick="location.href='../html/looflex_series.html?category=harrypotter'"
+                        >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="recent-movies">
+                <div class="inner">
+                    <div class="recent-title"><img src="../resource/img/Folder_icon.png" alt="">최근 시청한 컨텐츠</div>
+                    <div class="re-movie">
+                        <div class="movie-1">
+                            <img src="../resource/img/uncharted_poster.jpg" alt="" onclick="details(335787)">
+                            <span>56분 남음</span>
+                            <div class="bar">
+                                <div class="play-bar"></div>
+                            </div>
+                        </div>
+                        <div class="movie-2">
+                            <img src="../resource/img/gattaca_poster.png" alt="" onclick="details(782)">
+                            <span>1분 남음</span>
+                            <div class="bar">
+                                <div class="play-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="now-playing-box">
+                <div class="inner">
+                    <div class="box-title">
+                        <img src="../resource/img/playing-botton.png" alt=""> 현재 상영작 TOP 5 
+                    </div>
+                    <div class="movies">
+
+                    </div>
+                </div>
+            </div>  
+
+            <div class="filmography-box">
+                <div class="inner">
+                    <div class="box-title">
+                        <div class="title-top">
+                            <img src="../resource/img/tom_spider_icon.png" alt=""> 톰 홀랜드 필모그래피!
+                        </div>
+                        <span>'브랜드 뉴 데이'로 돌아오는 스파이더맨, 톰 홀랜드의 필모그래피들을 만나보세요.</span>
+                    </div>
+                    <div class="filmo-wrap">
+                        <img src='../resource/img/left_arrow.png' class="left-button">
+                        <div class="filmo-container">
+                            <div class="filmo-movies">
+        
+                            </div>
+                        </div>
+                        <img src='../resource/img/right_arrow.png' class="right-button">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="bottom">
+                <div class="inner">
+                    <div class="footer-box">
+                        <div class="footer-top">
+                            <div>루플렉스 서비스 이용약관</div>
+                            <div>개인정보 처리 방침</div>
+                            <div>청소년 보호정책</div>
+                            <div>채용정보</div>
+                        </div>
+                        <div class="footer-middle">
+                            <div><div>고객센터</div><span>FAQ · cs@looflex.com</span></div>
+                            <div><div>광고 문의</div><span>ad-sales@looflex.com</span></div>
+                            <div><div>제휴 및 대외 협력</div><span>https://looflex.team/contact</span></div>
+                            <div><div>큐레이터</div><span>큐레이터 이용 가이드</span></div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="bottom-top">
+                                <div>주식회사 looflex</div>
+                                <div>대표 OOO</div>
+                                <div>200 Park Ave, New York, NY 10166, USA</div>
+                            </div>
+                            <div>사업자번호 0000-0000-0000-0000</div>
+                            <div>호스팅 서비스 제공자 looflex</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL -->
+
+            <div class="modal">
+                <div class="modal-content">
+                    <div onclick="modalClose()" class="close"></div>
+                    <div class="modal-details">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="top-img"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

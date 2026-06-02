@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looflex_Questions</title>
+    <link rel="stylesheet" href="../css/common/looflex_common.css">
+    <link rel="stylesheet" href="../css/looflex_Questions.css">
+    <link rel="icon" href="../resource/img/looflex_logo_ico.png">
+
+
+</head>
+
+<body>
+    <script src="../js/common/config.js" defer></script>
+    <script src="../js/looflex_Questions.js" defer></script>
+    <script src="../js/looflex_Main.js" defer></script>
+    <script src="../js/common/looflex_detail_modal.js" type="module" defer></script>
+    <script src="../js/common/looflex_header.js" defer></script>
+
+<!-- HEADER -->
+    <div class="header">
+        <div class="logo" onclick="location.href='../html/looflex_Main.html'">
+            <img src="../resource/img/looflex_logo.png" alt="">
+        </div>
+        <div class="category">
+            <div onclick="location.href='../html/looflex_allMovies.html'">영화</div>
+            <div onclick="location.href='../html/looflex_series.html'">시리즈</div>
+            <div class="genres">장르<img src="../resource/img/down_arrow.png" alt="">
+                <div class="genres-drop">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <div class="search-icon">
+                <div class="search-icon-img"></div>
+            </div>
+        </div>
+        <div class="my-page-box">
+            <button onclick="location.href='../html/looflex_myPage_wishlist.html'">마이페이지</button>
+        </div>
+    </div>
+
+
+    <!-- .................................................................... -->
+
+    <div class="sahang">
+        <div class="uppestside"><!-- 상단 -->
+            <div class="left_m">
+                묻고 답하기
+            </div>
+
+        </div>
+        <!-- 분류 방법 -->
+        <div class="classification">
+            <div class="dapbyeon_m">답변상태</div>
+            <div class="question_m">문의사항</div>
+            <div class="zaksung_who">작성자</div>
+            <div class="zaksung_date">작성일</div>
+        </div>
+
+        <!-- 일단 1개 문의 사항용.
+        div안에 div 2개.
+        1개는 기본상태이고.
+        나머지 1개는 답변 여부임과 동시에 숨겨놨다가 클릭하면 보이게 하기.
+        위의 답변상태, 문의사항, 작성자, 작성일 다 고려해서 작성할것.
+        -->
+
+        <!-- 버튼 누르면 글쓰기 시작되는 버튼.
+        하단의 div는 input 되는 창인걸로 처결. -->
+        <div class="write-box">
+
+            <button id="writeBtn">
+                글쓰기
+            </button>
+
+            <!-- 숨겨둘 입력창 -->
+            <div id="writeForm" style="
+            display:none;
+            margin-top:15px;
+        ">
+
+                <input type="text" id="writerInput" placeholder="작성자 입력">
+
+                <input type="text" id="questionInput" placeholder="문의사항 입력">
+
+                <button id="submitBtn">
+                    등록
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- 데이터 들어갈 곳 -->
+        <div id="question-list"></div>
+
+        <!-- 페이지 버튼 -->
+        <div class="page_m" id="page-buttons">
+        </div>
+        <div class="searchbox_m">
+            <div>
+                <input type="text" id="searchInput_m">
+            </div>
+
+            <div>
+                <button id="searchBtn_m">
+                    검색
+                </button>
+            </div>
+
+            <div>
+                <button id="resetBtn_m">
+                    되돌리기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+                <div class="bottom">
+                    <div class="inner">
+                        <div class="footer-box">
+                            <div class="footer-top">
+                                <div>루플렉스 서비스 이용약관</div>
+                                <div>개인정보 처리 방침</div>
+                                <div>청소년 보호정책</div>
+                                <div>채용정보</div>
+                            </div>
+                            <div class="footer-middle">
+                                <div><div>고객센터</div><span>FAQ · cs@looflex.com</span></div>
+                                <div><div>광고 문의</div><span>ad-sales@looflex.com</span></div>
+                                <div><div>제휴 및 대외 협력</div><span>https://looflex.team/contact</span></div>
+                                <div><div>큐레이터</div><span>큐레이터 이용 가이드</span></div>
+                            </div>
+                            <div class="footer-bottom">
+                                <div class="bottom-top">
+                                    <div>주식회사 looflex</div>
+                                    <div>대표 OOO</div>
+                                    <div>200 Park Ave, New York, NY 10166, USA</div>
+                                </div>
+                                <div>사업자번호 0000-0000-0000-0000</div>
+                                <div>호스팅 서비스 제공자 looflex</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</body>
+
+</html>

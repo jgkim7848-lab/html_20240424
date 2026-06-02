@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="looflex_css.css">
+    <!-- 이거 복붙해서 css 파일 공유때릴것. -->
+</head>
+
+<body>
+    <!-- 
+        이 파일에서 더 해야할 것들
+        
+    -->
+
+    <div class="header">
+        <div class="logo">
+            <img src="../looflex/resource/looflex_logo.png" alt="">
+        </div>
+        <div class="category">
+            <div>영화</div>
+            <div>시리즈</div>
+            <div>장르<img src="../looflex/resource/down_arrow.png" alt=""></div>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <div class="search-icon">
+                <div class="search-icon-img"></div>
+            </div>
+        </div>
+        <div class="my-page-box">
+            <button>마이페이지</button>
+        </div>
+    </div>
+    <!-- header에서 화면 상단부
+    일단은 내버려둘것. -->
+
+    <!-- 3개 페이지, 페이지당 공지 10개 -->
+
+    <div id="page1" class="page1 page">
+        <div class="gong gong1"><button id="gong1">Gong 1</button></div>
+        <div class="gong gong2"><button id="gong2">Gong 2</button></div>
+        <div class="gong gong3"><button id="gong3">Gong 3</button></div>
+        <div class="gong gong4"><button id="gong4">Gong 4</button></div>
+        <div class="gong gong5"><button id="gong5">Gong 5</button></div>
+        <div class="gong gong6"><button id="gong6">Gong 6</button></div>
+        <div class="gong gong7"><button id="gong7">Gong 7</button></div>
+        <div class="gong gong8"><button id="gong8">Gong 8</button></div>
+        <div class="gong gong9"><button id="gong9">Gong 9</button></div>
+        <div class="gong gong10"><button id="gong10">Gong 10</button></div>
+    </div>
+
+
+    <div id="page2" class="page2 page">
+        <div class="gong gong11"><button id="gong11">Gong 11</button></div>
+        <div class="gong gong12"><button id="gong12">Gong 12</button></div>
+        <div class="gong gong13"><button id="gong13">Gong 13</button></div>
+        <div class="gong gong14"><button id="gong14">Gong 14</button></div>
+        <div class="gong gong15"><button id="gong15">Gong 15</button></div>
+        <div class="gong gong16"><button id="gong16">Gong 16</button></div>
+        <div class="gong gong17"><button id="gong17">Gong 17</button></div>
+        <div class="gong gong18"><button id="gong18">Gong 18</button></div>
+        <div class="gong gong19"><button id="gong19">Gong 19</button></div>
+        <div class="gong gong20"><button id="gong20">Gong 20</button></div>
+    </div>
+
+
+    <div id="page3" class="page3 page">
+        <div class="gong gong21"><button id="gong21">Gong 21</button></div>
+        <div class="gong gong22"><button id="gong22">Gong 22</button></div>
+        <div class="gong gong23"><button id="gong23">Gong 23</button></div>
+        <div class="gong gong24"><button id="gong24">Gong 24</button></div>
+        <div class="gong gong25"><button id="gong25">Gong 25</button></div>
+        <div class="gong gong26"><button id="gong26">Gong 26</button></div>
+
+        <!-- 필요하다면 추가
+  <div class="gong gong27"><button id="gong27">Gong 27</button></div>
+  <div class="gong gong28"><button id="gong28">Gong 28</button></div>
+  <div class="gong gong29"><button id="gong29">Gong 29</button></div>
+  <div class="gong gong30"><button id="gong30">Gong 30</button></div> -->
+    </div>
+
+
+
+    <div id="showG" class="showG">
+        <!-- 누른거 번호에 따른 내용이랑 같이 보여주는 용도임. -->
+        <div>
+            <!-- 제목. 내용. 작성날짜등 -->
+
+
+        </div>
+
+        <div>
+            <!-- 뒤로 가는 버튼.
+     원래라면 윗글 아랫글 보여줘야하지만 지금은 완성이 먼저임.
+      -->
+
+
+        </div>
+
+
+
+    </div>
+
+    <!-- 페이지 이동 화살표
+     화살표 계획 폐기. 순수 버튼 구동으로 변경. -->
+    <div class="navigation">
+        <!-- <div class="left"><span id="goingleft">⇋</span><span id="cantgomore">ㅡ</span></div> -->
+        <div class="page">
+            <button id="num1b" class="Gbutton">1</button>
+            <button id="num2b" class="Gbutton">2</button>
+            <button id="num3b" class="Gbutton">3</button>
+        </div>
+        <!-- 1 2 3 -->
+        <!-- <div class="right"><span id="goingright">⇌</span></div> -->
+    </div>
+
+    <!-- 검색 박스 -->
+    <div class="searchbox">
+        <div class="questionbox"><input type="text"></div>
+        <div><button class="Qimage"></button></div>
+
+    </div>
+
+    <!-- 예시 이미지 -->
+    <div class="Qimg"></div>
+
+    <script>
+        //==================================================================================================
+        //기본값 설정. 페이지 1을 제외한 2페이지 3페이지 본문 내용 보여주기 전부 배제한 상황.
+        //아래쪽은 버튼을 통해 통제함.
+        document.getElementById('page2').style.display = 'none';
+        document.getElementById('page3').style.display = 'none';
+        document.getElementById('showG').style.display = 'none';
+
+        document.getElementById('num1b').addEventListener('click', () => {
+            document.getElementById('page1').style.display = 'block';
+            document.getElementById('page2').style.display = 'none';
+            //1번 버튼 누를 경우 2 3 공지내용 보여주기 전부 막기.
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('showG').style.display = 'none';
+
+        })
+
+        document.getElementById('num2b').addEventListener('click', () => {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+            //2번 버튼 누를 경우 1 3 공지내용 보여주기 전부 막기.
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('showG').style.display = 'none';
+
+        })
+
+        document.getElementById('num3b').addEventListener('click', () => {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'block';
+            //3번 버튼 누를 경우 1 2 공지내용 보여주기 전부 막기.
+            document.getElementById('showG').style.display = 'none';
+
+        })
+        //============================================================================================
+
+
+
+
+
+
+
+        //=====================================================================================
+
+
+        const Gdata = [
+            { id: "gong1", title: "어린왕자", date: "2026-05-26", content: "이건 코끼리를 삼킨 보아뱀이야" },
+            { id: "gong2", title: "앵무새죽이기", date: "2026-05-25", content: "먹지마라" },
+            { id: "gong3", title: "짜라투스트라는 이렇게말했다", date: "2026-05-24", content: "아 퇴근 마렵다" },
+            { id: "gong4", title: "데일카네기의 인간관계론", date: "2026-05-23", content: "좋은 이야기꾼은 타인의 이야기를<br>잘 들어주는 사람" },
+            { id: "gong5", title: "죄와 벌", date: "2026-05-22", content: "내탓이오" },
+            { id: "gong6", title: "탈무드", date: "2026-05-21", content: "우화" },
+            { id: "gong7", title: "돈키호테", date: "2026-05-20", content: "산초야 지금이 닥돌할때다" },
+            { id: "gong8", title: "위대한 개츠비", date: "2026-05-19", content: "공지 8번 내용입니다." },
+            { id: "gong9", title: "톰소여의 모험", date: "2026-05-18", content: "공지 9번 내용입니다." },
+            { id: "gong10", title: "개미", date: "2026-05-17", content: "퇴근마렵다" },
+            { id: "gong11", title: "다빈치코드", date: "2026-05-16", content: "공지 11번 내용입니다." },
+            { id: "gong12", title: "노인과 바다", date: "2026-05-15", content: "어쨌든 살아돌아왔으니 좋아쓰" },
+            { id: "gong13", title: "안네의 일기", date: "2026-05-14", content: "공지 13번 내용입니다." },
+            { id: "gong14", title: "바람과 함께 사라지다", date: "2026-05-13", content: "공지 14번 내용입니다." },
+            { id: "gong15", title: "드래곤 라자", date: "2026-05-12", content: "말과 제가 후치에 올라타면 됩니다" },
+            { id: "gong16", title: "눈물을 마시는 새", date: "2026-05-11", content: "공지 16번 내용입니다." },
+            { id: "gong17", title: "피를 마시는 새", date: "2026-05-10", content: "공지 17번 내용입니다." },
+            { id: "gong18", title: "그림자 제국", date: "2026-05-09", content: "공지 18번 내용입니다." },
+            { id: "gong19", title: "룬의 아이들", date: "2026-05-08", content: "공지 19번 내용입니다." },
+            { id: "gong20", title: "하얀 늑대들", date: "2026-05-07", content: "공지 20번 내용입니다." },
+            { id: "gong21", title: "광마회귀", date: "2026-05-06", content: "칼을 든 원숭이" },
+            { id: "gong22", title: "게임 속 바바리안으로 살아남기", date: "2026-05-05", content: "공지 22번 내용입니다." },
+            { id: "gong23", title: "검은머리 미군 대원수", date: "2026-05-04", content: "안녕 나는 금괴야" },
+            { id: "gong24", title: "나는 전설이다", date: "2026-05-03", content: "공지 24번 내용입니다." },
+            { id: "gong25", title: "파우스트", date: "2026-05-02", content: "공지 25번 내용입니다." },
+            { id: "gong26", title: "안나카레니나", date: "2026-05-01", content: "공지 26번 내용입니다." }
+        ];
+
+        //============================================================================================
+        // Gdata 배열을 기준으로 버튼 텍스트 채우기
+        // Gdata 배열은 이미 준비되어 있다고 가정
+        Gdata.forEach(gdataline => {
+            const btn = document.getElementById(gdataline.id);
+            if (btn) {
+                // 버튼에 제목 날짜 표시
+                btn.innerHTML = `<div>${gdataline.title}</div><div style="font-size:12px; color:gray;">${gdataline.date}</div>`;
+
+                // 버튼 클릭 시 상세 내용 보여주기
+                btn.addEventListener("click", () => {
+                    const showBox = document.getElementById("showG");
+                    showBox.style.display = "block";
+                    showBox.innerHTML = `
+        <h2>${gdataline.title}</h2>
+        <p><strong>작성일:</strong> ${gdataline.date}</p>
+        <p>${gdataline.content}</p>
+        <button id="backBtn">뒤로가기</button>
+      `;
+
+                    // 목록 페이지 숨기기
+                    document.getElementById("page1").style.display = "none";
+                    document.getElementById("page2").style.display = "none";
+                    document.getElementById("page3").style.display = "none";
+
+                    // 뒤로가기 버튼 이벤트
+                    document.getElementById("backBtn").addEventListener("click", () => {
+                        showBox.style.display = "none";
+                        document.getElementById("page1").style.display = "block"; // 기본으로 page1 보여주기
+                    });
+                });
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    <footer></footer>
+</body>
+
+</html>

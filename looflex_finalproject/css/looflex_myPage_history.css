@@ -1,0 +1,242 @@
+/* =========================
+   Base
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  letter-spacing: -0.04em;
+  line-height: 1.2em;
+
+  background: #2E313D;
+  color: #F6F6F6;
+}
+
+
+/* =========================
+   Page Layout (LEFT / RIGHT)
+========================= */
+/* 변경 후 CSS */
+.calendar-page {
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.calendar-page .inner {
+  display: grid;
+  grid-template-columns: 850px 300px; 
+  gap: 40px;
+  justify-content: center; /* 가운데 정렬 */
+}
+
+/* =========================
+   Calendar (LEFT)
+========================= */
+.calendar {
+  background: #323644;
+  border-radius: 5px;
+  padding: 40px 48px;
+}
+
+/* Header */
+.calenderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.calenderHeader h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  color: #6EC3CE;
+}
+
+.calenderHeader button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6EC3CE;
+  cursor: pointer;
+}
+
+/* =========================
+   Weekdays
+========================= */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-bottom: 12px;
+  border-bottom: 1px solid #3A3E4A;
+}
+
+.weekdays span {
+  text-align: center;
+  font-size: 13px;
+  color: #F6F6F6;
+}
+
+/* =========================
+   Days Grid
+========================= */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 110px;
+}
+
+/* =========================
+   Day Cell
+========================= */
+.days span {
+  position: relative;
+  padding: 6px 6px;
+  font-size: 13px;
+  color: #F6F6F6;
+
+  border-right: 1px solid #3A3E4A;
+  border-bottom: 1px solid #3A3E4A;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* 마지막 열 */
+.days span:nth-child(7n) {
+  border-right: none;
+}
+
+/* Hover */
+.days span:hover {
+  background: rgba(110, 195, 206, 0.15);
+}
+
+/* =========================
+   Has Movie
+========================= */
+.days span.has-movie {
+  background: rgba(110, 195, 206, 0.2);
+  border-radius: 5px;
+  color: #F6F6F6;
+}
+
+/* =========================
+   Poster Thumbnails
+========================= */
+.poster-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.poster {
+  width: 22px;
+  height: 32px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Hover Title */
+.poster::after {
+  content: attr(data-title);
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.poster:hover::after {
+  opacity: 1;
+}
+
+/* =========================
+   Side Panel (RIGHT)
+========================= */
+.side-panel {
+  background: #323644;
+  border-radius: 5px;
+  padding: 32px 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.side-panel h3 {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #F6F6F6;
+}
+
+/* =========================
+   Record List
+========================= */
+.record-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.record-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.record-item .title {
+  font-size: 14px;
+  color: #F6F6F6;
+}
+
+.record-item .date {
+  font-size: 12px;
+  color: #999999;
+}
+
+/* =========================
+   Monthly Summary
+========================= */
+.summary-section {
+  border-top: 1px solid #3A3E4A;
+  padding-top: 20px;
+}
+
+.total-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: #6EC3CE;
+}
+
+.has-movie > img{
+  width: 54px;
+}
+
+.header .logo img {
+    box-sizing: content-box !important;
+}

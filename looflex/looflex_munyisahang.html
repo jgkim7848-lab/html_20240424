@@ -1,12 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 이건 진짜 모르겠다 gpt 달린다 -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="looflex_css.css">
+    <style>
+        /* ======================================================
+   문의사항 페이지   muny
+====================================================== */
 
+        .sahang {
+            width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ======================================================
+   상단
+====================================================== */
+
+        .uppestside {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .left_m {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+
+        /* ======================================================
+   헤더 분류 영역
+====================================================== */
+
+        .classification {
+            display: flex;
+            align-items: center;
+
+            min-height: 65px;
+
+            background: #f3f4f6;
+
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #ddd;
+
+            font-weight: bold;
+        }
+
+        .classification div {
+            padding: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* 폭 */
+        .dapbyeon_m,
+        .zaksung_who,
+        .zaksung_date {
+            width: 15%;
+        }
+
+        .question_m {
+            width: 55%;
+        }
+
+        /* ======================================================
+   게시글 리스트
+====================================================== */
+
+        .question-row {
+            display: flex;
+            align-items: center;
+
+            min-height: 70px;
+
+            background: white;
+
+            border-bottom: 1px solid #ececec;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .question-row:hover {
+            background: #f8f9fb;
+        }
+
+        .question-row>div {
+            padding: 18px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .state,
+        .writer,
+        .date {
+            width: 15%;
+        }
+
+        .question {
+            width: 55%;
+
+            text-align: left !important;
+
+            font-weight: 500;
+
+            word-break: break-word;
+        }
+
+        /* ======================================================
+   답변 박스
+====================================================== */
+
+        .answer-box {
+            display: none;
+
+            background: #f8f9fc;
+
+            padding: 25px;
+
+            border-bottom: 1px solid #e6e6e6;
+
+            line-height: 1.8;
+
+            animation: fadeIn 0.2s ease;
+        }
+
+        .answer-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* 부드럽게 열림 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ======================================================
+   글쓰기 버튼
+====================================================== */
+
+        .write-box {
+            margin-top: 25px;
+            text-align: right;
+        }
+
+        .write-box button {
+            padding: 12px 20px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: black;
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .write-box button:hover {
+            opacity: 0.85;
+        }
+
+        /* ======================================================
+   페이지 버튼
+====================================================== */
+
+        .page_m {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            margin-top: 35px;
+        }
+
+        .page_m button {
+            min-width: 42px;
+            height: 42px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            background: white;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .page_m button:hover {
+            background: #ececec;
+        }
+
+        /* ======================================================
+   검색
+====================================================== */
+
+        .searchbox_m {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .searchbox_m input {
+            width: 260px;
+            height: 45px;
+
+            padding: 0 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            outline: none;
+        }
+
+        .searchbox_m input:focus {
+            border-color: #999;
+        }
+
+        .searchbox_m button {
+            height: 45px;
+            /* 검색창 높이와 맞춤 */
+            padding: 0 18px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: black;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        /* ======================================================
+   반응형
+====================================================== */
+
+        @media (max-width: 950px) {
+
+            .sahang {
+                width: 95%;
+            }
+
+            #writeForm {
+                flex-direction: column;
+            }
+        }
+
+        .left_m {
+            font-size: 26px;
+        }
+
+        .question-row {
+            font-size: 14px;
+        }
+
+        .write-box input {
+            width: 220px;
+            height: 40px;
+
+            padding: 0 12px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            margin-right: 10px;
+        }
+
+        #writeForm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+        #writeForm input {
+            width: 220px;
+            height: 45px;
+
+            padding: 0 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            box-sizing: border-box;
+        }
+
+        #writeForm button {
+            height: 45px;
+
+            padding: 0 20px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: black;
+            color: white;
+
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,17 +348,14 @@
         </div>
     </div>
 
-    <!-- ................................................................ -->
+    <!-- .................................................................... -->
 
     <div class="sahang">
         <div class="uppestside"><!-- 상단 -->
             <div class="left_m">
                 묻고 답하기
             </div>
-            <div class="right_m">
-                답변 상태
-                <!-- radio로 해서 답변 완료 혹은 답변 미완 으로 분류 가능하게. -->
-            </div>
+
         </div>
         <!-- 분류 방법 -->
         <div class="classification">
@@ -56,50 +371,680 @@
         나머지 1개는 답변 여부임과 동시에 숨겨놨다가 클릭하면 보이게 하기.
         위의 답변상태, 문의사항, 작성자, 작성일 다 고려해서 작성할것.
         -->
-        <div class="showornot">
-            <div class="basicshow"></div>
-            <div class="onclickshow" id="onclickshow"></div>
+
+        <!-- 버튼 누르면 글쓰기 시작되는 버튼.
+        하단의 div는 input 되는 창인걸로 처결. -->
+        <div class="write-box">
+
+            <button id="writeBtn">
+                글쓰기
+            </button>
+
+            <!-- 숨겨둘 입력창 -->
+            <div id="writeForm" style="
+            display:none;
+            margin-top:15px;
+        ">
+
+                <input type="text" id="writerInput" placeholder="작성자 입력">
+
+                <input type="text" id="questionInput" placeholder="문의사항 입력">
+
+                <button id="submitBtn">
+                    등록
+                </button>
+
+            </div>
+
         </div>
 
-        <div>
-            <!-- 글쓰기 버튼 -->
 
 
 
-        </div>
+        <!-- 데이터 들어갈 곳 -->
+        <div id="question-list"></div>
 
         <!-- 페이지 버튼 -->
-        <div class="page_m">
-            <div><button>1</button></div>
-            <div><button>2</button></div>
-            <div><button>3</button></div>
-            <div><button>4</button></div>
-            <div><button>5</button></div>
-            <div><button>6</button></div>
+        <div class="page_m" id="page-buttons">
         </div>
         <div class="searchbox_m">
-            <div><input type="text"></div>
-            <div><button>검색</button></div>
+            <div>
+                <input type="text" id="searchInput_m">
+            </div>
+
+            <div>
+                <button id="searchBtn_m">
+                    검색
+                </button>
+            </div>
+
+            <div>
+                <button id="resetBtn_m">
+                    되돌리기
+                </button>
+            </div>
         </div>
 
 
 
     </div>
 
+
+
+
     <script>
-        document.getElementById('onclickshow').style.display = 'none';
-
-        
-
-
-
 
 
 
         //데이터 모음=====================================================================================
-const Mdata = [
-  { id: "line1", QAyabu: "답변 완료",Q: "환불은 어떻게 해야 되나요", Qman: "데이터 받아와야됨", date: "2026-05-26", QA: "3분 이하 시청기록일경우에만 환불 가능합니다." }
-];
+
+        const Mdata = [
+            { id: "line1", QAyabu: "답변 대기", Q: "환불은 어떻게 해야 되나요?", Qman: "데이터 받아와야됨", date: "2026-05-26", QA: "" },
+            { id: "line2", QAyabu: "답변 완료", Q: "무료 체험은 몇 일인가요?", Qman: "데이터 받아와야됨", date: "2026-05-25", QA: "무료 체험은 7일 동안 제공됩니다." },
+            { id: "line3", QAyabu: "답변 완료", Q: "동시 시청은 몇 대까지 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-05-24", QA: "최대 2대 기기에서 동시 시청 가능합니다." },
+            { id: "line4", QAyabu: "답변 완료", Q: "지원되는 기기는 무엇인가요?", Qman: "데이터 받아와야됨", date: "2026-05-23", QA: "PC, 스마트폰, 태블릿, 스마트TV에서 이용 가능합니다." },
+            { id: "line5", QAyabu: "답변 완료", Q: "자막은 제공되나요?", Qman: "데이터 받아와야됨", date: "2026-05-22", QA: "한국어, 영어 자막을 기본 제공하며 일부 작품은 다국어 자막도 지원합니다." },
+            { id: "line6", QAyabu: "답변 완료", Q: "화질은 어떻게 되나요?", Qman: "데이터 받아와야됨", date: "2026-05-21", QA: "최대 4K UHD 화질을 지원합니다." },
+            { id: "line7", QAyabu: "답변 완료", Q: "결제 방법은 어떤 게 있나요?", Qman: "데이터 받아와야됨", date: "2026-05-20", QA: "신용카드, 체크카드, 간편결제(네이버페이, 카카오페이 등)를 지원합니다." },
+            { id: "line8", QAyabu: "답변 완료", Q: "자동 결제 해지는 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-05-19", QA: "마이페이지 > 결제 관리에서 자동 결제를 해지할 수 있습니다." },
+            { id: "line9", QAyabu: "답변 완료", Q: "아이디 공유가 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-05-18", QA: "아이디 공유는 금지되어 있으며 적발 시 계정이 정지될 수 있습니다." },
+            { id: "line10", QAyabu: "답변 완료", Q: "다운로드 기능이 있나요?", Qman: "데이터 받아와야됨", date: "2026-05-17", QA: "모바일 앱에서 영화와 드라마를 다운로드하여 오프라인 시청 가능합니다." },
+            { id: "line11", QAyabu: "답변 완료", Q: "신작 영화는 언제 업데이트 되나요?", Qman: "데이터 받아와야됨", date: "2026-05-16", QA: "신작은 극장 개봉 후 3~6개월 내 업데이트됩니다." },
+            { id: "line12", QAyabu: "답변 완료", Q: "광고가 나오나요?", Qman: "데이터 받아와야됨", date: "2026-05-15", QA: "유료 구독 시 광고 없이 시청 가능합니다." },
+            { id: "line13", QAyabu: "답변 완료", Q: "어린이용 콘텐츠가 있나요?", Qman: "데이터 받아와야됨", date: "2026-05-14", QA: "키즈 전용 카테고리를 제공하며 연령별 맞춤 콘텐츠가 있습니다." },
+            { id: "line14", QAyabu: "답변 완료", Q: "해외에서도 시청 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-05-13", QA: "일부 콘텐츠는 해외에서도 시청 가능하며, 국가별 제한이 있을 수 있습니다." },
+            { id: "line15", QAyabu: "답변 완료", Q: "로그인 오류가 발생하면 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-05-12", QA: "비밀번호 재설정 또는 고객센터 문의를 통해 해결 가능합니다." },
+            { id: "line16", QAyabu: "답변 완료", Q: "결제 영수증은 어디서 확인하나요?", Qman: "데이터 받아와야됨", date: "2026-05-11", QA: "마이페이지 > 결제 내역에서 영수증을 확인할 수 있습니다." },
+            { id: "line17", QAyabu: "답변 완료", Q: "추천 알고리즘은 어떻게 작동하나요?", Qman: "데이터 받아와야됨", date: "2026-05-10", QA: "시청 기록과 선호 장르를 기반으로 맞춤 추천을 제공합니다." },
+            { id: "line18", QAyabu: "답변 완료", Q: "계정 정지는 언제 발생하나요?", Qman: "데이터 받아와야됨", date: "2026-05-09", QA: "불법 공유, 결제 문제, 약관 위반 시 계정이 정지될 수 있습니다." },
+            { id: "line19", QAyabu: "답변 완료", Q: "고객센터 연락은 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-05-08", QA: "앱 내 고객센터 메뉴 또는 대표번호 1588-0000으로 문의 가능합니다." },
+            { id: "line20", QAyabu: "답변 완료", Q: "구독 요금제는 어떻게 되나요?", Qman: "데이터 받아와야됨", date: "2026-05-07", QA: "베이직, 스탠다드, 프리미엄 요금제가 있으며 월 9,900원부터 시작합니다." },
+            { id: "line21", QAyabu: "답변 완료", Q: "시청 기록은 어디서 확인하나요?", Qman: "데이터 받아와야됨", date: "2026-05-06", QA: "마이페이지 > 시청 기록 메뉴에서 확인 가능합니다." },
+            { id: "line22", QAyabu: "답변 완료", Q: "추천 영화는 어떻게 선정되나요?", Qman: "데이터 받아와야됨", date: "2026-05-05", QA: "사용자의 시청 이력과 선호 장르를 기반으로 자동 추천됩니다." },
+            { id: "line23", QAyabu: "답변 완료", Q: "계정 비밀번호 변경은 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-05-04", QA: "마이페이지 > 계정 설정에서 비밀번호를 변경할 수 있습니다." },
+            { id: "line24", QAyabu: "답변 완료", Q: "결제 실패 시 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-05-03", QA: "결제 수단을 다시 확인하거나 고객센터에 문의하세요." },
+            { id: "line25", QAyabu: "답변 완료", Q: "계정 탈퇴는 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-05-02", QA: "마이페이지 > 계정 관리에서 탈퇴 신청 가능합니다." },
+            { id: "line26", QAyabu: "답변 완료", Q: "시청 제한 기능이 있나요?", Qman: "데이터 받아와야됨", date: "2026-05-01", QA: "자녀 보호 모드를 통해 시청 제한을 설정할 수 있습니다." },
+            { id: "line27", QAyabu: "답변 완료", Q: "화면 끊김 현상은 왜 발생하나요?", Qman: "데이터 받아와야됨", date: "2026-04-30", QA: "네트워크 환경 문제일 수 있으며, 인터넷 속도를 확인하세요." },
+            { id: "line28", QAyabu: "답변 완료", Q: "지원되는 브라우저는 무엇인가요?", Qman: "데이터 받아와야됨", date: "2026-04-29", QA: "Chrome, Edge, Safari, Firefox 최신 버전을 지원합니다." },
+            { id: "line29", QAyabu: "답변 완료", Q: "결제 알림은 어떻게 받나요?", Qman: "데이터 받아와야됨", date: "2026-04-28", QA: "결제 완료 시 이메일과 앱 알림으로 안내됩니다." },
+            { id: "line30", QAyabu: "답변 완료", Q: "로그인 유지 기능이 있나요?", Qman: "데이터 받아와야됨", date: "2026-04-27", QA: "자동 로그인 설정을 통해 유지할 수 있습니다." },
+            { id: "line31", QAyabu: "답변 완료", Q: "화면 밝기 조절이 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-04-26", QA: "기기 자체 설정을 통해 조절 가능합니다." },
+            { id: "line32", QAyabu: "답변 완료", Q: "결제 취소는 언제까지 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-04-25", QA: "결제 후 24시간 이내에만 취소 가능합니다." },
+            { id: "line33", QAyabu: "답변 완료", Q: "추천 콘텐츠는 매일 바뀌나요?", Qman: "데이터 받아와야됨", date: "2026-04-24", QA: "추천 콘텐츠는 매일 업데이트됩니다." },
+            { id: "line34", QAyabu: "답변 완료", Q: "계정 공유 제한은 어떻게 되나요?", Qman: "데이터 받아와야됨", date: "2026-04-23", QA: "한 계정은 최대 2명까지만 사용할 수 있습니다." },
+            { id: "line35", QAyabu: "답변 완료", Q: "영상 속도 조절이 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-04-22", QA: "0.5배속~2배속까지 조절 가능합니다." },
+            { id: "line36", QAyabu: "답변 완료", Q: "결제 카드 변경은 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-04-21", QA: "마이페이지 > 결제 관리에서 카드 변경 가능합니다." },
+            { id: "line37", QAyabu: "답변 완료", Q: "로그인 알림은 제공되나요?", Qman: "데이터 받아와야됨", date: "2026-04-20", QA: "새 기기 로그인 시 이메일로 알림이 발송됩니다." },
+            { id: "line38", QAyabu: "답변 완료", Q: "화면 회전은 지원되나요?", Qman: "데이터 받아와야됨", date: "2026-04-19", QA: "모바일 앱에서 자동 회전이 지원됩니다." },
+            { id: "line39", QAyabu: "답변 완료", Q: "결제 내역은 어디서 확인하나요?", Qman: "데이터 받아와야됨", date: "2026-04-18", QA: "마이페이지 > 결제 내역에서 확인 가능합니다." },
+            { id: "line40", QAyabu: "답변 완료", Q: "영상 화질 자동 조정이 되나요?", Qman: "데이터 받아와야됨", date: "2026-04-17", QA: "네트워크 환경에 따라 자동으로 화질이 조정됩니다." },
+            { id: "line41", QAyabu: "답변 완료", Q: "계정 복구는 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-04-16", QA: "비밀번호 재설정 또는 고객센터를 통해 복구 가능합니다." },
+            { id: "line42", QAyabu: "답변 완료", Q: "결제 영수증은 이메일로 오나요?", Qman: "데이터 받아와야됨", date: "2026-04-15", QA: "결제 완료 후 이메일로 영수증이 발송됩니다." },
+            { id: "line43", QAyabu: "답변 완료", Q: "영상 다운로드 제한은 있나요?", Qman: "데이터 받아와야됨", date: "2026-04-14", QA: "최대 10개 콘텐츠까지 다운로드 가능합니다." },
+            { id: "line44", QAyabu: "답변 완료", Q: "결제 환불은 언제 처리되나요?", Qman: "데이터 받아와야됨", date: "2026-04-13", QA: "환불은 신청 후 3~5일 내 처리됩니다." },
+            { id: "line45", QAyabu: "답변 완료", Q: "영상 공유 기능이 있나요?", Qman: "데이터 받아와야됨", date: "2026-04-12", QA: "SNS 공유 버튼을 통해 가능합니다." },
+            { id: "line46", QAyabu: "답변 완료", Q: "계정 비밀번호는 몇 자리인가요?", Qman: "데이터 받아와야됨", date: "2026-04-11", QA: "최소 8자리 이상 설정해야 합니다." },
+            { id: "line47", QAyabu: "답변 완료", Q: "결제 알림을 끌 수 있나요?", Qman: "데이터 받아와야됨", date: "2026-04-10", QA: "앱 설정에서 알림을 끌 수 있습니다." },
+            { id: "line48", QAyabu: "답변 완료", Q: "영상 이어보기 기능이 있나요?", Qman: "데이터 받아와야됨", date: "2026-04-09", QA: "중단한 위치부터 이어서 시청 가능합니다." },
+            { id: "line49", QAyabu: "답변 완료", Q: "계정 정지 해제는 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-04-08", QA: "고객센터 문의 후 심사 과정을 거쳐 해제됩니다." },
+            { id: "line50", QAyabu: "답변 완료", Q: "결제 수단 추가는 가능한가요?", Qman: "데이터 받아와야됨", date: "2026-04-07", QA: "마이페이지 > 결제 관리에서 추가 가능합니다." },
+            { id: "line51", QAyabu: "답변 완료", Q: "영상 추천은 어떻게 받나요?", Qman: "데이터 받아와야됨", date: "2026-04-06", QA: "시청 기록과 선호 장르 기반으로 추천됩니다." },
+            { id: "line52", QAyabu: "답변 완료", Q: "계정 이메일 변경은 어떻게 하나요?", Qman: "데이터 받아와야됨", date: "2026-04-05", QA: "마이페이지 > 계정 관리에서 변경 가능합니다." },
+            { id: "line53", QAyabu: "답변 완료", Q: "결제 취소 후 환불은 언제 되나요?", Qman: "데이터 받아와야됨", date: "2026-02-02", QA: "환불은 영업일 기준 3~5일 내 처리됩니다." }
+        ];
+
+        const questionList =
+            document.getElementById("question-list");
+
+        const pageButtons =
+            document.getElementById("page-buttons");
+
+        const itemsPerPage = 10;
+
+        let currentPage = 1;
+        let openedAnswer = null;
+
+
+        // =============================
+        // 페이지 렌더링
+        // =============================
+        function renderPage(page) {
+
+            // 기존 화면 제거
+            questionList.innerHTML = "";
+
+            openedAnswer = null;
+
+            // 시작번호
+            const start =
+                (page - 1) * itemsPerPage;
+
+            // 끝번호
+            const end =
+                start + itemsPerPage;
+
+            // 현재 페이지 데이터
+            const currentData =
+                Mdata.slice(start, end);
+
+            currentData.forEach((item) => {
+
+                // 게시글 한 줄
+                const row =
+                    document.createElement("div");
+
+                row.className =
+                    "question-row";
+
+                row.innerHTML = `
+            <div class="state">
+                ${item.QAyabu}
+            </div>
+
+            <div class="question">
+                ${item.Q}
+            </div>
+
+            <div class="writer">
+                ${item.Qman}
+            </div>
+
+            <div class="date">
+                ${item.date}
+            </div>
+        `;
+
+
+                // 답변 박스
+                const answerBox =
+                    document.createElement("div");
+
+                answerBox.className =
+                    "answer-box";
+
+                answerBox.innerHTML = `
+            <div class="answer-title">
+                답변
+            </div>
+
+            <div>
+                ${item.QA || "답변이 없습니다."}
+            </div>
+        `;
+
+
+                // 클릭 이벤트
+                row.addEventListener("click", () => {
+
+                    if (
+                        item.QAyabu !==
+                        "답변 완료"
+                    ) {
+                        return;
+                    }
+
+                    // 이전 거 닫기
+                    if (
+                        openedAnswer &&
+                        openedAnswer !== answerBox
+                    ) {
+                        openedAnswer.style.display =
+                            "none";
+                    }
+
+                    // 토글
+                    if (
+                        answerBox.style.display ===
+                        "block"
+                    ) {
+
+                        answerBox.style.display =
+                            "none";
+
+                        openedAnswer = null;
+
+                    } else {
+
+                        answerBox.style.display =
+                            "block";
+
+                        openedAnswer = answerBox;
+                    }
+                });
+
+                questionList.appendChild(row);
+                questionList.appendChild(answerBox);
+            });
+        }
+
+
+
+        // =============================
+        // 페이지 버튼 생성
+        // =============================
+        function renderPageButtons() {
+
+            pageButtons.innerHTML = "";
+
+            const totalPages =
+                Math.ceil(
+                    Mdata.length /
+                    itemsPerPage
+                );
+
+            for (
+                let i = 1;
+                i <= totalPages;
+                i++
+            ) {
+
+                const btn =
+                    document.createElement(
+                        "button"
+                    );
+
+                btn.innerText = i;
+
+                btn.addEventListener(
+                    "click",
+                    () => {
+
+                        currentPage = i;
+
+                        renderPage(
+                            currentPage
+                        );
+                    }
+                );
+
+                pageButtons.appendChild(
+                    btn
+                );
+            }
+        }
+
+
+
+        // =============================
+        // 글쓰기용 함수 (미리 준비)
+        // =============================
+        function addQuestion(
+            question,
+            writer
+        ) {
+
+            const newId =
+                "line" +
+                (Mdata.length + 1);
+
+            Mdata.unshift({
+
+                id: newId,
+
+                QAyabu:
+                    "답변 대기",
+
+                Q: question,
+
+                Qman: writer,
+
+                date:
+                    new Date()
+                        .toISOString()
+                        .split("T")[0],
+
+                QA: ""
+            });
+
+            // 버튼 재계산
+            renderPageButtons();
+
+            // 첫페이지 이동
+            currentPage = 1;
+
+            renderPage(
+                currentPage
+            );
+        }
+
+
+
+        // 최초 실행
+        renderPageButtons();
+        renderPage(currentPage);
+
+
+        // ======================================
+        // 기본 설정
+        // ======================================
+
+        // 되돌리기 버튼 처음 숨기기
+        document.getElementById(
+            "resetBtn_m"
+        ).style.display = "none";
+
+
+        // ======================================
+        // 검색 기능
+        // ======================================
+
+        document.getElementById(
+            "searchBtn_m"
+        ).addEventListener(
+            "click",
+            () => {
+
+                const keyword =
+                    document.getElementById(
+                        "searchInput_m"
+                    )
+                        .value
+                        .trim();
+
+                // 검색어 없으면 종료
+                if (keyword === "") {
+                    return;
+                }
+
+                // 제목 검색
+                const result =
+                    Mdata.filter(item =>
+                        item.Q.includes(
+                            keyword
+                        )
+                    );
+
+                // 기존 리스트 제거
+                questionList.innerHTML =
+                    "";
+
+                // 페이지 버튼 숨기기
+                pageButtons.style.display =
+                    "none";
+
+                // 검색 결과 없음
+                if (
+                    result.length === 0
+                ) {
+
+                    questionList.innerHTML =
+                        `
+                <div style="
+                    text-align:center;
+                    padding:50px;
+                    color:gray;
+                ">
+                    검색 결과가 없습니다.
+                </div>
+            `;
+
+                } else {
+
+                    result.forEach(
+                        (item) => {
+
+                            const row =
+                                document.createElement(
+                                    "div"
+                                );
+
+                            row.className =
+                                "question-row";
+
+                            row.innerHTML =
+                                `
+                    <div class="state">
+                        ${item.QAyabu}
+                    </div>
+
+                    <div class="question">
+                        ${item.Q}
+                    </div>
+
+                    <div class="writer">
+                        ${item.Qman}
+                    </div>
+
+                    <div class="date">
+                        ${item.date}
+                    </div>
+                    `;
+
+                            // 답변박스
+                            const answerBox =
+                                document.createElement(
+                                    "div"
+                                );
+
+                            answerBox.className =
+                                "answer-box";
+
+                            answerBox.innerHTML =
+                                `
+                        <div class="answer-title">
+                            답변
+                        </div>
+
+                        <div>
+                            ${item.QA ||
+                                "답변이 없습니다."
+                                }
+                        </div>
+                    `;
+
+                            // 클릭 이벤트
+                            row.addEventListener(
+                                "click",
+                                () => {
+
+                                    if (
+                                        item.QAyabu !==
+                                        "답변 완료"
+                                    ) {
+                                        return;
+                                    }
+
+                                    // 이전 답변 닫기
+                                    if (
+                                        openedAnswer &&
+                                        openedAnswer !==
+                                        answerBox
+                                    ) {
+
+                                        openedAnswer.style.display =
+                                            "none";
+                                    }
+
+                                    // 토글
+                                    if (
+                                        answerBox.style.display ===
+                                        "block"
+                                    ) {
+
+                                        answerBox.style.display =
+                                            "none";
+
+                                        openedAnswer =
+                                            null;
+
+                                    } else {
+
+                                        answerBox.style.display =
+                                            "block";
+
+                                        openedAnswer =
+                                            answerBox;
+                                    }
+                                }
+                            );
+
+                            questionList.appendChild(
+                                row
+                            );
+
+                            questionList.appendChild(
+                                answerBox
+                            );
+                        }
+                    );
+                }
+
+                // 되돌리기 버튼 보이기
+                document.getElementById(
+                    "resetBtn_m"
+                ).style.display =
+                    "inline-block";
+            }
+        );
+
+
+        // ======================================
+        // 되돌리기 기능
+        // ======================================
+
+        document.getElementById(
+            "resetBtn_m"
+        ).addEventListener(
+            "click",
+            () => {
+
+                // 검색창 초기화
+                document.getElementById(
+                    "searchInput_m"
+                ).value = "";
+
+                // 페이지 버튼 다시 보이기
+                pageButtons.style.display =
+                    "flex";
+
+                // 현재 페이지 복구
+                renderPage(
+                    currentPage
+                );
+
+                // 되돌리기 버튼 숨김
+                document.getElementById(
+                    "resetBtn_m"
+                ).style.display =
+                    "none";
+            }
+        );
+
+
+
+        // ======================================
+        // 글쓰기 버튼
+        // ======================================
+
+        document
+            .getElementById("writeBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    const form =
+                        document.getElementById(
+                            "writeForm"
+                        );
+
+                    // 보이기 / 숨기기
+                    if (
+                        form.style.display
+                        === "none"
+                    ) {
+
+                        form.style.display =
+                            "flex";
+
+                    } else {
+
+                        form.style.display =
+                            "none";
+                    }
+                }
+            );
+
+
+        // ======================================
+        // 등록 버튼
+        // ======================================
+
+        document
+            .getElementById("submitBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    const writer =
+                        document
+                            .getElementById(
+                                "writerInput"
+                            )
+                            .value
+                            .trim();
+
+                    const question =
+                        document
+                            .getElementById(
+                                "questionInput"
+                            )
+                            .value
+                            .trim();
+
+                    // 빈칸 검사
+                    if (
+                        writer === "" ||
+                        question === ""
+                    ) {
+
+                        alert(
+                            "내용을 입력해주세요."
+                        );
+
+                        return;
+                    }
+
+                    // 질문 추가
+                    addQuestion(
+                        question,
+                        writer
+                    );
+
+                    // 입력칸 비우기
+                    document
+                        .getElementById(
+                            "writerInput"
+                        ).value = "";
+
+                    document
+                        .getElementById(
+                            "questionInput"
+                        ).value = "";
+
+                    // 입력창 닫기
+                    document
+                        .getElementById(
+                            "writeForm"
+                        ).style.display =
+                        "none";
+                }
+            );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

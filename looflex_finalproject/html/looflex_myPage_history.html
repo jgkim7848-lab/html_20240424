@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>looflex_myPage</title>
+  <link rel="stylesheet" href="../css/looflex_myPage_history.css" />
+  <link rel="stylesheet" href="../css/common/looflex_common.css">
+  <link rel="icon" href="../resource/img/looflex_logo_ico.png">
+
+</head>
+<body>
+    <script src="../js/common/config.js" defer></script>
+    <script src="../js/common/looflex_search.js" defer></script>
+    <script src="../js/common/looflex_header.js" defer></script>
+    <script src="../js/looflex_genres.js" defer></script>
+
+<!-- HEADER -->
+    <div class="header">
+        <div class="logo" onclick="location.href='../html/looflex_Main.html'">
+            <img src="../resource/img/looflex_logo.png" alt="">
+        </div>
+        <div class="category">
+            <div onclick="location.href='../html/looflex_allMovies.html'">영화</div>
+            <div onclick="location.href='../html/looflex_series.html'">시리즈</div>
+            <div class="genres">장르<img src="../resource/img/down_arrow.png" alt="">
+                <div class="genres-drop">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <div class="search-icon">
+                <div class="search-icon-img"></div>
+            </div>
+        </div>
+        <div class="my-page-box">
+            <button onclick="location.href='../html/looflex_myPage_wishlist.html'">마이페이지</button>
+        </div>
+    </div> 
+    <!-- 
+    TMDB API JS
+        ↓
+    영화 목록 (movie 객체)
+        ↓
+    감상하기 / 대여 / 소장 클릭
+        ↓
+    addWatchRecordToday(movie, type)
+        ↓
+    localStorage 저장
+        ↓
+    캘린더 / 패널 렌더링
+    -->
+    <main class="calendar-page">
+        <div class="inner">
+            <!-- LEFT : CALENDAR -->
+            <section class="calendar">
+            
+                <div class="calenderHeader">
+                    <button id="prev">◀</button>
+                    <h2 id="monthTitle"></h2>
+                    <button id="next">▶</button>
+                </div>
+            
+                <div class="weekdays">
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                </div>
+            
+                <div id="days" class="days"></div>
+            
+            </section>
+        
+            <!-- RIGHT : SIDE PANEL -->
+            <aside class="side-panel">
+                <!-- 시청 내역 -->
+                <section class="record-section">
+                    <h3>이번달 시청 내역</h3>
+                    <ul class="record-list"></ul>
+                </section>
+            
+                <!-- 월 요약 -->
+                <section class="summary-section">
+                    <h3>TOTAL</h3>
+                    <p class="total-price">₩ 0</p>
+                </section>
+            </aside>
+        </div>
+        
+    </main>
+
+<!-- FOOTER -->
+            <div class="bottom">
+                <div class="inner">
+                    <div class="footer-box">
+                        <div class="footer-top">
+                            <div>루플렉스 서비스 이용약관</div>
+                            <div>개인정보 처리 방침</div>
+                            <div>청소년 보호정책</div>
+                            <div>채용정보</div>
+                        </div>
+                        <div class="footer-middle">
+                            <div><div>고객센터</div><span>FAQ · cs@looflex.com</span></div>
+                            <div><div>광고 문의</div><span>ad-sales@looflex.com</span></div>
+                            <div><div>제휴 및 대외 협력</div><span>https://looflex.team/contact</span></div>
+                            <div><div>큐레이터</div><span>큐레이터 이용 가이드</span></div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="bottom-top">
+                                <div>주식회사 looflex</div>
+                                <div>대표 OOO</div>
+                                <div>200 Park Ave, New York, NY 10166, USA</div>
+                            </div>
+                            <div>사업자번호 0000-0000-0000-0000</div>
+                            <div>호스팅 서비스 제공자 looflex</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    <script type="module" src="../js/looflex_myPage_history.js"></script>
+</body>
+</html>

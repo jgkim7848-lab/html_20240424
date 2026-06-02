@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looflex_위시리스트</title>
+    <link rel="stylesheet" href="../css/looflex_myPage_wishlist.css" />
+    <link rel="stylesheet" href="../css/common/looflex_common.css">
+    <link rel="stylesheet" href="../css/common/looflex_modal.css">
+    <link rel="icon" href="../resource/img/looflex_logo_ico.png">
+
+
+</head>
+<body>
+    <script src="../js/common/config.js" defer></script>
+    <script src="../js/common/looflex_header.js" defer></script>
+    <script src="../js/common/looflex_search.js" defer></script>
+    <script src="../js/looflex_genres.js" defer></script>
+    <script src="../js/common/looflex_detail_modal.js" type="module" defer></script>
+    <script src="../js/looflex_myPage_info.js" defer></script>
+
+<!-- HEADER -->
+    <div class="header">
+        <div class="logo" onclick="location.href='../html/looflex_Main.html'">
+            <img src="../resource/img/looflex_logo.png" alt="">
+        </div>
+        <div class="category">
+            <div onclick="location.href='../html/looflex_allMovies.html'">영화</div>
+            <div onclick="location.href='../html/looflex_series.html'">시리즈</div>
+            <div class="genres">장르<img src="../resource/img/down_arrow.png" alt="">
+                <div class="genres-drop">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <div class="search-icon">
+                <div class="search-icon-img"></div>
+            </div>
+        </div>
+        <div class="my-page-box">
+            <button>마이페이지</button>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+
+    <main class="wishlist-page empty">
+        <div class="inner">
+            <div class="wish-inner-box">
+                <div class="my-page-info">
+                    <div class="info-top">
+                        <div class="profile-pic"></div>
+                        <div class="profile-script">
+                            <div class="script-left">
+                                <div class="profile-name"></div>
+                                <span> looflex 첫 결제 시, 첫 달 이용권 100% 코인 페이백 </span>
+                                <span> > 구매하기 </span>
+                            </div>
+                            <div class="script-right">
+                                <div onclick="location.href='../html/looflex_Notice.html'"><img src="../resource/img/bulletin-board.png" alt="">공지사항</div>
+                                <div onclick="location.href='../html/looflex_FAQ.html'"><img src="../resource/img/paper_icon.png" alt="">자주 묻는 질문</div>
+                                <div onclick="location.href='../html/looflex_Questions.html'"><img src="../resource/img/qa_icon.png" alt="">나의 문의사항</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-bottom">
+                        <button class="buy-movies">구매 컨텐츠</button>
+                        <button onclick="location.href='../html/looflex_myPage_history.html'">나의 영화기록</button>
+                    </div>
+                </div>
+
+                <div class="stored-movies">
+
+                </div>
+    
+                <div class="wish-list-box">
+                    <!-- PAGE HEADER -->
+                    <header class="page-header">
+                            <h2>찜한 영화</h2>
+                    </header>
+                    
+                    <div class="wish-list-state-box">
+                        <!-- EMPTY STATE -->
+                        <section class="empty-state">
+                                <h3>찜한 영화가 없습니다. 담고 돌아와 😑</h3>
+                        </section>
+                
+                        <!-- WISHLIST GRID -->
+                        <section class="wishlist-section">
+                                <ul class="wishlist-grid"></ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+            <div class="bottom">
+                <div class="inner">
+                    <div class="footer-box">
+                        <div class="footer-top">
+                            <div>루플렉스 서비스 이용약관</div>
+                            <div>개인정보 처리 방침</div>
+                            <div>청소년 보호정책</div>
+                            <div>채용정보</div>
+                        </div>
+                        <div class="footer-middle">
+                            <div><div>고객센터</div><span>FAQ · cs@looflex.com</span></div>
+                            <div><div>광고 문의</div><span>ad-sales@looflex.com</span></div>
+                            <div><div>제휴 및 대외 협력</div><span>https://looflex.team/contact</span></div>
+                            <div><div>큐레이터</div><span>큐레이터 이용 가이드</span></div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="bottom-top">
+                                <div>주식회사 looflex</div>
+                                <div>대표 OOO</div>
+                                <div>200 Park Ave, New York, NY 10166, USA</div>
+                            </div>
+                            <div>사업자번호 0000-0000-0000-0000</div>
+                            <div>호스팅 서비스 제공자 looflex</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- MODAL -->
+
+            <div class="modal">
+                <div class="modal-content">
+                    <div onclick="modalClose()" class="close"></div>
+                    <div class="modal-details">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="top-img"></div>
+            </div>
+    
+    <!-- import 사용중이라 type필수 -->
+    <script type="module" src="../js/looflex_myPage_wishlist.js"></script>
+</body>
+</html>

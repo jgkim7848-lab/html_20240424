@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 꾸미기만하면됨. -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looflex_FAQ</title>
+    <link rel="stylesheet" href="../css/looflex_FAQ.css">
+    <link rel="stylesheet" href="../css/common/looflex_common.css">
+    <link rel="icon" href="../resource/img/looflex_logo_ico.png">
+
+</head>
+
+<body>
+    <script src="../js/common/config.js" defer></script>
+    <script src="../js/looflex_FAQ.js" defer></script>
+    <script src="../js/looflex_Main.js" defer></script>
+    <script src="../js/common/looflex_detail_modal.js" type="module" defer></script>
+    <script src="../js/common/looflex_header.js" defer></script>
+
+<!-- HEADER -->
+    <div class="header">
+        <div class="logo" onclick="location.href='../html/looflex_Main.html'">
+            <img src="../resource/img/looflex_logo.png" alt="">
+        </div>
+        <div class="category">
+            <div onclick="location.href='../html/looflex_allMovies.html'">영화</div>
+            <div onclick="location.href='../html/looflex_series.html'">시리즈</div>
+            <div class="genres">장르<img src="../resource/img/down_arrow.png" alt="">
+                <div class="genres-drop">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input">
+            <div class="search-icon">
+                <div class="search-icon-img"></div>
+            </div>
+        </div>
+        <div class="my-page-box">
+            <button onclick="location.href='../html/looflex_myPage_wishlist.html'">마이페이지</button>
+        </div>
+    </div>
+
+
+    <main>
+        <div class="zemok">자주 하는 질문</div><!-- innertxt 자주하는 질문 목록 그대로적으면됨. -->
+        <div class="zazu">
+            <div class="faq-item"><button id="service">⚫ 서비스 관련</button></div>
+            <div class="faq-item"><button id="howtouse">⚫ 이용방법</button></div>
+            <div class="faq-item"><button id="authority">⚫ 판권/저작권</button></div>
+            <div class="faq-item"><button id="tech">⚫ 기술지원</button></div>
+            <div class="faq-item"><button id="money">⚫ 계정 결제</button></div>
+
+        </div>
+
+        <div class="sub_zazu">
+            <!-- 서비스 관련 -->
+            <div class="sub service" id="servic">
+                <span>서비스 관련 4건</span>
+                <div class="faq" id="a1">이 사이트는 직접 영화를 제공하나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="a1a1">저희는 직접 영상을 제공하지 않습니다.<br>
+                    대신 판권을 보유한 공식 플랫폼으로 연결해드려요.<br>
+                    사용자는 여러 OTT를 한 곳에서 검색하고 합법적인 경로로 시청할 수 있습니다.<br></div>
+
+                <div class="faq" id="a2">어떤 영화/시리즈를 볼 수 있나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="a2a2">판권이 확보된 작품과 제휴된 OTT에서 제공하는 콘텐츠를 확인할 수 있습니다.<br>
+                    최신 영화부터 고전 명작까지 다양한 장르를 검색할 수 있습니다.<br>
+                    다만 실제 시청은 연결된 플랫폼의 정책에 따라 달라집니다.<br></div>
+
+                <div class="faq" id="a3">판권이 없는 작품은 어떻게 처리되나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="a3a3">판권이 없는 경우 안내 메시지를 드립니다.<br>
+                    그리고 해당 작품을 제공하는 합법적인 플랫폼으로 연결해드립니다.<br>
+                    저작권을 존중하는 안전한 서비스 운영을 원칙으로 합니다.<br></div>
+
+                <div class="faq" id="a4">넷플릭스 같은 서비스와 어떤 차이가 있나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="a4a4">저희는 직접 스트리밍을 하지 않습니다.<br>
+                    여러 플랫폼을 한 곳에서 검색·연결할 수 있는 중계 서비스입니다.<br>
+                    즉, 다양한 OTT를 모아주는 검색·연결 허브 역할을 합니다.<br></div>
+
+            </div>
+
+            <!-- 이용 방법 -->
+            <div class="sub howtouse" id="howtous">
+                <span>이용방법 관련 4건</span>
+                <div class="faq" id="b1">회원가입을 꼭 해야 하나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="b1b1">기본 검색은 회원가입 없이 가능합니다.<br>
+                    하지만 즐겨찾기, 맞춤 추천 같은 개인화 기능은 회원가입 후 이용할 수 있습니다.<br>
+                    계정을 만들면 더 편리하게 콘텐츠를 관리할 수 있습니다.<br></div>
+
+                <div class="faq" id="b2">무료로 이용할 수 있나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="b2b2">저희 서비스 자체는 무료입니다.<br>
+                    다만 실제 시청은 넷플릭스, 디즈니+ 등 각 플랫폼의 요금제를 따라야 합니다.<br>
+                    즉, 검색과 연결은 무료지만 시청은 유료일 수 있습니다.<br></div>
+
+                <div class="faq" id="b3">검색 기능은 어떻게 사용하나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="b3b3">상단 검색창에 영화 제목이나 배우 이름을 입력하면 됩니다.<br>
+                    관련 콘텐츠를 빠르게 찾아드립니다.<br>
+                    검색 결과는 판권 여부에 따라 연결 가능한 플랫폼을 안내합니다.<br></div>
+
+                <div class="faq" id="b4">원하는 영화를 찾을 수 없을 때는 어떻게 하나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="b4b4">판권이 없는 경우 안내 메시지가 표시됩니다.<br>
+                    다른 플랫폼에서 제공 여부를 확인할 수 있습니다.<br>
+                    필요하다면 고객센터를 통해 문의도 가능합니다.<br></div>
+
+            </div>
+
+            <!-- 판권/저작권 -->
+            <div class="sub authority" id="authorit">
+                <span>판권/저작권 관련 3건</span>
+                <div class="faq" id="c1">판권이 없는 영화를 올려도 되나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="c1c1">불법 업로드는 불가능합니다.<br>
+                    저작권 침해 콘텐츠는 제공하지 않습니다.<br>
+                    판권이 없는 경우 합법적인 플랫폼으로 연결합니다.<br></div>
+
+                <div class="faq" id="c2">저작권 문제는 어떻게 해결되나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="c2c2">모든 콘텐츠는 판권을 보유한 공식 플랫폼을 통해서만 연결됩니다.<br>
+                    저작권을 침해하지 않는 합법적인 경로만 제공합니다.<br>
+                    안전하고 신뢰할 수 있는 서비스 운영을 원칙으로 합니다.<br></div>
+
+                <div class="faq" id="c3">판권이 있는 곳으로 연결해주는 방식은 합법인가요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="c3c3">네, 저희는 직접 영상을 제공하지 않습니다.<br>
+                    합법적인 경로로만 연결하기 때문에 문제가 없습니다.<br>
+                    모든 콘텐츠는 공식 판권을 보유한 플랫폼을 통해 제공됩니다.<br></div>
+
+            </div>
+
+            <!-- 기술/지원 -->
+            <div class="sub tech" id="tec">
+                <span>기술/지원 관련 3건</span>
+                <div class="faq" id="d1">PC, 모바일, TV에서 모두 이용 가능한가요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="d1d1">네, 웹 기반 서비스라서 다양한 기기에서 접속 가능합니다.<br>
+                    PC, 스마트폰, 태블릿, 스마트TV에서도 동일하게 이용할 수 있습니다.<br>
+                    단, 실제 재생은 연결된 플랫폼의 지원 여부에 따라 달라집니다.<br></div>
+
+                <div class="faq" id="d2">영상 재생이 안 될 때 어떻게 해야 하나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="d2d2">연결된 플랫폼의 문제일 가능성이 큽니다.<br>
+                    해당 OTT 고객센터를 통해 해결 방법을 확인하실 수 있습니다.<br>
+                    저희는 중계 역할만 하므로 직접 재생 문제를 처리하지는 않습니다.<br></div>
+
+                <div class="faq" id="d3">고객센터나 문의 방법은 어떻게 되나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="d3d3">사이트 하단의 “문의하기” 메뉴를 이용하시면 됩니다.<br>
+                    이메일 또는 채팅으로 문의하실 수 있습니다.<br>
+                    빠른 답변을 드리기 위해 고객지원팀이 준비되어 있습니다.<br></div>
+
+            </div>
+
+            <!-- 계정/결제 -->
+            <div class="sub money" id="mone">
+                <span>계정/결제 관련 3건</span>
+
+                <div class="faq" id="e1">결제 방식은 어떻게 되나요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="e1e1">저희 서비스 자체는 무료입니다.<br>
+                    실제 결제는 연결된 플랫폼(넷플릭스, 디즈니+ 등)에서 진행됩니다.<br>
+                    각 플랫폼의 결제 정책을 따르시면 됩니다.<br></div>
+
+                <div class="faq" id="e2">환불이나 구독 취소는 가능한가요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="e2e2">환불·취소는 각 플랫폼의 정책에 따라 가능합니다.<br>
+                    저희는 중계만 담당하기 때문에 직접 환불을 처리하지 않습니다.<br>
+                    이용 중 문제가 생기면 해당 OTT 고객센터를 이용해 주세요.<br></div>
+
+                <div class="faq" id="e3">계정 공유가 가능한가요?<span class="downhwa"> ⇣</span></div>
+                <div class="solution" id="e3e3">계정 공유 여부는 각 플랫폼의 정책을 따릅니다.<br>
+                    저희 서비스에서는 별도의 계정 공유 기능을 제공하지 않습니다.<br>
+                    안전한 이용을 위해 개인 계정 사용을 권장합니다.<br></div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+     <!-- FOOTER -->
+            <div class="bottom">
+                <div class="inner">
+                    <div class="footer-box">
+                        <div class="footer-top">
+                            <div>루플렉스 서비스 이용약관</div>
+                            <div>개인정보 처리 방침</div>
+                            <div>청소년 보호정책</div>
+                            <div>채용정보</div>
+                        </div>
+                        <div class="footer-middle">
+                            <div><div>고객센터</div><span>FAQ · cs@looflex.com</span></div>
+                            <div><div>광고 문의</div><span>ad-sales@looflex.com</span></div>
+                            <div><div>제휴 및 대외 협력</div><span>https://looflex.team/contact</span></div>
+                            <div><div>큐레이터</div><span>큐레이터 이용 가이드</span></div>
+                        </div>
+                        <div class="footer-bottom">
+                            <div class="bottom-top">
+                                <div>주식회사 looflex</div>
+                                <div>대표 OOO</div>
+                                <div>200 Park Ave, New York, NY 10166, USA</div>
+                            </div>
+                            <div>사업자번호 0000-0000-0000-0000</div>
+                            <div>호스팅 서비스 제공자 looflex</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</body>
+
+</html>

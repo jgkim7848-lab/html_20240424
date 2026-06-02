@@ -1,0 +1,316 @@
+        /* ======================================================
+   문의사항 페이지   muny
+====================================================== */
+
+        .sahang {
+            width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ======================================================
+   상단
+====================================================== */
+
+        .uppestside {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .left_m {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+
+        /* ======================================================
+   헤더 분류 영역
+====================================================== */
+
+        .classification {
+            display: flex;
+            align-items: center;
+
+            min-height: 65px;
+
+            background: #f3f4f6;
+
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #ddd;
+
+            font-weight: bold;
+        }
+
+        .classification div {
+            padding: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* 폭 */
+        .dapbyeon_m,
+        .zaksung_who,
+        .zaksung_date {
+            width: 15%;
+        }
+
+        .question_m {
+            width: 55%;
+        }
+
+        /* ======================================================
+   게시글 리스트
+====================================================== */
+
+        .question-row {
+            display: flex;
+            align-items: center;
+
+            min-height: 70px;
+
+            background: white;
+
+            border-bottom: 1px solid #ececec;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .question-row:hover {
+            background: #f8f9fb;
+        }
+
+        .question-row>div {
+            padding: 18px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .state,
+        .writer,
+        .date {
+            width: 15%;
+        }
+
+        .question {
+            width: 55%;
+
+            text-align: left !important;
+
+            font-weight: 500;
+
+            word-break: break-word;
+        }
+
+        /* ======================================================
+   답변 박스
+====================================================== */
+
+        .answer-box {
+            display: none;
+
+            background: #f8f9fc;
+
+            padding: 25px;
+
+            border-bottom: 1px solid #e6e6e6;
+
+            line-height: 1.8;
+
+            animation: fadeIn 0.2s ease;
+        }
+
+        .answer-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        /* 부드럽게 열림 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ======================================================
+   글쓰기 버튼
+====================================================== */
+
+        .write-box {
+            margin-top: 25px;
+            text-align: right;
+        }
+
+        .write-box button {
+            padding: 12px 20px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: black;
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .write-box button:hover {
+            opacity: 0.85;
+        }
+
+        /* ======================================================
+   페이지 버튼
+====================================================== */
+
+        .page_m {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            margin-top: 35px;
+        }
+
+        .page_m button {
+            min-width: 42px;
+            height: 42px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            background: white;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .page_m button:hover {
+            background: #ececec;
+        }
+
+        /* ======================================================
+   검색
+====================================================== */
+
+        .searchbox_m {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .searchbox_m input {
+            width: 260px;
+            height: 45px;
+
+            padding: 0 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            outline: none;
+        }
+
+        .searchbox_m input:focus {
+            border-color: #999;
+        }
+
+        .searchbox_m button {
+            height: 45px;
+            /* 검색창 높이와 맞춤 */
+            padding: 0 18px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: black;
+            color: white;
+
+            cursor: pointer;
+        }
+
+        /* ======================================================
+   반응형
+====================================================== */
+
+        @media (max-width: 950px) {
+
+            .sahang {
+                width: 95%;
+            }
+
+            #writeForm {
+                flex-direction: column;
+            }
+        }
+
+        .left_m {
+            font-size: 26px;
+        }
+
+        .question-row {
+            font-size: 14px;
+        }
+
+        .write-box input {
+            width: 220px;
+            height: 40px;
+
+            padding: 0 12px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            margin-right: 10px;
+        }
+
+        #writeForm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            margin-top: 15px;
+        }
+
+        #writeForm input {
+            width: 220px;
+            height: 45px;
+
+            padding: 0 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 10px;
+
+            box-sizing: border-box;
+        }
+
+        #writeForm button {
+            height: 45px;
+
+            padding: 0 20px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: black;
+            color: white;
+
+            cursor: pointer;
+        }

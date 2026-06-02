@@ -93,6 +93,238 @@ body {
 }
 
 
+/* 색깔 모음집 */
+
+
+
+
+
+
+
+/* GongGy.html=============================================== */
+
+
+.page1 {
+    /* width: 500px;
+    height: 700px;
+    border: 1px solid rgb(224, 224, 224);
+    margin: auto; */
+}
+
+.gong {
+    width: 400px;
+    height: 60px;
+    border: 1px solid rgb(219, 22, 22);
+    margin: auto;
+
+}
+
+.page1>.gong>button,
+.page2>.gong>button,
+.page3>.gong>button {
+    width: 400px;
+    height: 60px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    /* 가로 가운데 */
+    align-items: center;
+    /* 세로 가운데 (높이 있을 때) */
+    margin-top: 20px;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: center;
+    /* 가로 가운데 */
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.Qimage {
+    background-image: url(../looflex/resource/icon-magnifier.png);
+    width: 30px;
+    height: 30px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    border-radius: 5px;
+    filter: invert(100);
+}
+
+.showG {
+    width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.Gbutton {
+    width: 30px;
+    height: 20px;
+    background-color: #2E313D;
+    color: white;
+}
+
+
+
+
+
+
+/* zazuhanun   자주하는 질문 css 시작VVVVVVVVVVVVVVVV */
+/* 자주하는 질문 그 제목 관리 */
+.zemok {
+    text-align: center;
+    border: 1px solid yellow;
+    width: 800px;
+    height: 200px;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+main {
+    width: 800px;
+    /* 원하는 너비 */
+    margin: 0 auto;
+    /* 좌우 여백 자동 → 가로 가운데 */
+    /* background: #444; */
+    /* 확인용 배경 */
+    font-size: 30px;
+}
+
+.zazu {
+    display: flex;
+    width: auto;
+    height: auto;
+    border: 1px solid yellow;
+    
+}
+
+/* 자주하는 질문 목록에 대한 설정. */
+.faq-item {
+    flex: 1;
+    height: 50px;
+    border: 1px solid yellow;
+    text-align: center;
+
+}
+.faq-item>button{
+    font-size: 25px;
+    /* 서비스관련 이용방법 판권 기술 계정 글자크기. */
+}
+
+.solution {
+    height: auto;
+    border: 1px solid yellow;
+
+}
+
+.faq-item>button {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sub_zazu{
+    background-color: rgb(106, 106, 222);
+}
+
+.sub>span{
+    background-color: white;
+}
+
+
+
+
+
+
+/* munyisahang.html===================================================== */
+.uppestside,
+.classification,
+.searchbox_m,
+.page_m {
+    display: flex;
+
+}
+
+.sahang {
+    width: 800px;
+    /* 원하는 너비 */
+    margin: 0 auto;
+    /* 좌우 자동 → 가로 중앙 정렬 */
+    background: #f9f9f9;
+    /* 확인용 배경 */
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.uppestside {
+    width: 800px;
+    height: auto;
+}
+
+/*             <div class="left_m">
+                묻고 답하기
+            </div>
+            <div class="right_m">
+                답변 상태 */
+.left_m {
+    text-align: left;
+    font-size: 30px;
+}
+
+.left_m {
+    text-align: right;
+    /* 이건 왜 작동이 안되고 있는거냐 ㅅㅂ */
+    font-size: 23px;
+}
+
+.classification {
+    height: 70px;
+}
+
+.dapbyeon_m,
+.zaksung_who,
+.zaksung_date {
+    /* 밑에 올 컨텐츠들도 이걸로 관리할것. */
+    width: 12%;
+}
+
+.question_m {
+    /* 밑에 올 컨텐츠들도 이걸로 관리할것. */
+
+    width: 64%;
+}
+
+.page_m,
+.searchbox_m {
+    margin: 0 auto;
+
+}
+
+.basicshow {
+    height: 100px;
+    border: 1px solid red;
+}
+
+.onclickshow {
+    height: 100px;
+    border: 1px solid red;
+}
+
+
+
+
+
 
 
 

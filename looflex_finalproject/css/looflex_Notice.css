@@ -1,0 +1,233 @@
+
+        /* ==========================================
+   공지 리스트 영역
+========================================== */
+
+.page-box {
+    flex: 1;
+}
+
+        .page {
+            width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .gong {
+            width: 100%;
+            margin-bottom: 14px;
+        }
+
+        .gong>button {
+            width: 100%;
+            min-height: 75px;
+            border: none;
+            border-radius: 14px;
+            padding: 18px 24px;
+
+            background: #1f1f1f;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            cursor: pointer;
+
+            font-size: 18px;
+            text-align: left;
+
+            transition: all 0.25s ease;
+        }
+
+        /* 마우스 올릴 때 */
+        .gong>button:hover {
+            background-color: #2b2b2b;
+            transform: translateY(-2px);
+        }
+
+        /* 버튼 안 제목 */
+        .gong>button div:first-child {
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        /* 날짜 */
+        .gong>button div:last-child {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* ==========================================
+   페이지 버튼
+========================================== */
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .navigation .page {
+            width: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .Gbutton {
+            width: 44px;
+            height: 44px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: #2E313D;
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .Gbutton:hover {
+            background: #e50914;
+            transform: scale(1.08);
+        }
+
+        /* ==========================================
+   검색창
+========================================== */
+
+        .searchbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 80px;
+            margin-top: 35px;
+        }
+
+        #searchInput {
+            width: 350px;
+            height: 48px;
+
+            padding: 0 16px;
+
+            border: 1px solid #333;
+            border-radius: 12px;
+
+            background-color: #1f1f1f;
+            color: white;
+
+            font-size: 16px;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #e50914;
+        }
+
+        /* 돋보기 버튼 */
+        .Qimage {
+            width: 48px;
+            height: 48px;
+
+            border: none;
+            border-radius: 12px;
+
+            background-color: #2E313D;
+            background-image: url(../resource/img/icon-magnifier.png);
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 45%;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .Qimage:hover {
+            background-color: #e50914;
+            transform: scale(1.05);
+        }
+
+        /* ==========================================
+   되돌리기 버튼
+========================================== */
+
+        #resetBtn {
+            display: none;
+
+            height: 48px;
+            padding: 0 18px;
+
+            border: none;
+            border-radius: 12px;
+
+            background-color: #2E313D;
+            color: white;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #resetBtn:hover {
+            background-color: #e50914;
+            transform: scale(1.05);
+        }
+
+        /* ==========================================
+   상세보기(showG)
+========================================== */
+
+        .showG {
+            width: 800px;
+
+            margin: 50px auto;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            background: #1f1f1f;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .showG h2 {
+            color: #F6F6F6;
+            margin-bottom: 16px;
+            font-size: 32px;
+        }
+
+        .showG p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* 상세페이지 뒤로가기 */
+        #backBtn {
+            margin-top: 25px;
+
+            border: none;
+            border-radius: 10px;
+
+            padding: 12px 20px;
+
+            background: #2E313D;
+            color: white;
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #backBtn:hover {
+            background: #e50914;
+        }
